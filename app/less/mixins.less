@@ -3,12 +3,15 @@
 
 @import "blocks/btn.less";
 @import "blocks/input.less";
-@import "blocks/breadcramps.less";
+/*@import "blocks/breadcramps.less";
+@import "blocks/main-nav.less";*/
 
+@import "blocks/block-benefit.less"; 
+@import "blocks/block-main-forum.less";
+
+
+@import "blocks/first-screen.less";
 /*
-@import "blocks/page-header-desktop.less";
-@import "blocks/page-header-mobil.less";
-@import "blocks/main-nav.less";
 @import "blocks/breadcpamps.less";
 
 @import "blocks/main-slider.less";
@@ -65,23 +68,36 @@
 
 }
 
-.agora(@size) {  
-  font-family: "Agora", serif;
-  font-size: @size;  
+.gray-border() {
+	border-radius: 5px;
+	border: 1px solid #d1d1d1;
+	box-shadow: 0px 0px 5.7px 0.3px rgba(0, 0, 0, 0.16);
 }
 
-.linux(@size) {  
-  font-family: "Linux", serif;
+
+
+.segoe-bold(@size) {  
+  font-family: "SegoeUIBold", sans-serif;
   font-size: @size; 
 }
 
-.roboto(@size) { 
-  font-family: "Roboto", sans-serif;
+.segoe-regular(@size) {  
+  font-family: "SegoeUIRegular", sans-serif;
   font-size: @size; 
 }
 
-.open-sans(@size) {  
-  font-family: "OpenSans", sans-serif;
+.got-bold(@size) {  
+  font-family: "GothamProBold", sans-serif;
+  font-size: @size; 
+}
+
+.got-regular(@size) {  
+  font-family: "GothamProRegular", sans-serif;
+  font-size: @size; 
+}
+
+.got-light(@size) {  
+  font-family: "GothamProLight", sans-serif;
   font-size: @size; 
 }
 
