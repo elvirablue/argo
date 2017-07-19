@@ -8,7 +8,8 @@
 
 @import "blocks/block-benefit.less"; 
 @import "blocks/block-main-forum.less";
-
+@import "blocks/block-main-article.less";
+@import "blocks/call-form.less";
 
 @import "blocks/first-screen.less";
 /*
@@ -47,12 +48,18 @@
 	}
 }
 
+@media @tablet-widths {
 
+}
+
+@media @mobil-widths {
+
+}
 
 .container-fluid() {
 	width: 100%;
-	max-width: 1170px;
-	padding: 0 1.8rem;
+	max-width: 1000px;
+	padding: 0 20px;
 	margin: 0 auto;
 
 	@media @tablet-widths {
@@ -63,7 +70,7 @@
 		width: auto;
 		text-align: center;
 		min-width: 320px;
-		padding: 0 1.2rem;
+		padding: 0 20px;
 	}
 
 }

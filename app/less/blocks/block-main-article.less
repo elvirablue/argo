@@ -1,0 +1,54 @@
+.block-main-article {
+	position: relative;
+	display: block;
+	width: 310px;
+  	height: auto;
+  	min-height: 500px;
+	.gray-border();
+	padding: 0;
+
+	&__img {
+		display: block;		
+		width: 100%;
+		height: 230px;
+		background: no-repeat center @color-palegray;
+		background-size: cover;
+		border: 20px solid @color-darkblue;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	&__content {
+		display:block;
+		width: 100%;
+		padding: 20px;
+	}
+
+	&__text {
+		display: block;
+		width: 100%;
+		height: 118px;
+		margin-bottom: 20px;
+		overflow: hidden;
+		
+
+		* {
+			padding: 0 !important;
+			margin: 0 !important;
+			.segoe-regular(14px);
+			line-height: 1.2 !important;
+			text-indent: 10px !important;
+			text-align: justify;
+		}
+	}
+
+	&__link {
+		display: block;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
