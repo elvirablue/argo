@@ -1,21 +1,25 @@
 .mobil {
 	display: none;
 }
+
+.main-nav-block {
+	display: inline-block;
+	width: 100px;
+	min-height: 40px;
+	background-color: @color-lightgray;
+	padding: 10px;
+	color: @color-white;
+	.segoe-regular(18px);
+	position: relative;
+}
  
-.main-nav {
+.main-nav--closed .main-nav {
+    	
+	display: none;
 	width: 100%;
 	position: relative;
-	z-index: 100;
+	z-index: 1000;
 	
-	.block-logo-scroll {
-		display: inline-block;
-		float: left;
-		background: url("../img/logo.png") no-repeat center left;
-		background-size: contain;
-		width: 100px;
-		margin-right: 50px;
-		height: @nav-min-height-scroll;
-	}
 
 	&__wrapper {
 		.container-fluid();	
@@ -24,18 +28,14 @@
 
 
 		ul {
-			width: ~'calc(100% - 335px)';
-			float: left;
+			width: auto;
 			list-style: none;
-			display: flex;
-			flex-flow: row no-wrap;
-			align-items: stretch;
-			justify-content: space-between;			
+			display: block;
+						
 			position: relative;
 
-			li {
-				flex-basis: 100%;
-				display: inline-block;				
+			li {				
+				display: block;				
 				text-align: center;				
 				position: relative;				
 				cursor: pointer;				
@@ -43,8 +43,8 @@
 				a {
 					display: inline-block;
 					width: 100%;					
-					text-decoration: none;
-					
+					text-decoration: none;	
+					color: @color-white;				
 				}
 			}					
 		}
@@ -52,13 +52,10 @@
 
 
 	&__toggle {
-		display: none;
+		display: block;
 	}
 }
 
-.main-nav > ul > li:first-child {
-	display: none;
-}
 
 
 
@@ -67,34 +64,31 @@
 /* Стили для пунктов  меню */
 /* ------------------------------- */
 .main-nav {
-	background-color: @color-bg-nav-green;	
-	min-height: @nav-min-height;
-
-	&__social {
-		float: right; 
-		padding-top: 12px;
-	}
+	
+	min-height: @nav-min-height;	
 
 	&__wrapper {
 		min-height: @nav-min-height;
-		padding: 0 10px;
+		
 
 		ul {
 			min-height: @nav-min-height;
+			background-color: @color-lightgray;	
+  			
 
 			li {
 				min-height: @nav-min-height;
-				text-align: center;
+				text-align: left;
 				
 				a {					
 					display: inline-block; 
 					width: 100%;   				
 					height: @nav-min-height;
 					line-height:  @nav-min-height;
-					padding: 0 12px;
-					.text-regular(16px);
+					padding: 0 40px;
+					.segoe-regular(16px);
 					text-transform: uppercase;															
-					color: @color-white;
+					color: @color-black;
 
 					text-decoration: none;	
 					transition: color ease 0.3s;
@@ -108,7 +102,7 @@
 				position: relative;				
 
 				a {					
-					color: @color-link-green-hover;
+					color: @color-white;
 					/*text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);*/
 				}							
 			}
@@ -120,6 +114,59 @@
 .main-nav__wrapper > ul > li > ul {
 		display: none;
 }
+
+.main-nav__toggle {
+	position: relative; 
+  	display: block;  	
+  	background-color: @color-lightgray;	
+  	color: @color-white;
+  	cursor: pointer;
+  	border: none;
+  	outline: none;
+  	transition: color ease 0.5s;
+}
+
+
+.main-nav--opened .main-nav__toggle {
+ 
+  color: @color-black;
+}
+
+.main-nav--closed .main-nav__toggle:before {
+ 	display: inline-block;
+ 	width: 15px;
+ 	color: @color-white;
+ 	content: "\2630";
+ 	padding-right: 10px;
+ 	transition: color ease 0.5s;
+}
+
+.main-nav--opened .main-nav__toggle:before {
+ 	display: inline-block;
+ 	width: 15px;
+ 	color: @color-black;
+ 	content: "\2716";
+ 	padding-right: 10px;
+}
+
+
+
+.main-nav--closed .main-nav__toggle:active {
+ color: @color-black;
+  
+}
+
+.main-nav--opened .main-nav {
+	display: block;	
+	position: absolute;
+	top: 40px;
+	left: 0;
+	
+	width: auto;		
+	height: auto;		
+	opacity: 1;		
+	z-index: 5001;	
+}	
 
 
 
@@ -148,175 +195,15 @@
 
 }
 
-.main-nav__logo-mobile {
-	display: block;
-	display: none;
-	position: absolute;
-	z-index: 5002;
-	top: 7px;
-	left: 40px;
-	width: 161px;
-	height: 65px;
-	background: url("../img/logo-w.png") no-repeat center;
-	background-size: cover;
-}
-
 
 
 @media @tablet-widths {	
-	.main-nav-scroll {
-  		background-color: transparent;
-  		box-shadow: none;  		
-  	}
+	
 
-  	.main-nav .block-logo-scroll {
-  		display: none;
-  	}
-
-  	.main-nav__logo-mobile {
-  		display: block;
-  	}
-
-	.main-nav-block {
-		display: block;
-		width: 100%;
-		position: relative;
-		background-color: @color-bg-nav-tablet-green;
-		padding-top: @nav-min-height;
 		
-
-			
-	}
-
-	.main-nav .main-nav__wrapper {
-		
-		background-color: @color-logo-green-hover;
-		box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.3);
-		height: auto;
-		padding: 0;
-
-		ul {
-			display: block;	  
-	  		width: auto;
-	  		text-align: center;
-	  		min-width: 320px;
-	  		min-height: 280px;
-	  		height: auto;	  
-	  		flex-direction: column;	  
-	  		li{
-	  			flex-basis: 100%;
-	  			display: block;
-  				height: 40px;
-  				min-height: 40px;
-  				line-height: 40px;
-  				text-align: left;
-  				border-bottom: 1px solid @color-bg-lightgreen;
-	  		
-	  			a {
-	  				display: block;
-  					width: 100%;
-  					height: 40px;
-  					padding: 5px 20px 5px 50px;
-  					line-height: 30px;
-  					.text-regular(14px);
-	  			}	  			
-	  		}
-
-	  		li:hover, li.active, li:active {
-				background-color: @color-bg-lightgreen;
-
-				a {
-					color: @color-white;
-				}
-	  		}	  		
-  		}
-	}	
-
-	.main-nav__social {
-		display: none;
-	}
 	
-	
-	.main-nav--closed .main-nav {
-    	display: none;
-  	}
-
-	.main-nav__toggle {
-	  position: absolute;
-	  top:10px;
-	  right: 40px;
-	  z-index: 5002;
-	  display: block;
-	  width: 55px;
-	  height: 55px;
-	  font-size: 0;
-	  background-color: transparent;
-	  cursor: pointer;
-	  border: none;
-	  outline: none;
-	  transition: background-color ease 0.5s;
-	}
-
-	.main-nav__toggle:hover,
-	.main-nav__toggle:active,
-	.main-nav__toggle.active {
-	  background-color:  transparent;
-	}
-
-	.main-nav--closed .main-nav__toggle::before {
-	  content: "";
-	  position: absolute;
-	  top: 15px;
-	  left: 7px;
-	  width: 40px;
-	  height: 4px;
-	  border-radius: 2px;
-	  background-color: @color-white;  
-	  box-shadow: 0 10px 0 0 @color-white, 0 20px 0 0 @color-white;
-	}
-
-	.main-nav--closed .main-nav__toggle:active::before {
-	  background-color: rgba(255, 255, 255, 0.3);
-	  box-shadow: 0 10px 0 0 rgba(255, 255, 255, 0.3), 0 20px 0 0 rgba(255, 255, 255, 0.3);
-	}
 
 	
-	.main-nav--opened .main-nav__toggle::before,
-	.main-nav--opened .main-nav__toggle::after {
-	  content: "";
-	  position: absolute;
-	  top: 27px;
-	  left: 10px;
-	  width: 35px;
-	  height: 4px;
-	  border-radius: 2px;
-	  background-color: @color-white;
-	}
-
-	.main-nav--opened .main-nav__toggle::before {	  
-	          transform: rotate(45deg);		  
-	          box-shadow: none;
-	}
-
-	.main-nav--opened .main-nav__toggle:after {
-	  transform: rotate(-45deg);
-	}
-
-	.main-nav--opened .main-nav__toggle:active::before,
-	.main-nav--opened .main-nav__toggle:active::after {
-	  background-color: rgba(255, 255, 255, 0.3);
-	}
-
-	.main-nav--opened .main-nav {
-		display: block;	
-		position: absolute;
-		top: @nav-min-height;
-		right: 0;
-		width: 320px;		
-		height: auto;		
-		opacity: 1;		
-		z-index: 5001;	
-	}	
 	
 }
 

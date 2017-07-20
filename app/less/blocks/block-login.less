@@ -1,0 +1,62 @@
+.block-login {
+	display: inline-block;
+	vertical-align: middle;
+	
+	padding-left: 20px;
+	border-left: 1px solid #dddddd;
+
+	&__head {
+		.segoe-regular(18px);		
+		color: @color-black;
+		text-decoration: underline;
+		position: relative;
+		.ico-absolute(-55px, -4px);
+		margin-left: 30px;
+	}
+
+	&__btn {
+		width: 100%;
+		text-align: right;
+		.segoe-regular(12px);	
+
+		a {
+			display: inline-block;
+			color: @color-black;
+			transition: ease color 0.3s;
+		}
+
+		a:hover, a:active, a.active {
+			color: @color-text-blue;
+			text-decoration: underline;
+		}	
+		
+	}
+
+	
+}
+
+@media @tablet-widths {
+	.block-login {
+		border-left: none;
+	}
+	
+	.block-login__head, .registry {
+			display: none;
+			font-size: 0;
+		}
+
+	.ingress {
+		font-size: 0;
+		width: 45px;
+		height: 45px;
+		background: url("../img/ingress.png") no-repeat center;
+	}
+	.block-login__btn {
+		font-size: 0;
+	}
+}
+
+@media @mobil-widths {
+
+}
+

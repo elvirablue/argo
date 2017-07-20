@@ -1,0 +1,55 @@
+.city-select {
+	display: inline-block;
+	vertical-align: middle;
+
+	position: relative;
+	.ico-absolute(-25px, -3px);
+	margin-left: 70px;
+
+	.select-wr {
+		display: inline-block;
+		vertical-align: bottom;
+		width: 175px;
+		overflow: hidden;
+		cursor: pointer;
+
+		position: relative;
+		z-index: 100;
+	}
+
+	.select-wr:before {
+		content: "";
+		position: absolute;
+		top: 7px;
+		right: 0;
+		width: 15px;
+		height: 15px;
+		background: url("../img/city-down-arrow.png") no-repeat center;
+	}
+
+	label, select {
+		min-width: 200px;
+		width: auto;
+		color: @color-black;
+		.segoe-regular(18px);
+		background-color: transparent;
+		
+		outline: none;
+		border: none;
+	}
+
+	select  {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}
+
+@media @tablet-widths {
+	.city-select {
+		margin-left: 40px;
+	}
+}
+
+@media @mobil-widths {
+
+}

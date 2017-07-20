@@ -39,49 +39,87 @@
 	<div class="wrapper-y">
 	<!-- *************************** ШАПКА ***************************************- -->
 		<header class="page-header">
-			
+			<div class="page-header__top">
+			<!-- *************************** БЛОК МЕНЮ ***************************************- -->
+				<div class="main-nav-block main-nav--closed">
+					<button class="main-nav__toggle" type="button">Mеню</button>					
+					<nav class="main-nav">			
+						<div class="main-nav__wrapper">
+							<ul>
+								<li class="active"><a href="">Главная</a></li>
+								<li><a href="about.html">О нас</a></li>
+								<li><a href="schedule.html">Расписание</a></li>
+								<li><a href="smi-publications.html">СМИ о нас</a></li>
+								<li><a href="gallery.html">Фотогалерея</a></li>
+								<li><a href="lease.html">Аренда</a></li>
+								<li><a href="area.html">Пространство</a></li>
+								<li><a href="contacts.html">Контакты</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+
+				<form class="city-select">
+					<label class="" for="city">Ваш регион: </label>
+					<div class="select-wr">
+						<select class="" id="city" name="city">
+						  	<option>Новосибирск</option>
+						  	<option>Санкт-Петербург</option>
+						  	<option>Москва</option>
+						  	<option>Ростов-на-Дону</option>
+						</select>
+					</div>
+					<p style="display: none;"><input type="submit" value="Отправить"></p>				
+				</form>				
+
+				<div class="block-login page-header__left">
+
+					<p class="block-login__head">Личный кабинет</p>
+					<p class="block-login__btn">
+						<a class="ingress" href="#">Вход</a> / <a class="registry" href="#">Регистрация</a>
+					</p>					
+				</div>
+
+				<form class="search-form" action="" method="get" id="search-block-form"> 
+				    <input class="search" type="text" name="search" id="search" value="" size="15" maxlength="128" placeholder="Поиск по сайту">   
+				    <input type="hidden" name="id" value="">
+				    <input type="submit" class="submit-btn" id="edit-submit" value="Поиск"> 
+				</form>
+
+			</div>			
 		</header>
 
-	<!-- *************************** БЛОК МЕНЮ ***************************************- -->
-		<div class="main-nav-block main-nav--closed">
-			<button class="main-nav__toggle" type="button">Открыть меню</button>
-			<div class="main-nav-bg"></div>	
-			<nav class="main-nav">			
-				<div class="main-nav__wrapper">
-					<ul>
-						<li class="active"><a href="">Главная</a></li>
-						<li><a href="about.html">О нас</a></li>
-						<li><a href="schedule.html">Расписание</a></li>
-						<li><a href="smi-publications.html">СМИ о нас</a></li>
-						<li><a href="gallery.html">Фотогалерея</a></li>
-						<li><a href="lease.html">Аренда</a></li>
-						<li><a href="area.html">Пространство</a></li>
-						<li><a href="contacts.html">Контакты</a></li>
-					</ul>
+		<header class="page-header">
+			<div class="page-header__bottom">
+				<a href="index.html" class="main-logo page-header__logo"></a>
+				<div class="page-header__center">
+					<button type="button" id="add-car" class="btn btn--yellow btn--big"><span>Добавить транспорт</span></button>
+					<button type="button" id="bid" class="btn btn--yellow btn--big"><span>Оставить заявку на перевозку</span></button>
 				</div>
-			</nav>
-		</div>
+				<div class="page-header__left">
+					<a href="#" class="page-header__link btn-distances">Расчет расстояний</a>
+					<a href="#" class="page-header__link btn-forum">Перейти на форум</a>
+				</div>
+			</div>
+		</header>
+
+	
 
 	<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
 		<div class="first-screen-bg">
-					
-		</div>
-		<div class="first-screen">
-			<button class="btn btn--gray btn--small">
-				Подробнее
-			</button>
-			<button class="btn btn--gray btn--big">
-				Подробнее
-			</button>
-			<button class="btn btn--yellow btn--big btn--shadow">
-				Подробнее
-			</button>
-			<button class="btn btn--border-black btn--big ">
-				Подробнее
-			</button>
-			<div><h2 class="yellow-line">Заголовок с линией</h2></div>
+			<div class="first-screen">
+				<h1>БЕЗОПАСНЫЙ ПОИСК ГРУЗОВ <br>И ПЕРЕВОЗЧИКОВ ДЛЯ АГРОСЕКТОРА</h1>
+				<button type="button" class="first-screen__btn btn btn--yellow btn--big btn--shadow">
+					<span>Регистрация и вход</span>
+				</button>
+			</div>		
 		</div>
 
+	<!-- *************************** БЛОК ПРЕИМУЩЕСТВ ***************************************- -->
+
+		<div class="page-block">
+			<h2 class="page-block__head yellow-line">Система ArgoCargo - это: </h2>			
+		</div>
 
 		<div class="main-benefit">
 			<div class="block-benefit">
@@ -113,13 +151,22 @@
 			</div>
 		</div>
 
-			<div class="separator"></div>
 
+		<div class="page-block">
+			<button type="button" class="page-block__btn btn btn--yellow btn--big">
+					<span>Зарегистрироваться и получить доступ</span>
+			</button>			
+		</div>
+
+
+
+		<div class="separator"></div>
+	<!-- *************************** БЛОКИ ПОИСКА ***************************************- -->
 		<div class="main-call-form">
 			<div class="block-call-form yellow">
 				<p class="block-call-form__title">ПОИСК ГРУЗОВ</p>
-				<p class="block-call-form__subtitle">Оставляйте заявку на перевозку груза </p>
-				<button class="block-call-form__btn">
+				<p class="block-call-form__subtitle">Оставляйте заявку на перевозку&nbsp;груза </p>
+				<button class="block-call-form__btn btn btn--gray ">
 					Добавить груз (бесплатно) 
 				</button>
 				<div class="block-call-form__img" style="background-image: url(img/pic-1.png)"></div>
@@ -128,8 +175,8 @@
 			<div class="block-call-form blue">
 				<p class="block-call-form__title">ПРОВЕРКА ПАРТНЕРА</p>
 				<p class="block-call-form__subtitle">Проверяйте порядочность перевозчиков или заказчиков</p>
-				<button class="block-call-form__btn">
-					Проверить перевозчика<br>или заказчика 
+				<button class="block-call-form__btn btn btn--gray">
+					Проверить перевозчика или заказчика 
 				</button>
 				<div class="block-call-form__img" style="background-image: url(img/pic-2.png)"></div>
 			</div>
@@ -137,7 +184,7 @@
 			<div class="block-call-form gray">
 				<p class="block-call-form__title">ПОИСК ТРАНСПОРТА</p>
 				<p class="block-call-form__subtitle">Посмотрите все открытые заявки на перевозку грузов</p>
-				<button class="block-call-form__btn">
+				<button class="block-call-form__btn btn btn--gray">
 					Добавить транспорт (бесплатно) 
 				</button>
 				<div class="block-call-form__img" style="background-image: url(img/pic-3.png)"></div>
@@ -145,45 +192,143 @@
 			
 		</div>
 
-			
-				
-		<div class="first-screen">	
-
-			<div class="block-main-forum">
-				<div class="block-main-forum__img" style="background-image: url(img/nophoto.png)"></div>
-				<div class="block-main-forum__content">
-					<h4>Название темы на форуме</h4>
-					<p class="rubrik">Рубрика: Название рубрики</p>
-					<p class="block-count">
-						<span class="block-count__last-date">Последнее сообщение: 01.01.2017</span> 
-						<span class="block-count__sum-message">Ответов и сообщений: 1 218 </span>
-						<span class="block-count__topic-date">Дата создания темы: 01.01.2016</span>
-					</p>
-				</div>
-				<div></div>
-			</div>
-			
-
-		<div class="separator"></div>
-
-
-			<div class="block-main-article">
-				<div class="block-main-article__img" style="background-image: url(img/nophoto.png)"></div>
-					<div class="block-main-article__content">
-						<h5>Длинный заголовок статьи заголовок статьи заголовок статьи заголовок статьи</h5>
-						<div class="block-main-article__text">
-							<p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
-							<p>Duis vulputate Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
-						</div>
-						<a href="#" class="block-main-article__link link">Читать подробнее...</a>
-
+	<!-- *************************** БЛОК НОВОЕ НА ФОРУМАХ ***************************************- -->
+		<div class="page-block-bg page-block-bg--forum top-shadow">
+			<div class="page-block">
+				<h2 class="page-block__head yellow-line">НОВОЕ НА ФОРУМАХ</h2>				
+	
+				<div class="block-main-forum">
+					<div class="block-main-forum__img" style="background-image: url(img/nophoto.png)"></div>
+					<div class="block-main-forum__content">
+						<h4>Название темы на форуме</h4>
+						<p class="rubrik">Рубрика: Название рубрики</p>
+						<p class="block-count">
+							<span class="block-count__last-date">Последнее сообщение: 01.01.2017</span> 
+							<span class="block-count__sum-message">Ответов и сообщений: 1 218 </span>
+							<span class="block-count__topic-date">Дата создания темы: 01.01.2016</span>
+						</p>
 					</div>
+					
+				</div>
+
+				<div class="block-main-forum">
+					<div class="block-main-forum__img" style="background-image: url(img/nophoto.png)"></div>
+					<div class="block-main-forum__content">
+						<h4>Название темы на форуме</h4>
+						<p class="rubrik">Рубрика: Название рубрики</p>
+						<p class="block-count">
+							<span class="block-count__last-date">Последнее сообщение: 01.01.2017</span> 
+							<span class="block-count__sum-message">Ответов и сообщений: 1 218 </span>
+							<span class="block-count__topic-date">Дата создания темы: 01.01.2016</span>
+						</p>
+					</div>
+					
+				</div>
+	
+				<div class="block-main-forum">
+					<div class="block-main-forum__img" style="background-image: url(img/nophoto.png)"></div>
+					<div class="block-main-forum__content">
+						<h4>Название темы на форуме</h4>
+						<p class="rubrik">Рубрика: Название рубрики</p>
+						<p class="block-count">
+							<span class="block-count__last-date">Последнее сообщение: 01.01.2017</span> 
+							<span class="block-count__sum-message">Ответов и сообщений: 1 218 </span>
+							<span class="block-count__topic-date">Дата создания темы: 01.01.2016</span>
+						</p>
+					</div>
+					
 				</div>
 			</div>
 		</div>
 
 
+		<!-- *************************** БЛОК СТАТЬИ И НОВОСТИ ***************************************- -->
+		<div class="separator"></div>
+		<div class="page-block-bg page-block-bg--article">			
+		
+			<div class="page-block main-article">
+				<h2 class="page-block__head yellow-line">СТАТЬИ И НОВОСТИ</h2>
 
+				<div class="page-block__wrapper">
+					<div class="fixed-article__bg"></div>
+					<div class="fixed-article">
+						<div class="fixed-article__img" style="background-image: url(img/nophoto.png)"></div>
+						<div class="fixed-article__content">
+							<h5>Длинный заголовок статьи заголовок статьи заголовок статьи заголовок статьи</h5>
+							<div class="fixed-article__text">
+								<p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+								<p>Duis vulputate Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+							</div>
+							<a href="#" class="fixed-article__link link">Читать подробнее...</a>
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="page-block__wrapper">
+					<div class="block-main-article main-article__item">
+						<a href="#">
+						<div class="block-main-article__img" style="background-image: url(img/nophoto.png)"></div>
+						<div class="block-main-article__content">
+							<h5>Длинный заголовок статьи заголовок статьи заголовок статьи заголовок статьи</h5>
+							<div class="block-main-article__text">
+								<p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+								<p>Duis vulputate Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+							</div>
+							<a href="#" class="block-main-article__link link">Читать подробнее...</a>
+						</div>
+						</a>
+					</div>
+
+					<div class="block-main-article main-article__item">
+						<div class="block-main-article__img" style="background-image: url(img/nophoto.png)"></div>
+						<div class="block-main-article__content">
+							<h5>Длинный заголовок статьи заголовок статьи заголовок статьи заголовок статьи</h5>
+							<div class="block-main-article__text">
+								<p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+								<p>Duis vulputate Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+							</div>
+							<a href="#" class="block-main-article__link link">Читать подробнее...</a>
+						</div>
+					</div>
+
+					<div class="block-main-article main-article__item">
+						<div class="block-main-article__img" style="background-image: url(img/nophoto.png)"></div>
+						<div class="block-main-article__content">
+							<h5>Длинный заголовок статьи заголовок статьи заголовок статьи заголовок статьи</h5>
+							<div class="block-main-article__text">
+								<p>Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+								<p>Duis vulputate Lorem ipsum dolor sit amet,consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. </p>
+							</div>
+							<a href="#" class="block-main-article__link link">Читать подробнее...</a>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+
+			<div class="page-block">
+				<button type="button" class="page-block__btn btn btn--yellow btn--big">
+					<span>Показать все статьи</span>
+				</button>			
+			</div>
+
+
+
+			<div class="separator"></div>
+
+		</div>
+
+			
+				
+		
+			
+
+		<div class="separator"></div>
+
+
+			
 	<!-- *************************** БЛОК ПОДВАЛ***************************************- -->	
 	</div> <!-- end wrapper-y -->	
 
@@ -221,9 +366,9 @@
 
 <!-- ********************************- -->
 </div> <!-- end wrapper-x -->
-<!--
+
 <script src="js/menu.js"> </script>
-<script src="js/prev-video.js"> </script>		
+<!--<script src="js/prev-video.js"> </script>		
 	
 <script src="js/modal.js"> </script>
 <script src="js/post.js"> </script>

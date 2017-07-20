@@ -1,5 +1,5 @@
 $(document).on('ready', function(){
-  var storage_clubCard = localStorage.getItem('clubCard');
+  
 	var navMain = document.querySelectorAll('.main-nav-block');
 	var navToggle = document.querySelectorAll('.main-nav__toggle');
 	var start_pos = navMain[0].offsetTop + 100; 
@@ -8,11 +8,6 @@ $(document).on('ready', function(){
 	
 
 
-  $('#js-filter').click(function(event){
-      event.preventDefault();
-      $('.catalog__filters').css('display','block');          
-      $('.catalog__bg-wrapper').css('display','block');
-  });
 
    window.addEventListener('keydown', function(event) {
           if (event.keyCode === 27 && $('.catalog__filters').css('display') === 'block') {
@@ -21,10 +16,7 @@ $(document).on('ready', function(){
           };
     });
 
-   $('.catalog__bg-wrapper').click(function(event){
-      $('.catalog__filters').css('display','none');          
-      $('.catalog__bg-wrapper').css('display','none');
-   });
+  
 
 	navToggle[0].addEventListener('click', function() {
 		if (navMain[0].classList.contains('main-nav--closed')) {

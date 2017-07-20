@@ -40,11 +40,16 @@ h1, h2, h3, h5 {
 }
 
 
+
+
+
 h1 { 
-	.segoe-bold(2.2rem);	
+	.segoe-regular(30px);	
 	font-weight: bold;
 	text-transform: uppercase;
 	color: @color-black;
+	text-align: left;
+  	text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.77);
 	
 }
 
@@ -162,8 +167,8 @@ a {
 		position: absolute;
 		top: 0;
 		left: -2.5rem;
-		width: 2rem;
-		height: 2rem;
+		width: 2.2rem;
+		height: 2.2rem;
 		background: url("../img/ico-sprite.png") @x @y no-repeat;
 	}
 }
@@ -220,7 +225,9 @@ a {
 
 
 @media @tablet-widths {
-		
+	h1 {
+		font-size: 26px;
+	}	
 }
 
 @media @mobil-widths {
