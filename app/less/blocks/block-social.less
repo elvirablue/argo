@@ -1,0 +1,83 @@
+.block-social {
+	display: block;
+}
+
+.social {
+	display: inline-block;
+	vertical-align: middle;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 2px solid #a7c4db;
+	background-image: url("../img/ico-social.png");
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: auto;
+	font-size: 0;
+	margin: 5px;
+
+	transition: border-width ease 0.3s;
+
+	@media @tablet-widths {
+		width: 48px;
+		height: 48px;
+		background-size: 400% auto;
+	}
+
+
+	&--vk {
+		background-position: 0 0;
+		transition: background-image ease 0.5s;
+		@media @tablet-widths {
+
+		}
+	}
+	&--vk:hover {
+				
+	}
+
+	&--facebook {
+		background-position: -180px 0;
+		transition: background-image ease 0.5s;
+		@media @tablet-widths {
+			background-position: -130px 0;
+		}
+	}
+	&--facebook:hover {
+			
+	}
+
+	&--instargam {
+		background-position: -60px 0;
+		transition: background-image ease 0.5s;
+		@media @tablet-widths {
+			background-position: -43px 0;
+		}
+	}
+	&--instargam:hover {
+				
+	}
+
+	&--ok {
+		background-position: -120px 0;
+		transition: background-image ease 0.5s;
+		@media @tablet-widths {
+			background-position: -86px 0;
+		}
+	}
+	&--ok:hover {
+			
+	}
+}
+
+@keyframes anim-rotate {
+  to {transform:rotate(360deg);}
+}
+
+.social:hover {
+	/*animation: anim-rotate 1s 1;*/
+	
+	
+}
+

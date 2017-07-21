@@ -1,3 +1,74 @@
 .input {
+	display: inline-block;
+	position: relative;
+	z-index: 100;
+	border-radius: 3px;
+	background-color: #d3e2ed;
+	border: 1px solid #d1d1d1;
+	overflow: hidden;
+	min-width: 75px;
+	width: 100px;
+	max-width: 280px;
+
 	
+
+	i {
+		position: absolute;
+		z-index: 101;
+		top: 0;
+		left: 10px;		
+
+		.segoe-regular(10px);		
+
+		color: @color-black;
+		font-style: italic;		
+	}
+
+	&--date {width: 120px;}
+
+	&--wh {width: 200px;}
+
+	&--km {width: 75px;}
 }
+
+.user-input {
+	height: 100%;
+	width: 110%;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	padding: 8px;
+	.segoe-regular(12px);
+	color: @color-black;
+}
+
+.input:active {
+	box-shadow: 0px 0px 4px 0.2px rgba(80, 44, 14, 0.34);
+}
+
+.user-input:focus {
+	background-color: @color-white;	
+}
+
+.user-input[type="date"],
+.user-input[type="number"] {
+	width: 150%;
+}
+
+select.user-input {
+	width: 120%;
+}
+
+.input--big {
+	height: 40px;
+
+	.user-input {
+		padding-top: 20px;
+	}
+}
+
+.input--small {
+	height: 30px;
+}
+
+

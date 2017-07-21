@@ -47,13 +47,13 @@
 						<div class="main-nav__wrapper">
 							<ul>
 								<li class="active"><a href="">Главная</a></li>
-								<li><a href="about.html">О нас</a></li>
-								<li><a href="schedule.html">Расписание</a></li>
-								<li><a href="smi-publications.html">СМИ о нас</a></li>
-								<li><a href="gallery.html">Фотогалерея</a></li>
-								<li><a href="lease.html">Аренда</a></li>
-								<li><a href="area.html">Пространство</a></li>
-								<li><a href="contacts.html">Контакты</a></li>
+								<li><a href="help.html">Помощь</a></li>
+								<li><a href="service.html">О сервисе</a></li>
+								<li><a href="contacts.html">Контакты</a></li>			
+								<li><a href="news.html">Новости и статьи</a></li>
+								<li><a href="docs.html">Образцы документов</a></li>
+								<li><a href="accreditation.html">Аккредитация</a></li>
+								<li><a href="forum.html">Форум</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -190,6 +190,84 @@
 				<div class="block-call-form__img" style="background-image: url(img/pic-3.png)"></div>
 			</div>
 			
+		</div>
+
+	<!-- ***************************ВСПЛЫВАЮЩИЙ БЛОК ПОИСКА ГРУЗОВ ***************************************- -->
+	<!-- ***************************ВСПЛЫВАЮЩИЙ БЛОК ПОИСКА ГРУЗОВ ***************************************- -->
+	<!-- ***************************ВСПЛЫВАЮЩИЙ БЛОК ПОИСКА ГРУЗОВ ***************************************- -->
+		<div class="page-block scan scan--cargo">
+			<h2 class="page-block__head yellow-line">ПОИСК <span class="text-blue">ГРУЗОВ</span></h2>
+			<p class="page-block__info">Инструкция по размещению заявки на перевозку находится в разделе <a href="#">помощь</a></p>
+
+			<div class="scan__wrapper">
+			<form action="" method="">
+				<p class="scan__head">Заполните форму для поиска груза (шаг 1 из 2)</p>
+
+				<div class="scan__block-row">
+					<label for="user-auto-cargo">Ваш транспорт: </label>
+					<div class="input input--small">						
+						<select class="user-input" id="user-auto-cargo" name="user-auto-cargo">
+					  		<option>1-Митсубиси Кантер, 3 т</option>
+					  		<option>2-Митсубиси Кантер, 3 т</option>
+					  		<option>3-Митсубиси Кантер, 3 т</option>					  		
+						</select>						
+					</div>
+
+					<p class="scan__text">Вы можете выбрать несколько видов автотранспорта</p>
+				</div>
+
+				<div class="scan__block-row">
+					<p class="scan__step-head"><span class="text-blue">Шаг 1</span> Выберите место и дату погрузки и разгрузки</p>
+					<div class="scan__block-col">
+						<div class="input input--big input--date">
+							<input type="date" class="user-input required" id="user-date-begin-cargo" name="user-date-begin-cargo">
+							<i>Дата погрузки</i>
+						</div>
+						<div class="input input--big input--date">
+							<input type="date" class="user-input required" id="user-date-end-cargo" name="user-date-end-cargo">
+							<i>Дата разгрузки</i>
+						</div>
+					</div>
+
+					<div class="scan__block-col">
+						<div class="input input--big input--wh">						
+							<select class="user-input" id="user-whence-cargo" name="user-whence-cargo" multiple="true">
+						  		<option>1----------</option>
+						  		<option>2--------------</option>
+						  		<option>3-------</option>					  		
+							</select>
+							<i>Откуда</i>						
+						</div>
+						<div class="input input--big input--km">
+							<input type="number" class="user-input required" id="user-whence-plus-cargo" name="user-whence-plus-cargo">
+							<i>+ км</i>
+						</div>
+					</div>
+
+					<div class="scan__block-col">
+						<div class="input input--big input--wh">						
+							<select class="user-input" id="user-where-cargo" name="user-where-cargo" multiple="true">
+						  		<option>1----------</option>
+						  		<option>2--------------</option>
+						  		<option>3-------</option>					  		
+							</select>
+							<i>Куда</i>						
+						</div>
+						<div class="input input--big input--km">
+							<input type="number" class="user-input required" id="user-where-plus-cargo" name="user-where-plus-cargo">
+							<i>+ км</i>
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="scan__block-row">
+				</div>
+
+
+
+			</form>	
+			</div>
 		</div>
 
 	<!-- *************************** БЛОК НОВОЕ НА ФОРУМАХ ***************************************- -->
@@ -359,6 +437,63 @@
 
 	<footer class="page-footer-bg">
 		<div class="page-footer">
+			<div class="page-footer__block-left">
+				<div class="page-footer__nav">
+					<ul>
+						<li class="active"><a href="">Главная</a></li>
+						<li><a href="help.html">Помощь</a></li>
+						<li><a href="service.html">О сервисе</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+					</ul>
+					<ul>
+						<li><a href="news.html">Новости и статьи</a></li>
+						<li><a href="docs.html">Образцы документов</a></li>
+						<li><a href="accreditation.html">Аккредитация</a></li>
+						<li><a href="forum.html">Форум</a></li>
+					</ul>
+				</div>
+			</div>
+
+			
+
+			<div class="page-footer__block-center">
+				<p class="page-footer__title">AGROCARGO В СОЦИАЛЬНЫХ СЕТЯХ:</p>
+				<div class="block-social page-footer__social" >
+					<a href="#" class="social social--vk">vk</a>
+					<a href="#" class="social social--instargam">instargam</a>
+					<a href="#" class="social social--ok">ok</a>
+					<a href="#" class="social social--facebook">facebook</a>				
+				</div>
+			</div>
+
+			<div class="page-footer__block-right">
+				<p class="page-footer__title">СВЯЗАТЬСЯ С НАМИ</p>
+				<form class="city-select page-footer__city-select">
+					<label class="" for="city">Ваш регион: </label>
+					<div class="select-wr">
+						<select class="" id="city" name="city">
+						  	<option>Новосибирск</option>
+						  	<option>Санкт-Петербург</option>
+						  	<option>Москва</option>
+						  	<option>Ростов-на-Дону</option>
+						</select>
+					</div>
+					<p style="display: none;"><input type="submit" value="Отправить"></p>				
+				</form>
+				<a href="tel:+79151253443" class="page-footer__phone">+7 (915) 125-34-43</a>				
+			</div>
+
+			<div class="page-footer__block-bottom">
+				<p class="page-footer__block-bottom-item login">
+					<a href="#">Личный кабинет</a>
+				</p>
+				<p class="page-footer__block-bottom-item mail">
+					<a href="#">info@agrocargo.ru</a>
+				</p>
+				<p class="page-footer__block-bottom-item call-form">
+					<a href="#">Форма обратной связи</a>
+				</p>
+			</div>
 			
 		</div>
 
