@@ -30,12 +30,21 @@
 
 .page-block {
 	.container-fluid();
+	padding-bottom: 40px;
 
 	&__wrapper {
 		position: relative;
 		z-index: 100;
 		width: 100%;
 		display: block;
+	}
+
+	&__btn {
+		@media @mobil-widths {
+			min-width: 280px;
+			max-width: 467px;
+			width: 100%;
+		}
 	}
 }
 

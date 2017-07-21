@@ -1,0 +1,37 @@
+.page-footer-bg {
+	display: block;
+	width: 100%;
+	background-color: @color-gray;
+	padding-top: 40px;
+	height: @height-footer;
+	margin-top: -@height-footer;
+}
+
+.page-footer {
+	.container-fluid();
+	.clearfix();
+	position: relative;
+	z-index: 1;
+
+
+	&__block-left {
+		display: block;
+		float: left;
+		width: 300px;
+		text-align: left;
+	}
+
+	&__block-center {
+		display: block;
+		float: left;
+		width: 300px;
+		text-align: left;
+	}
+
+	&__block-right {
+		display: block;
+		float: right;
+		width: 300px;
+		text-align: right;
+	}
+}

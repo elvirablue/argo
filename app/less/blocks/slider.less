@@ -1,0 +1,106 @@
+.slider {
+	position: relative;
+    width: 964px;    
+    height: 500px;    
+    margin: 15px auto 30px; 
+
+    @media @tablet-widths {width: 85vw;}
+
+    @media @mobil-widths {height: auto;}
+
+
+    &__block-logo {
+        width: 237px;
+        height: 465px;
+    }
+
+    &__logo-partners {        
+        display: block;
+        margin: 0 auto 30px;       
+    }
+
+}
+
+.slider--partners {
+    height: auto;
+    padding-top: 60px;
+
+}
+
+.slider--works {
+    height: 650px;
+
+    @media @tablet-widths {width: 85vw;height: auto;}
+
+    
+}
+
+.frame {
+    /**
+     * (optional) wrapper width, specifies width of the slider frame.
+     */
+    width: 964px;
+    height: 500px;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+    
+
+    @media @desktop-widths-only-item2 {width: 640px;}
+
+    @media @mobil-widths {
+        height: auto; 
+        width: 83vw;
+        min-width: 280px;
+        max-width: 467px;
+    }
+	
+	.slides {
+		display: block;
+		width: 99999px;
+		height: 100%;
+        text-align: left;
+	    li {
+	        position: relative;
+	        display: inline-block;
+	        
+	        width: auto;
+            padding-right: 10px;
+
+	        @media @mobil-widths {width: 85vw;}    		
+	    }
+
+        
+	}
+}
+
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    display: none;
+    cursor: pointer;
+
+    @media @mobil-widths {top: 30%;display: block;}
+}
+
+.next {
+    right: -50px;
+    @media @mobil-widths {right: -30px; }
+
+}
+
+.prev {
+    left: -50px;
+    @media @mobil-widths {left: -30px;}
+}
+
+.next svg, .prev svg {
+    width: 40px;
+
+    @media @mobil-widths {width: 30px;}
+}
+

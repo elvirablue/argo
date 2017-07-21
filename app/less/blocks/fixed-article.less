@@ -25,7 +25,7 @@
 	&__img {
 		display: inline-block;
 		vertical-align: top;
-		width: 515px;
+		width: 505px;
 		height: 355px;
 		background: no-repeat center @color-paleblue;
 		background-size: contain;
@@ -73,5 +73,37 @@
 		bottom: 20px;
 		
 		right: 0;
+	}
+}
+
+@media @tablet-widths {
+	.fixed-article {
+		&__bg {
+			display: none;
+		}
+
+		&__img {
+			width: 320px;
+			height: 220px;
+		}
+
+		&__content {
+			width: ~'calc(100% - 325px)';
+			height: 220px;
+		}
+
+		&__text {
+			height: 110px;
+		}
+
+		&__link {
+			width: ~'calc(100% - 325px)';
+		}
+	}
+}
+
+@media @mobil-widths {
+	.fixed-article {
+		display: none;
 	}
 }
