@@ -1,3 +1,14 @@
+.page-header-wr {
+	display: block;
+	width: 100%;
+	position: relative;
+	height: auto;
+
+	@media @mobil-widths {
+		height: @nav-min-height-mobil;
+	}
+}
+
 .page-header {
 	background-color: #fafafa;	
 	border-bottom: 1px solid  rgba(0, 0, 0, 0.23);
@@ -102,5 +113,45 @@
 }
 
 @media @mobil-widths {
+	.page-header {
+		border-bottom: none;	
 
+		&__left {
+			display: none;
+		}
+
+		&__bottom {
+			height: 0;
+		}
+
+		&__center {
+			width: 90vw;
+			position: absolute;
+			z-index: 10;
+			top: 200px;
+			left: 4vw;
+
+			.bbtn {
+				display: inline-block;
+				width: 130px;
+				min-width: 130px;
+				height: 50px;
+				box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.15);
+				span {
+					padding: 0 10px;
+				}
+			}
+
+		}
+
+		&__logo {
+			position: absolute;
+			z-index: 10;
+			width: 55px;
+			height: 55px;
+			top: 10px;
+			left: 50%;
+			margin-left: -27px;
+		}
+	}
 }
