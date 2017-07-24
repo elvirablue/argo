@@ -15,6 +15,10 @@
 		height: 80px;
 		background: no-repeat center @color-palegray;
 		background-size: cover;
+		@media @mobil-widths {
+			width: 70px;
+			height: 70px;
+		}
 	}
 
 	&__content {
@@ -22,42 +26,64 @@
 		vertical-align: top;
 		width: ~'calc(100% - 110px)';
 		padding-left: 30px;
+		@media @mobil-widths {
+			width: ~'calc(100% - 75px)';	
+			padding-left: 10px;
+		}
+
 		
 		* {color: @color-gray;}
 
-		h4 {color: @color-black;}
+		h4 {color: @color-black; text-align: left;}
 
 		.rubrik {
 			font-size: 16px;
 			padding-bottom: 10px;
+			text-align: left;
+			@media @mobil-widths {
+				font-size: 12px;
+			}
+		}
+	}	
+}
 
+.block-count {
+	display: block;
+	.clearfix();
+	font-size: 12px;
+
+	span {
+		display: inline-block;
+		width: 33%;				
+	}
+
+	&__last-date ,
+	&__sum-message{
+		float: left;
+		text-align: left;
+	}
+
+	&__sum-message {text-align: center;}
+
+	
+	&__topic-date {
+		float: right;
+		text-align: right;
+	}
+}
+				
+	
+
+@media @mobil-widths {	
+	.block-count {
+		font-size: 10px;
+		&__sum-message, &__topic-date {
+			display: none !important;
 		}
 
-		.block-count {
-			display: block;
-			.clearfix();
-			font-size: 12px;
-
-			span {
-				display: inline-block;
-				width: 33%;				
-			}
-
-			&__last-date ,
-			&__sum-message{
-				float: left;
-				text-align: left;
-			}
-
-			&__sum-message {text-align: center;}
-
-			
-			&__topic-date {
-				float: right;
-				text-align: right;
-			}
-		}		
+		span {width: 100%;}
 	}
+	
 }
 
 

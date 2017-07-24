@@ -1,11 +1,11 @@
 .input {
 	display: inline-block;
 	position: relative;
-	z-index: 100;
+	
 	border-radius: 3px;
 	background-color: #d3e2ed;
 	border: 1px solid #d1d1d1;
-	overflow: hidden;
+	
 	min-width: 75px;
 	width: 100px;
 	max-width: 280px;
@@ -29,22 +29,61 @@
 	&--wh {width: 200px;}
 
 	&--km {width: 75px;}
+
+	&--distance, &--type {width: 280px;}
+
+    &--type {margin-bottom: 20px;}
+
+    &--size-car {width: 120px;}
 }
+
+@media @tablet-widths {
+    .input  {
+        &--date {width: 100px;}
+
+        &--wh {width: 200px;}
+
+        &--km {width: 75px; margin-top: 10px;}
+
+        &--distance, &--type {width: 200px;}
+
+        &--size-car {width: ~'calc(100% - 85px)';}
+
+
+    }
+}
+
+@media @mobil-widths {
+    .input  {
+        &--date {width: 150px;margin-bottom: 10px;}
+
+        &--wh {max-width: 280px; width: 100%; margin-bottom: 10px;}
+
+        &--km {width: 75px; margin-top: 0; margin-bottom: 10px;}
+
+        &--distance, &--type {max-width: 280px; width: 100%; margin-bottom: 10px;}
+
+        &--size-car {max-width: 100px;}
+    }
+}
+
+.output-price-distance {
+    width: 150px;
+}
+.output-price-distance-e {width: 60px; min-width: 60px;}
 
 .user-input {
 	height: 100%;
-	width: 110%;
+	width: 100%;
 	background-color: transparent;
 	outline: none;
 	border: none;
-	padding: 8px;
+	padding: 0 5px;
 	.segoe-regular(12px);
 	color: @color-black;
 }
 
-.input:active {
-	box-shadow: 0px 0px 4px 0.2px rgba(80, 44, 14, 0.34);
-}
+
 
 .user-input:focus {
 	background-color: @color-white;	
@@ -52,11 +91,16 @@
 
 .user-input[type="date"],
 .user-input[type="number"] {
-	width: 150%;
+	width: 100%;
 }
 
 select.user-input {
-	width: 120%;
+	width: 100%;
+
+	option {
+		.segoe-regular(12px);
+		color: @color-black;
+	}
 }
 
 .input--big {
@@ -69,6 +113,73 @@ select.user-input {
 
 .input--small {
 	height: 30px;
+}
+
+
+.ch_wrapper {
+    display: block;
+    vertical-align: middle;
+    margin: 3px 7px 10px;
+    color: @color-black;
+    .segoe-regular(16px);
+    line-height: 20px;
+    width: auto;
+
+    input[type=checkbox],
+    input[type=radio] {
+        display: none;
+        box-sizing: border-box;
+        padding: 0;
+    }
+
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        padding-left: 30px;
+    }
+
+    input[type=checkbox]:checked + label,
+    input[type=radio]:checked + label {
+        color: @color-black;        
+    }
+
+
+    input[type=checkbox] + label:before,
+    input[type=radio] + label:before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        position: absolute;
+        left: 0;
+        top: -2px;
+        border-radius: 3px;
+		background-color: #d3e2ed;
+		border: 1px solid #d1d1d1;
+    }
+
+    input[type=radio] + label:before {       
+        border-radius: 50%;		
+    }
+
+    input[type=checkbox]:checked + label:before,
+    input[type=radio]:checked + label:before {
+        content: "\2713";
+        font-size: 16px;
+        color: @color-black;
+        text-align: center;
+        line-height: 16px;
+        font-weight: bold;
+        background-color: @color-yellow;
+    }
+
+    input[type=radio]:checked + label:before {
+    	content: "";
+    	box-shadow: inset 0 0 0 2px #ffffff;
+    }
 }
 
 

@@ -1,4 +1,4 @@
-.btn {
+.bbtn {
 	display: block;
 	position: relative;
 	width: 350px;
@@ -21,12 +21,13 @@
 	}
 
 	@media @mobil-widths {
+		font-size: 14px;
 		width: 80%;
-		min-width: 280px;
+		min-width: 255px;
 	}
 }
 
-.btn span {
+.bbtn span {
 	width: 100%;
 	position: absolute;
     top: 50%;
@@ -39,49 +40,60 @@
     @media @tablet-widths {
 		font-size: 16px;
 	}
+
+	@media @mobil-widths {
+		font-size: 14px;
+	}
 }
 
-.btn--small {
+.bbtn--small {
 	padding: 13px;
 	padding-top: 10px;
 	font-size: 15px;
 	color: @color-text-blue;
+	@media @mobil-widths {
+		padding: 10px;
+		font-size: 12px;
+	}
 }
 
-.btn--big {
+.bbtn--big {
 	padding: 25px;
 	color: @color-black;
 	text-decoration: underline;
+	@media @mobil-widths {
+		padding: 18px 5px;
+	}
 }
 
-.btn--gray {
+.bbtn--gray {
 
 }
 
-.btn--gray:hover {
+.bbtn--gray:hover {
 	background-color: @color-btn-gray;
 }
 
-.btn--yellow {
+.bbtn--yellow {
 	background-color: @color-yellow;
 	text-decoration: none;
 	border: none;
 }
 
-.btn--yellow:hover {
+.bbtn--yellow:hover {
 	background-color: #ffce0c;
 }
 
-.btn--border-black {
+.bbtn--border-black {
 	border: 3px solid @color-black;
 	text-decoration: none;
 }
 
-.btn--border-black:hover {
+.bbtn--border-black:hover {
 	background-color: #f4f4f4;
 }
 
-.btn--shadow {
+.bbtn--shadow {
 	box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.15)
 }
 

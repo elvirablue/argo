@@ -32,6 +32,10 @@
 	.container-fluid();
 	padding-bottom: 40px;
 
+	@media @mobil-widths {
+		padding-bottom: 20px;
+	}
+
 	&__wrapper {
 		position: relative;
 		z-index: 100;
@@ -39,7 +43,7 @@
 		display: block;
 	}
 
-	&__btn {
+	&__bbtn {
 		@media @mobil-widths {
 			min-width: 280px;
 			max-width: 467px;
@@ -54,11 +58,26 @@
 		text-align: left;		
 		margin-left: 30px;
 		margin-bottom: 15px;
+		@media @tablet-widths {
+			font-size: 18px;					
+		}
+
+		@media @mobil-widths {
+			font-size: 16px;
+			margin-left: 0;		
+		}
 
 		a {
 			.segoe-regular(24px);
 			color: @color-text-blue;
 			text-decoration: underline;
+			@media @tablet-widths {
+				font-size: 18px;					
+			}
+			@media @mobil-widths {
+				font-size: 16px;
+
+			}
 		}
 	}
 }
