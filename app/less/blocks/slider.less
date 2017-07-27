@@ -39,22 +39,27 @@
     /**
      * (optional) wrapper width, specifies width of the slider frame.
      */
-    width: 964px;
-    height: 500px;
+    width: 984px;
+    height: 520px;
+    padding: 10px;
     position: relative;
     font-size: 0;
     line-height: 0;
     overflow: hidden;
-    margin: 0 auto;
+    margin-left: -10px;
     
 
-    @media @desktop-widths-only-item2 {width: 640px;}
+    @media @desktop-widths-only-item2 {
+        width: 660px;
+        margin: 0 auto;
+    }
 
     @media @mobil-widths {
         height: auto; 
-        width: 82vw;
-        min-width: 275px;
-        max-width: 467px;
+        width: 80vw;
+         margin: 0 auto;
+        min-width: 250px;
+        max-width: 480px;
     }
 	
 	.slides {
@@ -69,7 +74,10 @@
 	        width: auto;
             margin: 0 12px 0 0;
 
-	        @media @mobil-widths {width: 82vw;}    		
+	        @media @mobil-widths {
+                width: ~'calc(82vw - 20px)';
+                margin: 0 7px 0 7px;
+            }    		
 	    }
 
         

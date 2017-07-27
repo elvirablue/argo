@@ -1,5 +1,7 @@
 .page-block-bg {
 	background-color: #fafafa;
+	position: relative;
+	z-index: 102;
 	
 	&--forum {
 		background-image: url("../img/bg-forum.png");
@@ -31,6 +33,16 @@
 .page-block {
 	.container-fluid();
 	padding-bottom: 40px;
+
+	&__subtitle {
+		.segoe-regular(24px);
+		padding: 30px;
+		padding-top: 0;
+		text-align: left;
+		@media @tablet-widths {
+			text-align: center;					
+		}
+	}
 
 	@media @mobil-widths {
 		padding-bottom: 20px;

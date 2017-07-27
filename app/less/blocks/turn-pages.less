@@ -1,0 +1,90 @@
+.turn-pages-wrapper {
+	.clearfix();
+	display: block;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	border-top: 1px solid #d1d1d1;
+}
+
+.turn-pages {	
+	display: inline-block;
+	width: 40%;	
+
+	p {
+		display: block;
+		padding-bottom: 10px;
+		.segoe-regular(14px);
+		color: @color-black;
+	}
+
+	.arrow {
+		padding-top: 8px;
+		padding-left: 4px;
+		padding-right: 4px;
+		display: inline-block;
+		vertical-align: middle;
+		border-radius: 50%;
+		border: 3px solid #e5e5e5;
+		width: 60px;
+		height: 60px;
+		transition: border-color ease 0.3s;
+	}
+
+	
+
+	h4 {
+		display: inline-block;
+		vertical-align: middle;
+		width: ~'calc(100% - 70px)';
+		.segoe-regular(16px);
+		color: @color-black;
+		font-weight: normal;
+		text-decoration: none;
+		text-transform: none;
+		padding: 0 10px;
+
+		transition: color ease 0.3s;
+	}
+
+	
+}
+
+.turn-pages--prev {
+	position: relative;
+	text-align: left;
+	float: left;
+	
+}
+
+.turn-pages--next {
+	position: relative;
+	text-align: right;
+	float: right;
+	
+}
+
+.turn-pages:hover {
+	.arrow {
+		border-color: @color-text-blue;
+		svg path {
+			transition: fill ease 0.3s;
+			fill: @color-text-blue;
+		}
+	}
+
+	h4 {
+		color: @color-text-blue;
+		text-decoration: underline;
+	}
+} 
+
+@media @mobil-widths {
+	.turn-pages {
+		width: 16rem;
+		margin-bottom: 1rem;
+		h4 {
+			font-size: 0.8rem;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+.page-controls {
+	display: block;
+	width: 100%;
+	text-align: center;
+	list-style: none;
+	padding-top: 40px;
+
+	&__item {
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 5px;
+		
+	}
+
+	&__item a {
+		display: inline-block;
+		vertical-align: top;
+		width: 32px;
+		height: 32px;
+		border-radius: 5px;
+		background-color: @color-gray;
+		color: @color-white;
+		.segoe-regular(24px);
+		line-height: 32px;
+		transition: color ease 0.3s,
+					background-color ease 0.3s;		
+	}
+
+	&__item:last-child:before {
+		content: "...";
+		line-height: 47px;
+		color: @color-black;
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 15px 0 0;
+
+	}
+
+	&__item:hover, &__item:active, &__item.active {
+		
+		a {
+			color: @color-black;
+			background-color:@color-yellow;
+		}
+		
+	}
+
+
+}

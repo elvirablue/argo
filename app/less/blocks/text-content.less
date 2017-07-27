@@ -1,0 +1,42 @@
+.text-content {
+	width: 100%;
+	.segoe-regular(16px);
+
+	* {
+		font-family: inherit;
+	}
+
+	p {
+		text-indent: 15px;
+		text-align: justify;
+		padding-bottom: 15px;
+
+		@media @tablet-widths {
+			font-size: 12px;
+		}
+
+		@media @mobil-widths {
+
+		}
+	}
+
+	h1, h2, h3, h4, h5 {
+		.segoe-regular(48px);
+		text-transform: none;
+		font-weight: normal;
+		padding-bottom: 10px;
+		text-align: left;
+		@media @tablet-widths {
+			font-size: 35px;
+		}
+
+		@media @mobil-widths {
+			font-size: 18px;
+			text-align: center;
+		}
+	}
+
+	.blue {
+		color: @color-text-blue;
+	}
+}

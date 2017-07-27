@@ -60,6 +60,13 @@ h2 {
 
 }
 
+h3 { 
+	.segoe-regular(38px);		
+	text-transform: uppercase;	
+	color: @color-black;
+
+}
+
 h4 { 
 	.segoe-regular(24px);
 	font-weight: bold;		
@@ -76,14 +83,15 @@ h5 {
 	text-align: center;	
 }
 
-h2.yellow-line {
+h2.yellow-line, h3.yellow-line {
 	position: relative;
-	z-index: 9;
+	z-index: 102;
 	width: auto;
 	display: inline-block;
 	text-align: left;
 	margin-top: 50px;
 	margin-left: 30px;
+
 	margin-bottom: 40px;
 
 	&:before {
@@ -96,6 +104,10 @@ h2.yellow-line {
 		height: 5px;
 		background-color: @color-yellow;
 	}
+}
+
+h3.yellow-line {
+	margin-top: 30px;
 }
 
 label {
@@ -149,7 +161,23 @@ a {
 	}
 }
 
+.anons-wrapper {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px !important;
+	
 
+	@media @tablet-widths {
+		.news__item:nth-child(4) {
+			display: none;
+		}
+	}
+
+	@media @mobil-widths {
+		display: none;
+	}
+}
 
 .ico(@x, @y) {
 
@@ -240,12 +268,12 @@ a {
 		height: 30px;
 	}
 
-	h2, h2.yellow-line {
+	h2, h2.yellow-line, h3.yellow-line {
 		font-size: 28px;
-		margin: 30px 0 20px;
+		margin: 20px 0 20px;
 	}
-	h3 {
-		
+	 h3.yellow-line {
+		font-size: 22px;
 	}
 	h4 {
 		font-size: 14px;

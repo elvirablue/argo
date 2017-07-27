@@ -1,8 +1,8 @@
 $(document).on('ready', function(){
   
-	var navMain = document.querySelectorAll('.main-nav-block');
-	var navToggle = document.querySelectorAll('.main-nav__toggle');
-	var start_pos = navMain[0].offsetTop + 100; 
+	var navMain = document.querySelector('.main-nav-block');
+	var navToggle = document.querySelector('.main-nav__toggle');
+	var start_pos = navMain.offsetTop + 100; 
   var FLAG_visible_scroll_menu = false;   
   //var filter = document.querySelector('#js-filter');
 	
@@ -18,28 +18,18 @@ $(document).on('ready', function(){
 
   
 
-	navToggle[0].addEventListener('click', function() {
-		if (navMain[0].classList.contains('main-nav--closed')) {
-			navMain[0].classList.remove('main-nav--closed');	
-			navMain[0].classList.add('main-nav--opened');
+	navToggle.addEventListener('click', function() {
+		if (navMain.classList.contains('main-nav--closed')) {
+			navMain.classList.remove('main-nav--closed');	
+			navMain.classList.add('main-nav--opened');
 		} else {
-			navMain[0].classList.add('main-nav--closed');	
-			navMain[0].classList.remove('main-nav--opened');	
+			navMain.classList.add('main-nav--closed');	
+			navMain.classList.remove('main-nav--opened');	
 		}
 	});
 
 
-  
 
- navToggle[1].addEventListener('click', function() {
-    if (navMain[1].classList.contains('main-nav--closed')) {
-      navMain[1].classList.remove('main-nav--closed');  
-      navMain[1].classList.add('main-nav--opened');
-    } else {
-      navMain[1].classList.add('main-nav--closed'); 
-      navMain[1].classList.remove('main-nav--opened');  
-    }
-  });
 
 	$(window).scroll(function(){
 
