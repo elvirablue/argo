@@ -1,4 +1,62 @@
+.param-reg {
+	position: relative;
+	&:before {
+		content: "*";
+		color: red;
+		font: inherit;
+		font-size: 20px;
+		display: inline-block;
+		vertical-align: top;
+		position: absolute;
+		top: -7px;
+		left: -10px;
+	}
+}
+
+.m-bottom {
+	margin-bottom: 20px;
+	@media @mobil-widths {
+		
+	}
+}
+
+.m-bottom-mobil {
+	margin-bottom: 0;
+		@media @mobil-widths {
+			margin-bottom: 20px;
+	}
+}
+
+.p-left {
+	padding-left: 20px;
+		
+		@media @tablet-widths {padding-left: 10px;}
+		@media @mobil-widths {padding-left: 0;}
+}
+
+.m-left {
+	margin-left: 60px;
+	@media @mobil-widths {
+		margin-left: 0;
+	}
+}
 .scan {
+	
+
+	.wrapper {
+		display: block;
+		margin-bottom: 10px;
+		padding-left: 20px;
+
+		@media @tablet-widths {
+			padding-left: 10px;
+		}
+
+		@media @mobil-widths {
+			display: inline-block;
+			vertical-align: top;
+		}		
+	}
 	
 	&__wrapper {
 		display: block;
@@ -91,26 +149,7 @@
 		text-align: left;
 		.ch_wrapper {
 			margin-left: 10px;				
-		}
-
-		.wrapper {
-			display: block;
-			margin-bottom: 10px;
-			padding-left: 20px;
-
-			@media @tablet-widths {
-				padding-left: 10px;
-			}
-
-			@media @mobil-widths {
-				display: inline-block;
-				vertical-align: top;
-			}
-		}
-
-		label.lab-for-input {
-			width: 80px;
-		}
+		}		
 
 		@media @mobil-widths {
 			width: 100%;
@@ -152,27 +191,11 @@
 	}
 
 	&__block-col, &__block-col2 {
-		display: inline-block;
-		vertical-align: top;
-		width: 33%;	
-		padding-bottom: 30px;	
-
-		@media @tablet-widths {
-			width: 31%;
-		}
-
-		@media @mobil-widths {
-			width: 100%;
-			padding-bottom: 10px;
-			.ch_wrapper {
-				margin-left: 20px;
-				text-align: left;
-			}
-		}
+		
 	}
 
-	&__block-col2 {
-		width: 66%;
+	&__block-btn {
+		text-align: center;
 	}
 
 	&__btn {
@@ -180,9 +203,9 @@
 		width: 200px;
 		margin: 30px auto 0;
 		@media @mobil-widths {
-			width: 90%;
-			max-width: 200px;	
-			min-width: 255px;				
+			width: 100%;
+			max-width: 255px;	
+			min-width: 200px;				
 		}
 	}
 
@@ -193,7 +216,21 @@
 		width: 80%;
 		margin: 30px auto 0;
 		@media @mobil-widths {
-			min-width: 255px;
+			min-width: 200px;
+			width: 100%;
+			max-width: 350px;					
+		}
+	}
+
+	&__btn-last-1-2 {
+		display: inline-block;
+		min-width: 200px;
+		max-width: 350px;
+		width: 40%;
+		margin: 30px 10px;
+		@media @mobil-widths {
+			min-width: 200px;
+			margin: 30px 0 0;
 			width: 100%;
 			max-width: 350px;					
 		}

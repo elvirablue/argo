@@ -1,3 +1,5 @@
+
+
 .input {
 	display: inline-block;
 	position: relative;
@@ -6,9 +8,10 @@
 	background-color: #d3e2ed;
 	border: 1px solid #d1d1d1;
 	
-	min-width: 75px;
+	min-width: 50px;
 	width: 100px;
 	max-width: 280px;
+   
 
 	
 
@@ -24,26 +27,32 @@
 		font-style: italic;		
 	}
 
-	&--date {width: 120px;}
+	&--date {width: 120px !important;}
+
+    &--hour {width: 50px !important;}
+
+    &--stavka {width: 200px !important;}
 
 	&--wh {width: 200px;}
 
-	&--km {width: 75px;}
+	&--km {width: 75px !important;}
 
 	&--distance, &--type {width: 280px;}
 
     &--type {margin-bottom: 20px;}
 
     &--size-car {width: 120px;}
+
+    &--short {width: 80px;}
 }
 
 @media @tablet-widths {
     .input  {
-        &--date {width: 100px;}
+        &--date {width: 100px  !important;}
 
         &--wh {width: 200px;}
 
-        &--km {width: 75px; margin-top: 10px;}
+        &--km {width: 75px; margin-top: 10px !important;}
 
         &--distance, &--type {width: 200px;}
 
@@ -55,16 +64,21 @@
 
 @media @mobil-widths {
     .input  {
-        &--date {width: 150px;margin-bottom: 10px;}
+        &--date {width: 150px;margin-bottom: 10px !important;}
 
         &--wh {max-width: 280px; width: 100%; margin-bottom: 10px;}
 
-        &--km {width: 75px; margin-top: 0; margin-bottom: 10px;}
+        &--km {width: 75px; margin-top: 0; margin-bottom: 10px !important;}
 
         &--distance, &--type {max-width: 280px; width: 100%; margin-bottom: 10px;}
 
         &--size-car {max-width: 100px;}
-    }
+
+        &--stavka {width: 170px !important;}
+}
+
+
+   
 }
 
 .output-price-distance {
@@ -89,9 +103,12 @@
 	background-color: @color-white;	
 }
 
-.user-input[type="date"],
-.user-input[type="number"] {
+.user-input[type="date"] {
 	width: 100%;
+}
+
+.user-input[type=number] {
+    width: 100%;    
 }
 
 select.user-input {
@@ -116,6 +133,13 @@ select.user-input {
 }
 
 
+
+.input--short {width: 80px;}
+.input--time {width: 180px !important;}
+.input--max {width: 100%;}
+
+
+
 .ch_wrapper {
     display: block;
     vertical-align: middle;
@@ -124,6 +148,13 @@ select.user-input {
     .segoe-regular(16px);
     line-height: 20px;
     width: auto;
+
+    @media @mobil-widths {
+        .wr {
+            display: block;
+            padding-left: 20px;
+        }
+    }
 
     input[type=checkbox],
     input[type=radio] {
@@ -137,6 +168,16 @@ select.user-input {
         vertical-align: middle;
         cursor: pointer;
         position: relative;
+       
+
+        b {
+            font: inherit;
+            color: @color-gray;
+            white-space: nowrap;
+        }
+    }
+
+    label:nth-child(2) {
         padding-left: 30px;
     }
 
@@ -180,6 +221,56 @@ select.user-input {
     	content: "";
     	box-shadow: inset 0 0 0 2px #ffffff;
     }
+}
+
+.in-block {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+textarea {
+        resize: none;
+}
+
+
+textarea:focus ~i {
+    opacity: 0.6;    
+    color: @color-gray;
+    
+}
+
+textarea:focus ~i {
+    
+}
+
+.input-area {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.3;
+    padding-top: 15px;  
+    padding-bottom: 10px;
+    margin-left: 0;
+    height: auto;
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: @color-white; 
+     i {
+        top: 5px;
+        opacity: 0.6;
+    }
+}
+
+.area {
+    padding-top: 15px;
+    max-width: 100%;
+    height: 120px;
+    @media @mobil-widths {
+        padding-top: 30px;
+        height: 220px;
+    }
+
 }
 
 

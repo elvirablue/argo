@@ -1,0 +1,161 @@
+.row-col {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+
+	.wr {
+		display: inline-block;
+		vertical-align: middle;
+		@media @mobil-widths {
+			display: block;
+			padding-left: 20px;
+			white-space: nowrap;
+		}
+	}
+
+	label.lab-for-input {
+		width: 40%;
+		max-width: 165px;
+		text-align: left;
+		vertical-align: middle;
+	}
+
+	label.lab-for-input.lab-large {
+		width: 100%;
+		max-width: 280px;
+	}
+
+	label.lab-for-input.lab-max {
+		width: 100%;
+		max-width: 100%;
+		padding-bottom: 10px;
+	}
+
+
+	label.lab-for-input.lab-min {
+		width: auto;
+		max-width: 150px;
+		min-width: 50px;
+	} 
+
+	.lab-title {
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	.input--large {
+		width: 40%;
+		max-width: 250px;
+	}
+
+	.input--max {
+		width: 80%;
+		max-width: 550px;
+	}
+
+	
+
+	
+
+	.input--short {width: 80px;margin-right: 10px;}
+
+	@media @mobil-widths {
+		max-width: 285px;
+		margin: 0 auto;
+		label.lab-for-input {width: 100%;max-width: 250px;padding-bottom: 5px;}
+		.input--short {width: 55px; min-width: 55px;margin-right: 5px;}
+		.input--time {width: 200px; margin-left: 10px; margin-top: 5px;}
+		.input--large {width: 100%; padding-bottom: 5px;}
+		.input--max {width: 100%; padding-bottom: 5px;}
+	}
+}
+
+
+.col-1-3, .col-2-3, .col-1-2 {
+	display: inline-block;
+	vertical-align: top;	
+	padding-bottom: 30px;	
+
+	@media @mobil-widths {
+		width: 100% !important;
+		padding-bottom: 10px;
+		.ch_wrapper {
+			margin-left: 20px;
+			text-align: left;
+		}
+		.in-block {		    
+		    margin-left: 0;
+		    margin-right: 20px;
+		    margin-bottom: 20px;
+		}
+	}
+}
+
+.col-1-3 {
+	width: 33%;
+	@media @tablet-widths {width: 31%;}
+	label.lab-for-input {
+		width: 70px;
+		text-align: left;		
+	}
+
+	.input--large {
+		width: 60%;
+		max-width: 200px;
+	}
+}
+
+.col-2-3 {
+	width: 65%;
+	@media @tablet-widths {width: 62%;}
+}
+
+.col-1-2{
+	width: 45%;
+	margin-right: 2%;
+	text-align: left;
+	padding-bottom: 0;
+
+
+	label.lab-for-input {
+		width: 40%;
+		text-align: left;
+		vertical-align: middle;
+	}
+
+	label.lab-for-input.lab-large {
+		
+	}
+
+	.input {width: 58%;}
+
+	.input--short {width: 80px;margin-right: 10px;}
+
+
+	.input--max {
+		width: 80%;
+		max-width: 250px;
+	}
+
+	@media @tablet-widths {}
+
+	@media @mobil-widths {
+		width: 100%;
+		padding-bottom: 0;
+
+		label.lab-for-input {width: 100%; margin-bottom: 5px;}
+		.input {width: 100%;}
+		.input--short {width: 70px; min-width: 60px;margin-right: 5px;}
+
+	}
+
+}
+
+
+.row-col .col-1-3, .row-col .col-2-3, .row-col .col-1-2 {
+	padding-bottom: 0;
+}
+
+
+

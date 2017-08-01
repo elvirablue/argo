@@ -130,6 +130,8 @@
 			z-index: 10;
 			top: 200px;
 			left: 4vw;
+			right: auto;
+			display: none;
 
 			.bbtn {
 				display: inline-block;
@@ -147,11 +149,122 @@
 		&__logo {
 			position: absolute;
 			z-index: 10;
-			width: 55px;
-			height: 55px;
-			top: 10px;
+			width: 50px;
+			height: 50px;
+			top: 13px;
 			left: 50%;
-			margin-left: -27px;
+			margin-left: -25px;
 		}
 	}
 }
+
+	.main-nav-scroll {
+		.page-header-wr {
+			border-bottom: 1px solid rgba(0, 0, 0, 0.23);
+		}
+
+		.page-header:last-child .page-header__bottom {
+			
+		}
+		.page-header {
+			width: 100vw;
+			border-bottom: none;
+			
+			&__left {
+				display: none;
+			}
+
+			&__left.block-login {
+				display: block;
+				position: relative;
+				z-index: 100000;
+			}
+
+			&__top {
+				padding: 5px 20px;
+			}
+
+			&__bottom {
+				height: 0;
+				width: 100vw;
+				padding: 0;
+			}
+			&__center {
+				position: absolute;
+				display: block;
+			
+				width: ~'calc(100vw - 280px)';			
+				z-index: 9999;
+				top: 0px;
+				right: 50px;
+				left: auto;
+				@media @mobil-widths {
+					width: ~'calc(100vw - 170px)';	
+				}
+
+				.bbtn {
+					display: inline-block;
+					width: 50%;
+					min-width: 120px;
+					max-width: 300px;
+					height: 20px;
+					margin: 25px 10px 0;
+					padding: 25px;
+					box-shadow: none;
+
+					@media @tablet-widths {
+						min-width: 120px;
+						max-width: 350px;
+						margin: 8px 10px 0;
+						padding: 18px;
+					}
+
+					@media @mobil-widths {
+						min-width: 120px;
+						max-width: 280px;
+						height: 20px;
+						margin: 8px 10px 0;
+					}
+					
+					span {
+						padding: 0 5px;
+						font-size: 14px;
+						@media @mobil-widths {
+							padding: 0 3px;
+							font-size: 11px;
+						}
+					}
+				}
+			}
+
+			&__logo {	
+				position: relative;		
+				z-index: 10000;
+				width: 55px;
+				height: 55px;
+				top: auto;
+				left: auto;
+				right: auto;
+				margin-top: -55px;
+				margin-left: 150px;
+				
+				@media @tablet-widths {
+					top: -55px;
+					left: 150px;
+					right: auto;
+					margin-left: 0;
+					margin-top: 0;
+				}
+
+				@media @mobil-widths {
+					width: 40px;
+					height: 40px;					
+					left: 80px;
+					right: auto;
+				}
+				
+			}
+		}
+	}
+
+

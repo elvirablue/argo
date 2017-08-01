@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>  
+	<meta charset="UTF-8">
+	<title>AGRO CARGO - БЕЗОПАСНЫЙ ПОИСК ГРУЗОВ  И ПЕРЕВОЗЧИКОВ ДЛЯ АГРОСЕКТОРА</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">	
+	
+	
+	<link rel="stylesheet" href="css/venders/animate.css">
+	<link rel="stylesheet" href="css/simple.css">
+
+	<script src="js/venders/lory.min.js"></script>
+	<script src="js/sliders.js"></script>
+
+	<!-- jQuery -->
+	<script src="js/venders/jquery-1.11.1.min.js"></script>
+	<script src="js/venders/jquery.maskedinput.js"></script>
+	<script src="js/venders/bootstrap.min.js"></script>
+ 
+	<!-- Include the plugin's CSS and JS: -->
+	<script src="js/venders/bootstrap-multiselect.js"></script> 
+	<script src="js/venders/moment-with-locales.min.js"></script>
+	<script src="js/venders/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/venders/jquery.sticky.js"></script>
+	 <script> 
+    $(window).load(function(){ 
+    	$("#header-sticky-wrapper").sticky({ topSpacing: 0 }); 
+    	}); 
+    </script>
+
+
+
+	<link rel="stylesheet" href="css/venders/bootstrap-3.3.2.min.css">
+	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker.min.css" />
+
+	
+	<link rel="stylesheet" href="css/venders/jquery.arcticmodal-0.3.css">	
+	<script src="js/venders/jquery.arcticmodal-0.3.min.js"></script>
+
+	<link rel="stylesheet" href="css/venders/normalize.css">
+	<link rel="stylesheet" href="css/stylename.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lte IE 9]>
+	    <script src="oldies/oldies.js" charset="utf-8"></script>
+	    <style>
+	       .wrapper-x {display: none;}	       
+	    </style>
+	 <![endif]-->
+</head> 
+<body>
+
+
+<div class="wrapper-x">
+	<div class="wrapper-y">
+	<!-- *************************** ШАПКА ***************************************- -->
+		<div id="header-sticky-wrapper" class="sticky-wrapper">
+		<div class="page-header-wr">
+		<header class="page-header">
+			<div class="page-header__top">
+			<!-- *************************** БЛОК МЕНЮ ***************************************- -->
+				<div class="main-nav-block main-nav--closed">
+					<button class="main-nav__toggle" type="button">Mеню</button>					
+					<nav class="main-nav">			
+						<div class="main-nav__wrapper">
+							<ul>
+								<li class="active"><a href="">Главная</a></li>
+								<li><a href="help.html">Помощь</a></li>
+								<li><a href="service.html">О сервисе</a></li>
+								<li><a href="contacts.html">Контакты</a></li>			
+								<li><a href="news.html">Новости и статьи</a></li>
+								<li><a href="docs.html">Образцы документов</a></li>
+								<li><a href="accreditation.html">Аккредитация</a></li>
+								<li><a href="forum.html">Форум</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+
+				<form class="city-select">
+					<label class="" for="city">Ваш регион: </label>
+					<div class="select-wr">
+						<select class="" id="city" name="city">
+						  	<option>Новосибирск</option>
+						  	<option>Санкт-Петербург</option>
+						  	<option>Москва</option>
+						  	<option>Ростов-на-Дону</option>
+						</select>
+					</div>
+					<p style="display: none;"><input type="submit" value="Отправить"></p>				
+				</form>				
+
+				<div class="block-login page-header__left">
+
+					<p class="block-login__head">Личный кабинет</p>
+					<p class="block-login__bbtn">
+						<a class="ingress" href="#">Вход</a> / <a class="registry" href="#">Регистрация</a>
+					</p>					
+				</div>
+
+				<form class="search-form" action="" method="get" id="search-block-form"> 
+				    <input class="search" type="text" name="search" id="search" value="" size="15" maxlength="128" placeholder="Поиск по сайту">   
+				    <input type="hidden" name="id" value="">
+				    <input type="submit" class="submit-bbtn" id="edit-submit" value="Поиск"> 
+				</form>
+
+			</div>			
+		</header>
+
+		<header class="page-header">
+			<div class="page-header__bottom">
+				<a href="index.html" class="main-logo page-header__logo"></a>
+				<div class="page-header__center">
+					<a href="add-car.html" id="add-car" class="bbtn bbtn--yellow bbtn--big"><span>Добавить транспорт</span></a>
+					<a href="add-card.html" id="bid" class="bbtn bbtn--yellow bbtn--big"><span>Оставить заявку на перевозку</span></a>
+				</div>
+				<div class="page-header__left">
+					<a href="#" class="page-header__link bbtn-distances">Расчет расстояний</a>
+					<a href="#" class="page-header__link bbtn-forum">Перейти на форум</a>
+				</div>
+			</div>
+		</header>
+		</div>
+		</div>
+
+		<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
+		<div class="first-screen-page-bg bg-page add-car-bg">
+			<div class="first-screen-page">
+				<div class="first-screen-page__title">
+					<h1>ДОБАВЛЕНИЕ ТРАНСПОРТА</h1>
+				</div>				
+			</div>		
+		</div>
+
+	<!-- *************************** БЛОК ФОРМЫ ***************************************- -->
+
+		<div class="page-block-bg top-shadow">
+
+			<div class="breadcrumbs">
+				<ul>
+					<li><a href="index.html">Главная</a></li>
+					<li class="active"><a >Добавление груза</a></li>
+				</ul>				
+			</div>
+
+			<div class="page-block form-add-car-wrapper">
+				<div class="scan__wrapper">
+					<form action="" method="">
+						<p class="scan__head">Заполните форму для добавления транспорта</p>
+
+<!-- *************************** ШАГ 1 ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__step-head"><span class="text-blue">Шаг 1</span> Кузов</p>
+							<div class="row-col">
+								<div class="scan__block-col col-1-2">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input param-reg" for="user-type-car">Тип кузова: </label>
+										<div class="input input--small">
+											<div class="user-input-bootstrap-wrapper">						
+											<select class="user-input-bootstrap" id="user-type-car" name="user-type-car">
+										  		<option>1--------**********--</option>
+										  		<option>2--------------</option>
+										  		<option>3--***** ******-----</option>					  		
+											</select>
+											</div>																
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-2">
+									<div class="ch_wrapper in-block">
+										<input id="radio01" type="radio" name="radio" value="radio01">
+										<label for="radio01">Полуприцеп</label>
+									</div>
+									<div class="ch_wrapper in-block">
+										<input id="radio02" type="radio" name="radio" value="radio02">
+										<label for="radio02">Грузовик</label>
+									</div>
+									<div class="ch_wrapper in-block">
+										<input id="radio03" type="radio" name="radio" value="radio03">
+										<label for="radio03">Сцепка</label>
+									</div>	
+								</div>
+							</div>
+
+							<div class="row-col">
+							<div class="scan__block-col col-1-2">
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input" for="user-loading-car">Тип загрузки: </label>
+									<div class="input input--small">
+										<div class="user-input-bootstrap-wrapper">						
+										<select class="user-input-bootstrap" id="user-loading-car" name="user-loading-car">								
+									  		<option>Верхняя</option>
+									  		<option>Боковая</option>
+									  		<option>Задняя</option>					  		
+										</select>
+										</div>																
+									</div>
+								</div>								
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input param-reg" for="user-carrying-car">Грузоподъемность, т: </label>
+									<div class="input input--small input--short">
+										<input type="number" class="user-input" id="user-carrying-car" name="user-carrying-car">			
+									</div>
+								</div>
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input param-reg" for="user-weight-car">Объем, м<sup>3</sup>: </label>
+									<div class="input input--small input--short">
+										<input type="number" class="user-input" id="user-weight-car" name="user-weight-car">			
+									</div>
+								</div>
+							</div>							
+							</div>
+
+							<div class="row-col">
+							
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input param-reg lab-large" for="user-size1-car">Внутренние габариты кузова (Д/Ш/В), м : </label>
+															
+									<div class="input input--small input--short">
+										<input type="number" class="user-input" id="user-size1-car" name="user-size1-car">			
+									</div>
+									<label>X &nbsp;&nbsp;</label>
+									<div class="input input--small input--short">
+										<input type="number" class="user-input" id="user-size2-car" name="user-size2-car">			
+									</div>
+									<label>X &nbsp;&nbsp;</label>
+									<div class="input input--small input--short">
+										<input type="number" class="user-input" id="user-size3-car" name="user-size3-car">			
+									</div>
+									<p class="scan__text">Введите длину, ширину и высоту внутреннего пространства кузова </p>
+								</div>
+							
+							</div>
+						</div>
+
+<!-- *************************** ШАГ 2 ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__step-head"><span class="text-blue">Шаг 2</span> Разрешения</p>
+							<div class="row-col">
+								<div class="scan__block-col col-1-3">
+									<div class="ch_wrapper ">
+										<input id="check31" type="checkbox" name="check" value="check31">
+										<label for="check31">Медицинская книжка</label>
+									</div>
+									<div class="ch_wrapper ">
+										<input id="check32" type="checkbox" name="check" value="check32">
+										<label for="check32">Спецодежда для перевозки кормов и свиней </label>
+									</div>
+									<div class="ch_wrapper ">
+										<input id="check33" type="checkbox" name="check" value="check33">
+										<label for="check33">Пропуск на МКАД</label>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="ch_wrapper ">
+										<input id="check34" type="checkbox" name="check" value="check34">
+										<label for="check34">Экспедирование</label>
+									</div>
+									<div class="ch_wrapper ">
+										<input id="check35" type="checkbox" name="check" value="check35">
+										<label for="check35">Прохождение весового контроля в пути</label>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="scan__block-border">
+										<p class="scan__block-border-title">Прохождение весового контроля в пути </p>
+										<p class="scan__text">Проверку службой безопастности проходят только аккредитованные заказчики. <br>С остальными Вы работаете на свой страх и риск.</p>						
+
+										<div class="ch_wrapper ">
+											<input id="check36" type="checkbox" name="check" value="check36">
+											<label for="check36">Не проверен</label>
+										</div>
+										<div class="ch_wrapper ">
+											<input id="check37" type="checkbox" name="check" value="check37">
+											<label for="check37">Полная аккредитация</label>
+										</div>
+										<div class="ch_wrapper ">
+											<input id="check38" type="checkbox" name="check" value="check38">
+											<label for="check38">Прошел первичную аккредитацию</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+<!-- *************************** ШАГ 3 ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__step-head"><span class="text-blue">Шаг 3</span> Когда</p>
+							<div class="row-col">
+								<div class="ch_wrapper m-bottom">
+									<input id="radio11" type="radio" name="radio" value="radio11">
+									<label for="radio11">Готов к загрузке <b>(с сегодняшнего дня +2 дня)</b></label>
+								</div>
+								<div class="ch_wrapper m-bottom">
+									<input id="radio12" type="radio" name="radio" value="radio12">
+									<label for="radio12">С&nbsp;&nbsp;&nbsp;</label>
+									<div class="input input--small input--date">
+										<input type="text" class="datetimepicker6 user-input" id="user-date-begin-car" name="user-date-begin-car">							
+									</div>
+									<span class="wr">
+									<label for="radio12">&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</label>
+									<div class="input input--small input--km">
+										<input type="number" class="user-input required" id="user-whence-plus-car" name="user-whence-plus-car">										
+									</div>
+
+									<label for="radio12">&nbsp;&nbsp;&nbsp;дней</label>
+									</span>
+
+								</div>
+								<div class="ch_wrapper m-bottom">
+									<input id="radio13" type="radio" name="radio" value="radio13">
+									<label for="radio13">Постоянно&nbsp;&nbsp;&nbsp;</label>
+									<span class="wr">
+									<div class="input input--small input--time">
+										<div class="user-input-bootstrap-wrapper">						
+										<select class="user-input-bootstrap" id="user-time-car" name="user-time-car">
+									  		<option>В течение 1 месяца</option>
+									  		<option>В течение 6 месяцев</option>
+									  		<option>В течение 1 года</option>
+									  		<option>Безсрочно</option>					  		
+										</select>
+										</div>															
+									</div>
+									</span>
+									<span class="wr">
+									<label for="radio13">&nbsp;&nbsp;&nbsp;<b>(с сегодняшнего дня +2 дня)</b></label></span>
+								</div>	
+							</div>
+							<p class="scan__text">В течении этого времени заявка будет находится в системе, после чего будет автоматически удалена.<br>Если заявка потеряет актуальность раньше, не забудьте её удалить из системы.</p>
+						</div>
+
+<!-- *************************** ШАГ 4 ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__step-head"><span class="text-blue">Шаг 4</span> Оплата</p>
+							<div class="row-col">
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input" for="user-rate-car">Минимальная ставка: </label>
+									<div class="input input--small input--short">
+										<input type="number" class="user-input" id="user-rate-car" name="user-rate-car">			
+									</div>
+									<div class="input input--small ">
+										<div class="user-input-bootstrap-wrapper">						
+										<select class="user-input-bootstrap" id="user-rate-ed-car" name="user-rate-ed-car">								
+									  		<option>руб./км</option>
+									  		<option>руб./км</option>				  						  		
+										</select>
+										</div>																
+									</div>
+								</div>
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input" for="">Способ оплаты: </label>
+									<div class="ch_wrapper in-block">
+										<input id="check41" type="checkbox" name="check" value="check41">
+										<label for="check41">Безналичный</label>
+									</div>
+									<div class="ch_wrapper in-block">
+										<input id="check42" type="checkbox" name="check" value="check42">
+										<label for="check42">Наличный</label>
+									</div>
+									<div class="ch_wrapper in-block">
+										<input id="check43" type="checkbox" name="check" value="check43">
+										<label for="check43">НДС</label>
+									</div>
+									<div class="ch_wrapper in-block">
+										<input id="check44" type="checkbox" name="check" value="check44">
+										<label for="check44">На карту</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+<!-- *************************** ШАГ 5 ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__step-head"><span class="text-blue">Шаг 5</span> Примечание</p>
+							<div class="row-col">
+								<div class="input input-area">
+									<textarea name="user-text" id="user_text" cols="7" rows="10" class="user-input area" maxlength="1500"></textarea>
+									<i>Введите дополнительную информацию. Запрещается размещать контактную информацию (телефоны, #ICQ и т.д.)</i>
+								</div>
+							</div>
+						</div>
+
+<!-- *************************** ШАГ 6 ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__step-head"><span class="text-blue">Шаг 6</span> ПТС</p>
+							<div class="row-col">
+								<label class="lab-for-input lab-max lab-title">Свидетельство о регистрации ТС:</label>
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-pts1-car">ТС: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-pts1-car" name="user-pts1-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-pts2-car">Серия: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-pts2-car" name="user-pts2-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-pts3-car">Номер: </label>
+										<div class="input input--small input--large">
+											<input type="number" class="user-input" id="user-pts3-car" name="user-pts3-car">			
+										</div>
+									</div>
+								</div>								
+							</div>
+
+							<div class="row-col">
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input lab-large" for="user-pts4-car">Гос. регистрационный знак:  </label>
+									<div class="input input--small input--large">
+										<input type="text" class="user-input" id="user-pts4-car" name="user-pts4-car">			
+									</div>
+								</div>
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input lab-large" for="user-pts5-car">Дата регистрации:  </label>
+									<div class="input input--small input--date">
+										<input type="text" class="datetimepicker6 user-input" id="user-pts5-car" name="user-pts5-car">							
+									</div>
+								</div>								
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input lab-large" for="user-pts6-car">Выдано ГИБДД:  </label>
+									<div class="input input--small input--max">
+										<input type="text" class="user-input" id="user-pts6-car" name="user-pts6-car">			
+									</div>
+								</div>
+
+								<div class="wrapper m-bottom">	
+									<label class="lab-for-input lab-large" for="user-pts6-car"> </label>								
+									<div class="input input--small input--large">
+										<input type="text" class="user-input" id="user-pts7-car" name="user-pts7-car">			
+									</div>
+								</div>
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input lab-large" for="user-pts8-car">Отметка о снятии с учета:  </label>
+									<div class="input input--small input--large">
+										<input type="text" class="user-input" id="user-pts8-car" name="user-pts8-car">			
+									</div>
+								</div>
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input lab-large" for="user-pts8-car">Дата снятия с учета:  </label>
+									<div class="input input--small input--date">
+										<input type="text" class="datetimepicker6 user-input" id="user-pts8-car" name="user-pts8-car">							
+									</div>
+								</div>
+							</div>
+
+							<div class="scan__block-btn">
+								<button type="submit" class="bbtn bbtn--yellow bbtn--big scan__btn-last">Загрузить фотографии</button>
+								<p class="scan__text">Список загруженных файлов Список загруженных файлов Список загруженных файлов</p>
+								
+							</div>
+						</div>
+
+<!-- *************************** ШАГ 7 ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__step-head"><span class="text-blue">Шаг 7</span> Контакты</p>
+							<div class="row-col">
+								<label class="lab-for-input lab-max lab-title">Собственник:</label>
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-owner1-car">Фамилия: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner1-car" name="user-owner1-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-owner2-car">&nbsp;&nbsp;&nbsp;Имя: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner2-car" name="user-owner2-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-owner3-car">Отчество: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner3-car" name="user-owner3-car">			
+										</div>
+									</div>
+								</div>					
+							</div>
+
+							<div class="row-col">								
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-owner4-car">ИНН: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner4-car" name="user-owner4-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min p-left" for="user-owner5-car">КПП: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner5-car" name="user-owner5-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min p-left" for="user-owner6-car">ОГРН: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner6-car" name="user-owner6-car">			
+										</div>
+									</div>
+								</div>					
+							</div>
+
+							<div class="row-col">								
+								<div class="scan__block-col col-1-2">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-owner7-car">Расч/сч: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner7-car" name="user-owner7-car">			
+										</div>
+									</div>
+								</div>
+								<div class="scan__block-col col-1-2">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min p-left" for="user-owner8-car">В банке: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-owner8-car" name="user-owner8-car">			
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row-col">
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input lab-large" for="user-owner9-car">Юридический адрес: </label>
+									<div class="input input--small input--max">
+										<input type="text" class="user-input" id="user-owner9-car" name="user-owner9-car">			
+									</div>
+								</div>
+
+								<div class="wrapper m-bottom">
+									<label class="lab-for-input lab-large" for="user-owner10-car">Фактический адрес:&nbsp;&nbsp; </label>
+									<div class="input input--small input--max">
+										<input type="text" class="user-input" id="user-owner10-car" name="user-owner10-car">			
+									</div>
+								</div>
+
+							</div>
+
+							<hr><br>
+
+							<div class="row-col">
+								<label class="lab-for-input lab-max lab-title">Водитель:</label>
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-driver1-car">Фамилия: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-driver1-car" name="user-driver1-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min p-left" for="user-driver2-car">Имя: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-driver2-car" name="user-driver2-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-driver3-car">Отчество: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-driver3-car" name="user-driver3-car">			
+										</div>
+									</div>
+								</div>					
+							</div>
+
+							<div class="row-col">
+								
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-large" for="user-driver4-car">Регистрационная карточка: </label>
+										<div class="input input--small input--large">
+											<input type="text" class="user-input" id="user-driver4-car" name="user-driver4-car">			
+										</div>
+									</div>
+								
+							</div>
+
+							<div class="row-col">
+								
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-large" for="user-driver5-car">Удостоверение №:</label>
+										<div class="input input--small input--large">
+											<input type="text" class="user-input" id="user-driver5-car" name="user-driver5-car">			
+										</div>
+									</div>
+								
+							</div>	
+							
+							<div class="row-col">								
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min" for="user-driver6-car">Рег. №: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-driver6-car" name="user-driver6-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min p-left" for="user-driver7-car">Серия: </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-driver7-car" name="user-driver7-car">			
+										</div>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-3">
+									<div class="wrapper m-bottom">
+										<label class="lab-for-input lab-min p-left" for="user-driver8-car">Номер:  </label>
+										<div class="input input--small input--max">
+											<input type="text" class="user-input" id="user-driver8-car" name="user-driver8-car">			
+										</div>
+									</div>
+								</div>					
+							</div>
+						</div>
+
+<!-- *************************** КНОПКИ ***************************************- -->
+						<div class="scan__block-row">
+							<p class="scan__text param-reg" style="padding: 0; text-align: left;">Поля, обязательные для заполнения<br></p>
+							<div class="scan__block-btn">
+								<button type="submit" class="bbtn bbtn--yellow bbtn--big scan__btn-last-1-2">Добавить транспорт</button>
+								<button type="submit" class="bbtn bbtn--yellow bbtn--big scan__btn-last-1-2">Закрыть</button>
+							</div>							
+
+						</div>
+					
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+		
+
+
+			
+	<!-- *************************** БЛОК ПОДВАЛ***************************************- -->	
+	</div> <!-- end wrapper-y -->	
+
+	<footer class="page-footer-bg">
+		<div class="page-footer">
+			<div class="page-footer__block-left">
+				<div class="page-footer__nav">
+					<ul>
+						<li class="active"><a href="">Главная</a></li>
+						<li><a href="help.html">Помощь</a></li>
+						<li><a href="service.html">О сервисе</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+					</ul>
+					<ul>
+						<li><a href="news.html">Новости и статьи</a></li>
+						<li><a href="docs.html">Образцы документов</a></li>
+						<li><a href="accreditation.html">Аккредитация</a></li>
+						<li><a href="forum.html">Форум</a></li>
+					</ul>
+				</div>
+			</div>
+
+			
+
+			<div class="page-footer__block-center">
+				<p class="page-footer__title">AGROCARGO В СОЦИАЛЬНЫХ СЕТЯХ:</p>
+				<div class="block-social page-footer__social" >
+					<a href="#" class="social social--vk">vk</a>
+					<a href="#" class="social social--instargam">instargam</a>
+					<a href="#" class="social social--ok">ok</a>
+					<a href="#" class="social social--facebook">facebook</a>				
+				</div>
+			</div>
+
+			<div class="page-footer__block-right">
+				<p class="page-footer__title">СВЯЗАТЬСЯ С НАМИ</p>
+				<form class="city-select page-footer__city-select">
+					<label class="" for="city">Ваш регион: </label>
+					<div class="select-wr">
+						<select class="" id="city" name="city">
+						  	<option>Новосибирск</option>
+						  	<option>Санкт-Петербург</option>
+						  	<option>Москва</option>
+						  	<option>Ростов-на-Дону</option>
+						</select>
+					</div>
+					<p style="display: none;"><input type="submit" value="Отправить"></p>				
+				</form>
+				<a href="tel:+79151253443" class="page-footer__phone">+7 (915) 125-34-43</a>				
+			</div>
+
+			<div class="page-footer__block-bottom">
+				<p class="page-footer__block-bottom-item login">
+					<a href="#">Личный кабинет</a>
+				</p>
+				<p class="page-footer__block-bottom-item mail">
+					<a href="#">info@agrocargo.ru</a>
+				</p>
+				<p class="page-footer__block-bottom-item call-form">
+					<a href="#">Форма обратной связи</a>
+				</p>
+			</div>
+			
+		</div>
+
+	</footer>
+
+	<!-- ************** БЛОК ПРИЛИПАЮЩАЯ НАВИГАЦИЯ ПРИ СКРОЛЛЕ ******************- -->
+	
+
+<!-- ************** БЛОК МОДАЛЬНЫЕ ОКНА ******************- -->
+
+
+<!-- ********************************- -->
+</div> <!-- end wrapper-x -->
+
+<script src="js/menu.js"> </script>
+<script src="js/script.js"> </script>
+<!--<script src="js/prev-video.js"> </script>		
+	
+<script src="js/modal.js"> </script>
+<script src="js/post.js"> </script>
+-->
+
+
+</body>
+</html>

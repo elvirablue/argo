@@ -64,4 +64,10 @@ $(document).on('ready', function(){
                {pickTime: false, language: 'ru'}
             );
         });
+
+        $(function () {
+            $('.datetimepicker3').datetimepicker(
+               {pickDate: false, language: 'ru'}
+            );
+        });
 });

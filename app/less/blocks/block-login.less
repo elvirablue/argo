@@ -17,7 +17,8 @@
 	&__bbtn {
 		width: 100%;
 		text-align: right;
-		.segoe-regular(12px);	
+		.segoe-regular(12px);
+		cursor: pointer;	
 
 		a {
 			display: inline-block;
@@ -50,16 +51,53 @@
 		width: 45px;
 		height: 45px;
 		background: url("../img/ingress.png") no-repeat center;
+
 	}
 	.block-login__bbtn {
 		font-size: 0;
+
 	}
 }
 
 @media @mobil-widths {
 	.block-login {
+		position: relative;
+		z-index: 10000;
 		padding-top: 20px;
-		padding-right: 10px;
+		padding-right: 0px;
+	}
+
+	.ingress {
+		font-size: 0;
+		width: 40px;
+		height: 40px;
+		background-size: 90%;
+	}
+}
+
+.main-nav-scroll {
+	.block-login {
+		border-left: none;
+		padding-top: 20px;
+		padding-right: 0px;
+
+	}
+
+	.block-login__head, .registry {
+			display: none;
+			font-size: 0;
+		}
+
+	.ingress {
+		font-size: 0;
+		width: 45px;
+		height: 45px;
+		background: url("../img/ingress.png") no-repeat center;
+
+	}
+	.block-login__bbtn {
+		font-size: 0;
+		cursor: pointer;
 	}
 }
 

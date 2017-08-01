@@ -23,6 +23,13 @@
 	<script src="js/venders/bootstrap-multiselect.js"></script> 
 	<script src="js/venders/moment-with-locales.min.js"></script>
 	<script src="js/venders/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/venders/jquery.sticky.js"></script>
+	 <script> 
+    $(window).load(function(){ 
+    	$("#header-sticky-wrapper").sticky({ topSpacing: 0 }); 
+    	}); 
+    </script>
+
 
 
 	<link rel="stylesheet" href="css/venders/bootstrap-3.3.2.min.css">
@@ -48,6 +55,7 @@
 <div class="wrapper-x">
 	<div class="wrapper-y">
 	<!-- *************************** ШАПКА ***************************************- -->
+		<div id="header-sticky-wrapper" class="sticky-wrapper">
 		<div class="page-header-wr">
 		<header class="page-header">
 			<div class="page-header__top">
@@ -104,8 +112,8 @@
 			<div class="page-header__bottom">
 				<a href="index.html" class="main-logo page-header__logo"></a>
 				<div class="page-header__center">
-					<button type="button" id="add-car" class="bbtn bbtn--yellow bbtn--big"><span>Добавить транспорт</span></button>
-					<button type="button" id="bid" class="bbtn bbtn--yellow bbtn--big"><span>Оставить заявку на перевозку</span></button>
+					<a href="add-car.html" id="add-car" class="bbtn bbtn--yellow bbtn--big"><span>Добавить транспорт</span></a>
+					<a href="add-card.html" id="bid" class="bbtn bbtn--yellow bbtn--big"><span>Оставить заявку на перевозку</span></a>
 				</div>
 				<div class="page-header__left">
 					<a href="#" class="page-header__link bbtn-distances">Расчет расстояний</a>
@@ -114,9 +122,10 @@
 			</div>
 		</header>
 		</div>
+		</div>
 
 		<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
-		<div class="first-screen-page-bg news-bg">
+		<div class="first-screen-page-bg bg-page news-bg">
 			<div class="first-screen-page">
 				<div class="first-screen-page__title">
 					<h1>СТАТЬИ И НОВОСТИ</h1>
