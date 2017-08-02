@@ -1,0 +1,89 @@
+.private-office {
+
+
+	&__avatar  {
+		display: block;
+		margin: 0 auto;
+		width: 130px;
+		height: 130px;
+		border: 1px solid @color-lightgray;
+		border-radius: 50%;
+		background-color: @color-palegray;
+	}
+
+	&__out {
+		display: block;
+		width: 100px;
+		text-align: center;
+		margin: 15px auto 0;
+		.segoe-regular(16px);
+		color: @color-text-blue;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	&__out:hover, &__out:active, &__out:focus {
+		font-weight: bold;
+	}
+
+	&__status {
+		display: block;
+		width: 100%;
+		max-width: 280px;
+		margin: 10px auto;
+		padding: 7px 10px 9px;
+		line-height: 1.2;
+		.segoe-regular(16px);
+		border: 1px solid transparent;
+		border-radius: 5px;
+		text-align: center;
+	}
+
+	&__status.st-tested {
+		color: @color-tested;
+		border-color: @color-tested;
+	}
+
+	&__status.st-notested {
+		color: @color-notested;
+		border-color: @color-notested;
+	}
+
+	&__status.st-agent {
+		color: @color-agent;
+		border-color: @color-agent;
+	}
+
+	@media @tablet-widths {
+		.col-private-office {
+			width: 48%;
+			margin-bottom: 30px;
+		}
+
+	}
+
+	@media @mobil-widths {
+		h4 {font-size: 16px;}
+		.col-private-office {width: 100%;}
+		.col-private-office:first-child {margin-top: 250px;}
+		.col-private-office:last-child {
+			position: absolute;
+			top: 0;
+		}
+	}
+}
+
+.span-private-office {
+	display: inline-block;
+	.segoe-regular(16px);
+	color: @color-black;
+	padding-top: 20px;
+	@media @mobil-widths {width: 100%; padding-top: 15px;}
+
+}
+
+.span-private-office.blue {
+	color: @color-text-blue;
+	padding-left: 15px;
+	@media @mobil-widths {padding-top: 0; padding-left: 0;}
+}

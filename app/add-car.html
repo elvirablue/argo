@@ -33,8 +33,8 @@
 
 
 	<link rel="stylesheet" href="css/venders/bootstrap-3.3.2.min.css">
-	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker.min.css" />
-
+	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker.css" />
+	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker-standalone.css"/>
 	
 	<link rel="stylesheet" href="css/venders/jquery.arcticmodal-0.3.css">	
 	<script src="js/venders/jquery.arcticmodal-0.3.min.js"></script>
@@ -155,10 +155,10 @@
 							<div class="row-col">
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input param-reg" for="user-type-car">Тип кузова: </label>
+										<label class="lab-for-input param-reg" for="user-1-car">Тип кузова: </label>
 										<div class="input input--small">
 											<div class="user-input-bootstrap-wrapper">						
-											<select class="user-input-bootstrap" id="user-type-car" name="user-type-car">
+											<select class="user-input-bootstrap" id="user-1-car" name="user-1-car">
 										  		<option>1--------**********--</option>
 										  		<option>2--------------</option>
 										  		<option>3--***** ******-----</option>					  		
@@ -170,16 +170,16 @@
 
 								<div class="scan__block-col col-1-2">
 									<div class="ch_wrapper in-block">
-										<input id="radio01" type="radio" name="radio" value="radio01">
-										<label for="radio01">Полуприцеп</label>
+										<input id="user-2-1-car" type="radio" name="radio" value="user-2-1-car">
+										<label for="user-2-1-car">Полуприцеп</label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="radio02" type="radio" name="radio" value="radio02">
-										<label for="radio02">Грузовик</label>
+										<input id="user-2-2-car" type="radio" name="radio" value="user-2-2-car">
+										<label for="user-2-2-car">Грузовик</label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="radio03" type="radio" name="radio" value="radio03">
-										<label for="radio03">Сцепка</label>
+										<input id="user-2-3-car" type="radio" name="radio" value="user-2-3-car">
+										<label for="user-2-3-car">Сцепка</label>
 									</div>	
 								</div>
 							</div>
@@ -187,10 +187,10 @@
 							<div class="row-col">
 							<div class="scan__block-col col-1-2">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input" for="user-loading-car">Тип загрузки: </label>
+									<label class="lab-for-input" for="user-3-car">Тип загрузки: </label>
 									<div class="input input--small">
 										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-loading-car" name="user-loading-car">								
+										<select class="user-input-bootstrap" id="user-3-car" name="user-3-car">								
 									  		<option>Верхняя</option>
 									  		<option>Боковая</option>
 									  		<option>Задняя</option>					  		
@@ -200,16 +200,16 @@
 								</div>								
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input param-reg" for="user-carrying-car">Грузоподъемность, т: </label>
+									<label class="lab-for-input param-reg" for="user-4-car">Грузоподъемность, т: </label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-carrying-car" name="user-carrying-car">			
+										<input type="number" class="user-input" id="user-4-car" name="user-4-car">			
 									</div>
 								</div>
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input param-reg" for="user-weight-car">Объем, м<sup>3</sup>: </label>
+									<label class="lab-for-input param-reg" for="user-5-car">Объем, м<sup>3</sup>: </label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-weight-car" name="user-weight-car">			
+										<input type="number" class="user-input" id="user-5-car" name="user-5-car">			
 									</div>
 								</div>
 							</div>							
@@ -218,18 +218,18 @@
 							<div class="row-col">
 							
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input param-reg lab-large" for="user-size1-car">Внутренние габариты кузова (Д/Ш/В), м : </label>
+									<label class="lab-for-input param-reg lab-large" for="user-6-1-car">Внутренние габариты кузова (Д/Ш/В), м : </label>
 															
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-size1-car" name="user-size1-car">			
+										<input type="text" class="user-input" id="user-6-1-car" name="user-6-1-car">			
 									</div>
 									<label>X &nbsp;&nbsp;</label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-size2-car" name="user-size2-car">			
+										<input type="text" class="user-input" id="user-6-2-car" name="user-6-2-car">			
 									</div>
 									<label>X &nbsp;&nbsp;</label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-size3-car" name="user-size3-car">			
+										<input type="text" class="user-input" id="user-6-3-car" name="user-6-3-car">			
 									</div>
 									<p class="scan__text">Введите длину, ширину и высоту внутреннего пространства кузова </p>
 								</div>
@@ -243,27 +243,27 @@
 							<div class="row-col">
 								<div class="scan__block-col col-1-3">
 									<div class="ch_wrapper ">
-										<input id="check31" type="checkbox" name="check" value="check31">
-										<label for="check31">Медицинская книжка</label>
+										<input id="user-7-1-car" type="checkbox" name="check" value="user-7-1-car">
+										<label for="user-7-1-car">Медицинская книжка</label>
 									</div>
 									<div class="ch_wrapper ">
-										<input id="check32" type="checkbox" name="check" value="check32">
-										<label for="check32">Спецодежда для перевозки кормов и свиней </label>
+										<input id="user-7-2-car" type="checkbox" name="check" value="user-7-2-car">
+										<label for="user-7-2-car">Спецодежда для перевозки кормов и свиней </label>
 									</div>
 									<div class="ch_wrapper ">
-										<input id="check33" type="checkbox" name="check" value="check33">
-										<label for="check33">Пропуск на МКАД</label>
+										<input id="user-7-3-car" type="checkbox" name="check" value="user-7-3-car">
+										<label for="user-7-3-car">Пропуск на МКАД</label>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="ch_wrapper ">
-										<input id="check34" type="checkbox" name="check" value="check34">
-										<label for="check34">Экспедирование</label>
+										<input id="user-7-4-car" type="checkbox" name="check" value="user-7-4-car">
+										<label for="user-7-4-car">Экспедирование</label>
 									</div>
 									<div class="ch_wrapper ">
-										<input id="check35" type="checkbox" name="check" value="check35">
-										<label for="check35">Прохождение весового контроля в пути</label>
+										<input id="user-7-5-car" type="checkbox" name="check" value="user-7-5-car">
+										<label for="user-7-5-car">Прохождение весового контроля в пути</label>
 									</div>
 								</div>
 
@@ -273,16 +273,16 @@
 										<p class="scan__text">Проверку службой безопастности проходят только аккредитованные заказчики. <br>С остальными Вы работаете на свой страх и риск.</p>						
 
 										<div class="ch_wrapper ">
-											<input id="check36" type="checkbox" name="check" value="check36">
-											<label for="check36">Не проверен</label>
+											<input id="user-8-1-car" type="checkbox" name="check" value="user-8-1-car">
+											<label for="user-8-1-car">Не проверен</label>
 										</div>
 										<div class="ch_wrapper ">
-											<input id="check37" type="checkbox" name="check" value="check37">
-											<label for="check37">Полная аккредитация</label>
+											<input id="user-8-2-car" type="checkbox" name="check" value="user-8-2-car">
+											<label for="user-8-2-car">Полная аккредитация</label>
 										</div>
 										<div class="ch_wrapper ">
-											<input id="check38" type="checkbox" name="check" value="check38">
-											<label for="check38">Прошел первичную аккредитацию</label>
+											<input id="user-8-3-car" type="checkbox" name="check" value="user-8-3-car">
+											<label for="user-8-3-car">Прошел первичную аккредитацию</label>
 										</div>
 									</div>
 								</div>
@@ -294,32 +294,32 @@
 							<p class="scan__step-head"><span class="text-blue">Шаг 3</span> Когда</p>
 							<div class="row-col">
 								<div class="ch_wrapper m-bottom">
-									<input id="radio11" type="radio" name="radio" value="radio11">
-									<label for="radio11">Готов к загрузке <b>(с сегодняшнего дня +2 дня)</b></label>
+									<input id="user-9-1-car" type="radio" name="radio" value="user-9-1-car">
+									<label for="user-9-1-car">Готов к загрузке <b>(с сегодняшнего дня +2 дня)</b></label>
 								</div>
 								<div class="ch_wrapper m-bottom">
-									<input id="radio12" type="radio" name="radio" value="radio12">
-									<label for="radio12">С&nbsp;&nbsp;&nbsp;</label>
+									<input id="user-9-2-car" type="radio" name="radio" value="user-9-2-car">
+									<label for="user-9-2-car">С&nbsp;&nbsp;&nbsp;</label>
 									<div class="input input--small input--date">
-										<input type="text" class="datetimepicker6 user-input" id="user-date-begin-car" name="user-date-begin-car">							
+										<input type="text" class="datetimepicker6 user-input" id="user-9-2-1-car" name="user-9-2-1-car">							
 									</div>
 									<span class="wr">
-									<label for="radio12">&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</label>
-									<div class="input input--small input--km">
-										<input type="number" class="user-input required" id="user-whence-plus-car" name="user-whence-plus-car">										
+									<label>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</label>
+									<div class="input input--small input--day">
+										<input type="number" class="user-input required" id="user-9-2-2-car" name="user-9-2-2-car">										
 									</div>
 
-									<label for="radio12">&nbsp;&nbsp;&nbsp;дней</label>
+									<label for="user-9-2-2-car">&nbsp;&nbsp;&nbsp;дней</label>
 									</span>
 
 								</div>
 								<div class="ch_wrapper m-bottom">
-									<input id="radio13" type="radio" name="radio" value="radio13">
-									<label for="radio13">Постоянно&nbsp;&nbsp;&nbsp;</label>
+									<input id="user-9-3-car" type="radio" name="radio" value="user-9-3-car">
+									<label for="user-9-3-car">Постоянно&nbsp;&nbsp;&nbsp;</label>
 									<span class="wr">
 									<div class="input input--small input--time">
 										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-time-car" name="user-time-car">
+										<select class="user-input-bootstrap" id="user-9-3-1-car" name="user-9-3-1-car">
 									  		<option>В течение 1 месяца</option>
 									  		<option>В течение 6 месяцев</option>
 									  		<option>В течение 1 года</option>
@@ -329,7 +329,7 @@
 									</div>
 									</span>
 									<span class="wr">
-									<label for="radio13">&nbsp;&nbsp;&nbsp;<b>(с сегодняшнего дня +2 дня)</b></label></span>
+									<label>&nbsp;&nbsp;&nbsp;<b>(с сегодняшнего дня +2 дня)</b></label></span>
 								</div>	
 							</div>
 							<p class="scan__text">В течении этого времени заявка будет находится в системе, после чего будет автоматически удалена.<br>Если заявка потеряет актуальность раньше, не забудьте её удалить из системы.</p>
@@ -340,13 +340,13 @@
 							<p class="scan__step-head"><span class="text-blue">Шаг 4</span> Оплата</p>
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input" for="user-rate-car">Минимальная ставка: </label>
+									<label class="lab-for-input" for="user-10-car">Минимальная ставка: </label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-rate-car" name="user-rate-car">			
+										<input type="number" class="user-input" id="user-rate-car" name="user-10-car">			
 									</div>
 									<div class="input input--small ">
 										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-rate-ed-car" name="user-rate-ed-car">								
+										<select class="user-input-bootstrap" id="user-10-1-car" name="user-10-1-car">								
 									  		<option>руб./км</option>
 									  		<option>руб./км</option>				  						  		
 										</select>
@@ -357,20 +357,20 @@
 								<div class="wrapper m-bottom">
 									<label class="lab-for-input" for="">Способ оплаты: </label>
 									<div class="ch_wrapper in-block">
-										<input id="check41" type="checkbox" name="check" value="check41">
-										<label for="check41">Безналичный</label>
+										<input id="user-11-1-car" type="checkbox" name="check" value="user-11-1-car">
+										<label for="user-11-1-car">Безналичный</label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="check42" type="checkbox" name="check" value="check42">
-										<label for="check42">Наличный</label>
+										<input id="user-11-2-car" type="checkbox" name="check" value="user-11-2-car">
+										<label for="user-11-2-car">Наличный</label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="check43" type="checkbox" name="check" value="check43">
-										<label for="check43">НДС</label>
+										<input id="user-11-3-car" type="checkbox" name="check" value="user-11-3-car">
+										<label for="user-11-3-car">НДС</label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="check44" type="checkbox" name="check" value="check44">
-										<label for="check44">На карту</label>
+										<input id="user-11-4-car" type="checkbox" name="check" value="user-11-4-car">
+										<label for="user-11-4-car">На карту</label>
 									</div>
 								</div>
 							</div>
@@ -381,7 +381,7 @@
 							<p class="scan__step-head"><span class="text-blue">Шаг 5</span> Примечание</p>
 							<div class="row-col">
 								<div class="input input-area">
-									<textarea name="user-text" id="user_text" cols="7" rows="10" class="user-input area" maxlength="1500"></textarea>
+									<textarea name="user-12-car" id="user-12-car" cols="7" rows="10" class="user-input area" maxlength="1500"></textarea>
 									<i>Введите дополнительную информацию. Запрещается размещать контактную информацию (телефоны, #ICQ и т.д.)</i>
 								</div>
 							</div>
@@ -394,27 +394,27 @@
 								<label class="lab-for-input lab-max lab-title">Свидетельство о регистрации ТС:</label>
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-pts1-car">ТС: </label>
+										<label class="lab-for-input lab-min" for="user-13-car">ТС: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-pts1-car" name="user-pts1-car">			
+											<input type="text" class="user-input" id="user-13-car" name="user-13-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-pts2-car">Серия: </label>
+										<label class="lab-for-input lab-min" for="user-14-car">Серия: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-pts2-car" name="user-pts2-car">			
+											<input type="text" class="user-input" id="user-14-car" name="user-14-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-pts3-car">Номер: </label>
+										<label class="lab-for-input lab-min" for="user-15-car">Номер: </label>
 										<div class="input input--small input--large">
-											<input type="number" class="user-input" id="user-pts3-car" name="user-pts3-car">			
+											<input type="number" class="user-input" id="user-15-car" name="user-15-car">			
 										</div>
 									</div>
 								</div>								
@@ -422,44 +422,44 @@
 
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-pts4-car">Гос. регистрационный знак:  </label>
+									<label class="lab-for-input lab-large" for="user-16-car">Гос. регистрационный знак:  </label>
 									<div class="input input--small input--large">
-										<input type="text" class="user-input" id="user-pts4-car" name="user-pts4-car">			
+										<input type="text" class="user-input" id="user-16-car" name="user-16-car">			
 									</div>
 								</div>
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-pts5-car">Дата регистрации:  </label>
+									<label class="lab-for-input lab-large" for="user-17-car">Дата регистрации:  </label>
 									<div class="input input--small input--date">
-										<input type="text" class="datetimepicker6 user-input" id="user-pts5-car" name="user-pts5-car">							
+										<input type="text" class="datetimepicker6 user-input" id="user-17-car" name="user-17-car">							
 									</div>
 								</div>								
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-pts6-car">Выдано ГИБДД:  </label>
+									<label class="lab-for-input lab-large" for="user-18-car">Выдано ГИБДД:  </label>
 									<div class="input input--small input--max">
-										<input type="text" class="user-input" id="user-pts6-car" name="user-pts6-car">			
+										<input type="text" class="user-input" id="user-18-car" name="user-18-car">			
 									</div>
 								</div>
 
 								<div class="wrapper m-bottom">	
-									<label class="lab-for-input lab-large" for="user-pts6-car"> </label>								
+									<label class="lab-for-input lab-large" for="user-19-car"> </label>								
 									<div class="input input--small input--large">
-										<input type="text" class="user-input" id="user-pts7-car" name="user-pts7-car">			
+										<input type="text" class="user-input" id="user-19-car" name="user-19-car">			
 									</div>
 								</div>
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-pts8-car">Отметка о снятии с учета:  </label>
+									<label class="lab-for-input lab-large" for="user-20-car">Отметка о снятии с учета:  </label>
 									<div class="input input--small input--large">
-										<input type="text" class="user-input" id="user-pts8-car" name="user-pts8-car">			
+										<input type="text" class="user-input" id="user-20-car" name="user-20-car">			
 									</div>
 								</div>
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-pts8-car">Дата снятия с учета:  </label>
+									<label class="lab-for-input lab-large" for="user-21-car">Дата снятия с учета:  </label>
 									<div class="input input--small input--date">
-										<input type="text" class="datetimepicker6 user-input" id="user-pts8-car" name="user-pts8-car">							
+										<input type="text" class="datetimepicker6 user-input" id="user-21-car" name="user-21-car">							
 									</div>
 								</div>
 							</div>
@@ -478,27 +478,27 @@
 								<label class="lab-for-input lab-max lab-title">Собственник:</label>
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-owner1-car">Фамилия: </label>
+										<label class="lab-for-input lab-min" for="user-23-car">Фамилия: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner1-car" name="user-owner1-car">			
+											<input type="text" class="user-input" id="user-23-car" name="user-23-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-owner2-car">&nbsp;&nbsp;&nbsp;Имя: </label>
+										<label class="lab-for-input lab-min p-left" for="user-24-car">Имя: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner2-car" name="user-owner2-car">			
+											<input type="text" class="user-input" id="user-24-car" name="user-24-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-owner3-car">Отчество: </label>
+										<label class="lab-for-input lab-min" for="user-25-car">Отчество: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner3-car" name="user-owner3-car">			
+											<input type="text" class="user-input" id="user-25-car" name="user-25-car">			
 										</div>
 									</div>
 								</div>					
@@ -507,27 +507,27 @@
 							<div class="row-col">								
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-owner4-car">ИНН: </label>
+										<label class="lab-for-input lab-min" for="user-26-car">ИНН: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner4-car" name="user-owner4-car">			
+											<input type="text" class="user-input" id="user-26-car" name="user-26-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-owner5-car">КПП: </label>
+										<label class="lab-for-input lab-min p-left" for="user-27-car">КПП: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner5-car" name="user-owner5-car">			
+											<input type="text" class="user-input" id="user-27-car" name="user-27-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-owner6-car">ОГРН: </label>
+										<label class="lab-for-input lab-min p-left" for="user-28-car">ОГРН: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner6-car" name="user-owner6-car">			
+											<input type="text" class="user-input" id="user-28-car" name="user-28-car">			
 										</div>
 									</div>
 								</div>					
@@ -536,17 +536,17 @@
 							<div class="row-col">								
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-owner7-car">Расч/сч: </label>
+										<label class="lab-for-input lab-min" for="user-29-car">Расч/сч: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner7-car" name="user-owner7-car">			
+											<input type="text" class="user-input" id="user-29-car" name="user-29-car">			
 										</div>
 									</div>
 								</div>
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-owner8-car">В банке: </label>
+										<label class="lab-for-input lab-min p-left" for="user-30-car">В банке: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-owner8-car" name="user-owner8-car">			
+											<input type="text" class="user-input" id="user-30-car" name="user-30-car">			
 										</div>
 									</div>
 								</div>
@@ -554,16 +554,16 @@
 
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-owner9-car">Юридический адрес: </label>
+									<label class="lab-for-input lab-large" for="user-3132-car">Юридический адрес: </label>
 									<div class="input input--small input--max">
-										<input type="text" class="user-input" id="user-owner9-car" name="user-owner9-car">			
+										<input type="text" class="user-input" id="user-3132-car" name="user-3132-car">			
 									</div>
 								</div>
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-owner10-car">Фактический адрес:&nbsp;&nbsp; </label>
+									<label class="lab-for-input lab-large" for="user-32-car">Фактический адрес:&nbsp;&nbsp; </label>
 									<div class="input input--small input--max">
-										<input type="text" class="user-input" id="user-owner10-car" name="user-owner10-car">			
+										<input type="text" class="user-input" id="user-32-car" name="user-32-car">			
 									</div>
 								</div>
 
@@ -575,27 +575,27 @@
 								<label class="lab-for-input lab-max lab-title">Водитель:</label>
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-driver1-car">Фамилия: </label>
+										<label class="lab-for-input lab-min" for="user-33-car">Фамилия: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-driver1-car" name="user-driver1-car">			
+											<input type="text" class="user-input" id="user-33-car" name="user-33-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-driver2-car">Имя: </label>
+										<label class="lab-for-input lab-min p-left" for="user-34-car">Имя: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-driver2-car" name="user-driver2-car">			
+											<input type="text" class="user-input" id="user-34-car" name="user-34-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-driver3-car">Отчество: </label>
+										<label class="lab-for-input lab-min" for="user-35-car">Отчество: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-driver3-car" name="user-driver3-car">			
+											<input type="text" class="user-input" id="user-35-car" name="user-35-car">			
 										</div>
 									</div>
 								</div>					
@@ -604,9 +604,9 @@
 							<div class="row-col">
 								
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-large" for="user-driver4-car">Регистрационная карточка: </label>
+										<label class="lab-for-input lab-large" for="user-36-car">Регистрационная карточка: </label>
 										<div class="input input--small input--large">
-											<input type="text" class="user-input" id="user-driver4-car" name="user-driver4-car">			
+											<input type="text" class="user-input" id="user-36-car" name="user-36-car">			
 										</div>
 									</div>
 								
@@ -615,9 +615,9 @@
 							<div class="row-col">
 								
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-large" for="user-driver5-car">Удостоверение №:</label>
+										<label class="lab-for-input lab-large" for="user-37-car">Удостоверение №:</label>
 										<div class="input input--small input--large">
-											<input type="text" class="user-input" id="user-driver5-car" name="user-driver5-car">			
+											<input type="text" class="user-input" id="user-37-car" name="user-37-car">			
 										</div>
 									</div>
 								
@@ -626,27 +626,27 @@
 							<div class="row-col">								
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-driver6-car">Рег. №: </label>
+										<label class="lab-for-input lab-min" for="user-38-car">Рег. №: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-driver6-car" name="user-driver6-car">			
+											<input type="text" class="user-input" id="user-38-car" name="user-38-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-driver7-car">Серия: </label>
+										<label class="lab-for-input lab-min" for="user-39-car">Серия: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-driver7-car" name="user-driver7-car">			
+											<input type="text" class="user-input" id="user-39-car" name="user-39-car">			
 										</div>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-driver8-car">Номер:  </label>
+										<label class="lab-for-input lab-min" for="user-40-car">Номер:  </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-driver8-car" name="user-driver8-car">			
+											<input type="text" class="user-input" id="user-40-car" name="user-40-car">			
 										</div>
 									</div>
 								</div>					

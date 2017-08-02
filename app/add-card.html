@@ -33,7 +33,8 @@
 
 
 	<link rel="stylesheet" href="css/venders/bootstrap-3.3.2.min.css">
-	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker.css" />
+	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker-standalone.css"/>
 
 	
 	<link rel="stylesheet" href="css/venders/jquery.arcticmodal-0.3.css">	
@@ -172,9 +173,9 @@
 
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-1dop-card">Другой: </label>
+										<label class="lab-for-input lab-min p-left" for="user-1-1-card">Другой: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-1dop-card" name="user-1dop-card">			
+											<input type="text" class="user-input" id="user-1-1-card" name="user-1-1-card">			
 										</div>
 									</div>
 								</div>
@@ -238,17 +239,17 @@
 
 							<div class="row-col">								
 								<div class="wrapper m-bottom">	
-									<label class="lab-for-input" for="user-7-card">Габариты (Д/Ш/В), м : </label>								
+									<label class="lab-for-input" for="user-7-1-card">Габариты (Д/Ш/В), м : </label>								
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-7-card" name="user-7-card">			
+										<input type="number" class="user-input" id="user-7-1-card" name="user-7-1-card">			
 									</div>
 									<label>X &nbsp;&nbsp;</label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-8-card" name="user-7-card">			
+										<input type="number" class="user-input" id="user-7-2-card" name="user-7-2-card">			
 									</div>
 									<label>X &nbsp;&nbsp;</label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-9-card" name="user-7-card">			
+										<input type="number" class="user-input" id="user-7-3-card" name="user-7-3-card">			
 									</div>
 								</div>							
 							</div>
@@ -256,10 +257,10 @@
 							<div class="row-col">
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper">
-										<label class="lab-for-input " for="user-10-card"> </label>
+										<label class="lab-for-input " for="user-8-card"> </label>
 										<div class="input input--small input--large param-reg">
 											<div class="user-input-bootstrap-wrapper">						
-												<select class="user-input-bootstrap" id="user-10-card" name="user-10-card">
+												<select class="user-input-bootstrap" id="user-8-card" name="user-8-card">
 									  				<option>Нажмите, чтобы выбрать</option>
 									  				<option>2--------------</option>
 									  				<option>*******************</option>					  		
@@ -271,8 +272,8 @@
 
 								<div class="scan__block-col col-1-2">
 									<div class="ch_wrapper in-block m-left">
-										<input id="check11" type="checkbox" name="check" value="check11">
-										<label for="check11">Сборный груз</label>
+										<input id="user-9-card" type="checkbox" name="check" value="user-9-card">
+										<label for="user-9-card">Сборный груз</label>
 									</div>
 								</div>
 								
@@ -287,10 +288,10 @@
 							<div class="row-col">
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input param-reg" for="user-11-card">Тип кузова: </label>
+										<label class="lab-for-input param-reg" for="user-10-card">Тип кузова: </label>
 										<div class="input input--small">
 											<div class="user-input-bootstrap-wrapper">						
-											<select class="user-input-bootstrap" id="user-11-card" name="user-11-card">
+											<select class="user-input-bootstrap" id="user-10-card" name="user-10-card">
 										  		<option>1--------**********--</option>
 										  		<option>2--------------</option>
 										  		<option>3--***** ******-----</option>					  		
@@ -304,7 +305,31 @@
 							<div class="row-col">
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input" for="user-12-card">Тип загрузки: </label>
+										<label class="lab-for-input" for="user-11-card">Тип загрузки: </label>
+										<div class="input input--small">
+											<div class="user-input-bootstrap-wrapper">						
+											<select class="user-input-bootstrap"  multiple="multiple" id="user-11-card" name="user-11-card">
+										  		<option>1--------**********--</option>
+										  		<option>2--------------</option>
+										  		<option>3--***** ******-----</option>					  		
+											</select>
+											</div>																
+										</div>
+									</div>
+
+									<div class="ch_wrapper m-left">
+										<input id="user-11-1-card" type="radio" name="radio" value="user-11-1-card">
+										<label for="user-11-1-card">"или" (любой из выбранных)</label>
+									</div>
+									<div class="ch_wrapper m-left m-bottom m-bottom-mobil">
+										<input id="user-11-2-card" type="radio" name="radio" value="user-11-2-card">
+										<label for="user-11-2-card">"и" (все обязательны)</label>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-2">
+									<div class="wrapper m-bottom ">
+										<label class="lab-for-input p-left" for="user-12-card">Тип выгрузки: </label>
 										<div class="input input--small">
 											<div class="user-input-bootstrap-wrapper">						
 											<select class="user-input-bootstrap"  multiple="multiple" id="user-12-card" name="user-12-card">
@@ -317,36 +342,12 @@
 									</div>
 
 									<div class="ch_wrapper m-left">
-										<input id="radio12-1" type="radio" name="radio" value="radio12-1">
-										<label for="radio12-1">"или" (любой из выбранных)</label>
+										<input id="user-12-1-card" type="radio" name="radio" value="user-12-1-card">
+										<label for="user-12-1-card">"или" (любой из выбранных)</label>
 									</div>
 									<div class="ch_wrapper m-left m-bottom m-bottom-mobil">
-										<input id="radio12-2" type="radio" name="radio" value="radio12-2">
-										<label for="radio12-2">"и" (все обязательны)</label>
-									</div>
-								</div>
-
-								<div class="scan__block-col col-1-2">
-									<div class="wrapper m-bottom ">
-										<label class="lab-for-input p-left" for="user-13-card">Тип выгрузки: </label>
-										<div class="input input--small">
-											<div class="user-input-bootstrap-wrapper">						
-											<select class="user-input-bootstrap"  multiple="multiple" id="user-13-card" name="user-13-card">
-										  		<option>1--------**********--</option>
-										  		<option>2--------------</option>
-										  		<option>3--***** ******-----</option>					  		
-											</select>
-											</div>																
-										</div>
-									</div>
-
-									<div class="ch_wrapper m-left">
-										<input id="radio13-1" type="radio" name="radio" value="radio13-1">
-										<label for="radio13-1">"или" (любой из выбранных)</label>
-									</div>
-									<div class="ch_wrapper m-left m-bottom m-bottom-mobil">
-										<input id="radio13-2" type="radio" name="radio" value="radio13-2">
-										<label for="radio13-2">"и" (все обязательны)</label>
+										<input id="user-12-2-card" type="radio" name="radio" value="user-12-2-card">
+										<label for="user-12-2-card">"и" (все обязательны)</label>
 									</div>
 									
 								</div>
@@ -355,9 +356,9 @@
 							<div class="row-col">
 								<div class="wrapper m-bottom">
 									<br>
-									<label class="lab-for-input lab-min param-reg" for="user-143-card">Объем, м<sup>3</sup>: </label>
+									<label class="lab-for-input lab-min param-reg" for="user-13-card">Объем, м<sup>3</sup>: </label>
 									<div class="input input--small input--min">
-										<input type="text" class="user-input" id="user-14-card" name="user-143-card">			
+										<input type="text" class="user-input" id="user-13-card" name="user-13-card">			
 									</div>
 								</div>
 							</div>
@@ -371,11 +372,11 @@
 								<div class="scan__block-col col-1-2">
 									<div class="row-col">
 										<div class="ch_wrapper m-bottom">
-											<input id="radio12" type="radio" name="radio" value="radio12">
-											<label class="m-bottom" for="radio12">Готов к загрузке &nbsp;&nbsp;</label>
+											<input id="user-14-1-card" type="radio" name="radio" value="user-14-1-card">
+											<label class="m-bottom" for="user-14-1-card">Готов к загрузке &nbsp;&nbsp;</label>
 											<div class="input input--small input--large">
 												<div class="user-input-bootstrap-wrapper">						
-													<select class="user-input-bootstrap" id="user-12-card" name="user-12-card">
+													<select class="user-input-bootstrap" id="user-14-1-1-card" name="user-14-1-card">
 										  				<option>Нажмите, чтобы выбрать</option>
 										  				<option>2--------------</option>
 										  				<option>*******************</option>					  		
@@ -384,28 +385,28 @@
 											</div>	
 										</div>
 										<div class="ch_wrapper m-bottom">
-											<input id="radio13" type="radio" name="radio" value="radio13">
-											<label for="radio13">С&nbsp;&nbsp;&nbsp;</label>
+											<input id="user-14-2-card" type="radio" name="radio" value="user-14-2-card">
+											<label for="user-14-2-card">С&nbsp;&nbsp;&nbsp;</label>
 											<div class="input input--small input--date">
-												<input type="text" class="datetimepicker6 user-input" id="user-13-card" name="user-13-card">							
+												<input type="text" class="datetimepicker6 user-input" id="user-14-2-1-card" name="user-14-2-1-card">							
 											</div>
 											<span class="wr">
-												<label for="radio13">&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</label>
-												<div class="input input--small input--km">
-													<input type="text" class="user-input required" id="user-14-card" name="user-14-card">										
+												<label>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</label>
+												<div class="input input--small input--day">
+													<input type="text" class="user-input required" id="user-14-2-2-card" name="user-14-2-2-card">										
 												</div>
 
-												<label for="radio13">&nbsp;&nbsp;&nbsp;дней</label>
+												<label for="user-14-2-2-card">&nbsp;&nbsp;&nbsp;дней</label>
 											</span>
 
 										</div>
 										<div class="ch_wrapper m-bottom">
-											<input id="radio15" type="radio" name="radio" value="radio15">
-											<label for="radio15">Постоянно&nbsp;&nbsp;&nbsp;</label>
+											<input id="user-14-3-card" type="radio" name="radio" value="user-14-3-card">
+											<label for="user-14-3-card">Постоянно&nbsp;&nbsp;&nbsp;</label>
 											<span class="wr">
 												<div class="input input--small input--time">
 													<div class="user-input-bootstrap-wrapper">						
-													<select class="user-input-bootstrap" id="user-15-card" name="user-15-card">
+													<select class="user-input-bootstrap" id="user-14-3-1-card" name="user-14-3-1-card">
 												  		<option>В течение 1 месяца</option>
 												  		<option>В течение 6 месяцев</option>
 												  		<option>В течение 1 года</option>
@@ -415,7 +416,7 @@
 												</div>
 											</span>
 											<span class="wr">
-												<label for="radio15">&nbsp;&nbsp;&nbsp;<b>(с сегодняшнего дня +2 дня)</b></label>
+												<label for="user-14-3-1-card">&nbsp;&nbsp;&nbsp;<b>(с сегодняшнего дня + 2 дня)</b></label>
 											</span>
 										</div>	
 									</div>
@@ -426,31 +427,31 @@
 								<div class="scan__block-col col-1-2">
 									
 									<div class="wrapper m-bottom m-left">
-										<label for="user-16-card" class="lab-for-input lab-min">Время заргузки:&nbsp;&nbsp;</label>
+										<label for="user-15-1-card" class="lab-for-input lab-min">Время заргузки:&nbsp;&nbsp;</label>
 										<div class="wr">
 											<label> &nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;</label>
 											<div class="input input--small input--hour">
-												<input type="text" class="datetimepicker3 user-input" id="user-16-1-card" name="user-16-card">					
+												<input type="text" class="datetimepicker3 user-input" id="user-15-1-card" name="user-15-1-card">					
 											</div>										
 									
 											<label> &nbsp;&nbsp;по&nbsp;&nbsp;</label>
 											<div class="input input--small input--hour">
-												<input type="text" class="datetimepicker3 user-input" id="user-16-2-card" name="user-16-card">					
+												<input type="text" class="datetimepicker3 user-input" id="user-15-2-card" name="user-15-2-card">					
 											</div>
 										</div>										
 									</div>
 
 									<div class="wrapper m-bottom m-left">
-										<label for="user-17-card" class="lab-for-input lab-min">Время разгрузки:</label>
+										<label for="user-16-1-card" class="lab-for-input lab-min">Время разгрузки:</label>
 										<div class="wr">
 											<label> &nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;</label>
 											<div class="input input--small input--hour">
-												<input type="text" class="datetimepicker3 user-input" id="user-17-1-card" name="user-17-card">					
+												<input type="text" class="datetimepicker3 user-input" id="user-16-1-card" name="user-16-1-card">					
 											</div>										
 									
 											<label> &nbsp;&nbsp;по&nbsp;&nbsp;</label>
 											<div class="input input--small input--hour">
-												<input type="text" class="datetimepicker3 user-input" id="user-17-1-card" name="user-17-card">					
+												<input type="text" class="datetimepicker3 user-input" id="user-16-2-card" name="user-16-2-card">					
 											</div>
 										</div>										
 									</div>
@@ -466,10 +467,10 @@
 							<p class="scan__step-head"><span class="text-blue">Шаг 4</span> Оплата</p>
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input">Ставка: </label>
+									<label class="lab-for-input" for="user-17-1-card">Ставка: </label>
 									<div class="input input--small input--stavka param-reg m-bottom-mobil">
 										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-18-card" name="user-18-card">
+										<select class="user-input-bootstrap" id="user-17-1-card" name="user-17-1-card">
 									  		<option>Любая</option>
 									  		<option>****************</option>
 									  		<option>****************</option>		  						  		
@@ -477,12 +478,12 @@
 										</div>																
 									</div>
 									<div class="input input--small input--short m-left m-bottom-mobil">
-										<input type="text" class="user-input" id="user-19-card" name="user-19-card">
+										<input type="text" class="user-input" id="user-17-2-card" name="user-17-2-card">
 									</div>
 
 									<div class="input input--small m-left">
 										<div class="user-input-bootstrap-wrapper">						
-											<select class="user-input-bootstrap" id="user-20-card" name="user-20-card">
+											<select class="user-input-bootstrap" id="user-17-3-card" name="user-17-3-card">
 									  			<option>руб./км</option>
 									  			<option>руб./км</option>			  						  		
 											</select>
@@ -494,10 +495,10 @@
 
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input">Ставка б/нал с НДС: </label>
+									<label class="lab-for-input" for="user-18-1-card">Ставка б/нал с НДС: </label>
 									<div class="input input--small input--stavka param-reg">
 										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-21-card" name="user-21-card">
+										<select class="user-input-bootstrap" id="user-18-1-card" name="user-18-1-card">
 									  		<option>Любая</option>
 									  		<option>****************</option>
 									  		<option>****************</option>		  						  		
@@ -505,16 +506,16 @@
 										</div>																
 									</div>
 									<div class="input input--small input--short m-left">
-										<input type="text" class="user-input" id="user-22-card" name="user-22-card">
+										<input type="text" class="user-input" id="user-18-2-card" name="user-18-2-card">
 									</div>
 									
 								</div>
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input">Ставка б/нал без НДС: </label>
+									<label class="lab-for-input" for="user-19-1-card">Ставка б/нал без НДС: </label>
 									<div class="input input--small input--stavka param-reg">
 										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-23-card" name="user-23-card">
+										<select class="user-input-bootstrap" id="user-19-1-card" name="user-19-1-card">
 									  		<option>Любая</option>
 									  		<option>****************</option>
 									  		<option>****************</option>		  						  		
@@ -522,7 +523,7 @@
 										</div>																
 									</div>
 									<div class="input input--small input--short m-left">
-										<input type="text" class="user-input" id="user-24-card" name="user-24-card">
+										<input type="text" class="user-input" id="user-19-2-card" name="user-19-2-card">
 									</div>
 									
 								</div>
@@ -532,12 +533,12 @@
 							<div class="row-col">
 								<div class="wrapper">									
 									<div class="ch_wrapper in-block">
-										<input id="check25" type="checkbox" name="check" value="check25">
-										<label for="check25">Запрос ставки </label>
+										<input id="user-20-1-card" type="checkbox" name="check" value="user-20-1-card">
+										<label for="user-20-1-card">Запрос ставки </label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="check26" type="checkbox" name="check" value="check26">
-										<label for="check26">Возможен торг </label>
+										<input id="user-20-2-card" type="checkbox" name="check" value="user-20-2-card">
+										<label for="user-20-2-card">Возможен торг </label>
 									</div>
 								</div>
 
@@ -547,10 +548,10 @@
 							<div class="row-col">
 								<div class="wrapper in-block">									
 									<div class="ch_wrapper in-block">
-										<input id="check27" type="checkbox" name="check" value="check27">
-										<label for="check27">Предоплата</label>
+										<input id="user-21-card" type="checkbox" name="check" value="user-21-card">
+										<label for="user-21-card">Предоплата</label>
 										<div class="input input--small input--short m-left">
-											<input type="text" class="user-input" id="user-28card" name="user-28-card">
+											<input type="text" class="user-input" id="user-21-1-card" name="user-21-1-card">
 										</div>
 										<label>%</label>
 									</div>
@@ -558,25 +559,25 @@
 								</div>
 								<div class="wrapper in-block">
 									<div class="ch_wrapper in-block">
-										<input id="check29" type="checkbox" name="check" value="check29">
-										<label for="check29">На выгрузке</label>
+										<input id="user-22-card" type="checkbox" name="check" value="user-22-card">
+										<label for="user-22-card">На выгрузке</label>
 									</div>
 								</div>
 								<div class="wrapper in-block">
 									<div class="ch_wrapper in-block">
-										<input id="check30" type="checkbox" name="check" value="check30">
-										<label for="check30">Через банк</label>
+										<input id="user-23-card" type="checkbox" name="check" value="user-23-card">
+										<label for="user-23-card">Через банк</label>
 										<div class="input input--small input--short m-left">
-											<input type="text" class="user-input" id="user-31-card" name="user-31-card">
+											<input type="text" class="user-input" id="user-24-card" name="user-24-card">
 										</div>
-										<label>дней</label>
+										<label for="user-24-card">дней</label>
 									</div>
 								</div>
 
 								<div class="wrapper">
 									<div class="ch_wrapper in-block">
-										<input id="check32" type="checkbox" name="check" value="check32">
-										<label for="check32">Прямой договор</label>
+										<input id="user-25-card" type="checkbox" name="check" value="user-25-card">
+										<label for="user-25-card">Прямой договор</label>
 									</div>
 								</div>
 
@@ -591,7 +592,7 @@
 							<p class="scan__step-head"><span class="text-blue">Шаг 5</span> Примечание</p>
 							<div class="row-col">
 								<div class="input input-area">
-									<textarea name="user-text" id="user_text" cols="7" rows="10" class="user-input area" maxlength="1500"></textarea>
+									<textarea name="user-26-card" id="user-26-card" cols="7" rows="10" class="user-input area" maxlength="1500"></textarea>
 									<i>Введите дополнительную информацию. Запрещается размещать контактную информацию (телефоны, #ICQ и т.д.)</i>
 								</div>
 							</div>

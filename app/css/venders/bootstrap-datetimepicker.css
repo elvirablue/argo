@@ -5,14 +5,35 @@
  */
 .bootstrap-datetimepicker-widget {
   list-style: none;
+
 }
 .bootstrap-datetimepicker-widget.dropdown-menu {
-  display: block;
+  display: none;
   margin: 2px 0;
   padding: 4px;
   width: 19em;
 }
-@media (min-width: 768px) {
+
+@media (max-width: 480px) {
+  .bootstrap-datetimepicker-widget  {
+    position: fixed !important;
+    top: 150px !important;
+    left: 10vw !important;
+    width: 90vw !important;
+    
+  }
+  .bootstrap-datetimepicker-widget.dropdown-menu {
+   position: absolute;
+    width: 80% !important;
+    left: 10%;
+    right: 10%;
+    height: 250px;
+  }
+}
+
+
+
+@media (min-width: 480px) {
   .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
     width: 38em;
   }

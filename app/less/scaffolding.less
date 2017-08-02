@@ -114,6 +114,35 @@ label {
 	margin: 0;
 }
 
+.in-block {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0;
+    margin-right: 20px;
+}
+
+i.help {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	background-color: transparent;
+	border: 1px solid @color-gray;
+	border-radius: 50%;
+	color: @color-gray;
+	.segoe-regular(12px);
+	font-style: normal;
+	margin-left: 7px;
+	cursor: pointer;
+}
+
+i.help:hover {
+	border-color: @color-black;
+	background-color: @color-black;
+	color: @color-white;
+	
+}
+
 .caps {
 	text-transform: uppercase;
 }

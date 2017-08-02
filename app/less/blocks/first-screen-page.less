@@ -6,24 +6,6 @@
 	background-position: center;
 }
 
-.bg-page {
-	position: relative;
-	z-index: 100;	
-	background-position: top center;
-	height: 500px;
-
-	@media @tablet-widths {		
-		height: 410px;
-	}
-
-	@media @mobil-widths {
-		height: 220px;
-	}
-}
-
-.news-bg {background-image: url("../img/bg-news.jpg");}
-.add-car-bg {background-image: url("../img/bg-add-car-head.jpg");}
-.add-card-bg {background-image: url("../img/bg-add-card-head.jpg");}
 
 .first-screen-page {
 	.container-fluid();
@@ -47,11 +29,12 @@
 		}
 
 		h1 {
-			.segoe-regular(68px);
+			.segoe-regular(64px);
+			text-align: center;
 			font-weight: bold;
 			color: @color-black;			
 			@media @tablet-widths {
-				font-size: 68px;
+				font-size: 48px;
 			}
 
 			@media @mobil-widths {
@@ -62,5 +45,77 @@
 
 	}
 
+	&__title.title-left {
+		display: block;
+		width: auto;
+		margin-left: 0;
+		padding: 0 160px 0 30px;
+		background-color: transparent;
+		@media @mobil-widths {padding: 0 ;}
+		h1 {text-align: left;}
+	}
 
+
+}
+
+
+.bg-page {
+	position: relative;
+	z-index: 100;	
+	background-position: top center;
+	height: 500px;
+
+	@media @tablet-widths {		
+		height: 410px;
+	}
+
+	@media @mobil-widths {
+		height: 220px;
+	}
+}
+
+.bg-page-small {
+	position: relative;
+	z-index: 100;	
+	background-position: top center;
+	height: 230px;
+	background-color: #fafafa;
+	
+	.first-screen-page {
+		padding-top: 65px;
+
+		@media @tablet-widths {padding-top: 30px;}
+
+		@media @mobil-widths {padding-top: 20px;}
+	}
+
+	@media @tablet-widths {height: 175px;}
+
+	@media @mobil-widths {height: 100px; border-top: 1px solid  rgba(0, 0, 0, 0.23);}
+	
+}
+
+
+
+.news-bg {background-image: url("../img/bg-news.jpg");}
+.add-car-bg {background-image: url("../img/bg-add-car-head.jpg");}
+.add-card-bg {background-image: url("../img/bg-add-card-head.jpg");}
+.reg-carrier-bg {background-image: url("../img/bg-reg-carrier-head.jpg");}
+.reg-cargo-owner-bg {background-image: url("../img/bg-reg-cargo-owner-head.jpg");}
+.private-office-carrier-bg {
+	background-image: url("../img/bg-private-office-carrier-head.png");
+	background-size: auto;
+	background-position: top right;
+
+	@media @tablet-widths {
+		background-position: 60vw top;
+	}
+
+	@media @mobil-widths {
+		background-position: 85vw 0px;
+		background-size: 85%;
+	}
+
+	
+	
 }

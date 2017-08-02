@@ -55,6 +55,20 @@
 		display: block;
 	}
 
+	&__wr-border-gray {
+		position: relative;
+		z-index: 102;
+		display: block;
+		width: 100%;
+		.gray-border();
+		padding: 30px 50px;
+		background-color: #ffffff;
+		min-height: 100px;
+		margin-top: 30px;
+		@media @tablet-widths {padding: 20px;}
+		@media @mobil-widths {padding-top: 20px 0;}
+	}
+
 	&__bbtn {
 		@media @mobil-widths {
 			min-width: 280px;
