@@ -51,7 +51,8 @@
 		margin-left: 0;
 		padding: 0 160px 0 30px;
 		background-color: transparent;
-		@media @mobil-widths {padding: 0 ;}
+		@media @tablet-widths {padding: 0 200px 0 30px;}
+		@media @mobil-widths {padding: 0 ; max-width: 300px;}
 		h1 {text-align: left;}
 	}
 
@@ -114,8 +115,22 @@
 	@media @mobil-widths {
 		background-position: 85vw 0px;
 		background-size: 85%;
+	}	
+}
+
+.private-office-client-bg {
+	background-image: url("../img/bg-private-office-client-head.png");
+	background-size: auto;
+	background-position: center top;
+
+	@media @tablet-widths {
+		background-position: right top;
+		background-size: 90%;
 	}
 
-	
-	
+	@media @mobil-widths {
+		background-position: -330px -50px;
+		background-size: auto;
+
+	}	
 }

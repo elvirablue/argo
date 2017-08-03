@@ -56,8 +56,14 @@ $(document).on('ready', function(){
 });
 
  $(document).ready(function() {
-        $('#user-auto-cargo').multiselect();
-        $('.user-input-bootstrap').multiselect();
+        $('#user-auto-cargo').multiselect({maxHeight: 200});
+        $('.user-input-bootstrap').multiselect(
+            {
+              maxHeight: 200,
+              nonSelectedText: 'Нажмите, чтобы выбрать'             
+                              
+            }
+        );
 
         $(function () {
             $('.datetimepicker6').datetimepicker(

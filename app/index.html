@@ -234,13 +234,15 @@
 
 				<div class="scan__block-row">
 					<label for="user-auto-cargo">Ваш транспорт: </label>
-					<div class="scan__input-auto-cargo user-input-bootstrap-wrapper">
-						<select class="" id="user-auto-cargo" name="user-auto-cargo" multiple="multiple">
+					<div class="input input--small scan__input-auto-cargo">
+						<div class="user-input-bootstrap-wrapper">						
+						<select class="user-input-bootstrap" id="user-auto-car" name="user-auto-car">
 					  		<option>1-Митсубиси Кантер, 3 т</option>
 					  		<option>2-Митсубиси Кантер, 3 т</option>
 					  		<option>3-Митсубиси Кантер, 3 т</option>					  		
-						</select>	
-					</div>					
+						</select>
+						</div>																
+					</div>									
 
 					<p class="scan__text">Вы можете выбрать несколько видов автотранспорта</p>
 				</div>
@@ -332,15 +334,17 @@
 
 							<div class="ch_wrapper ">
 								<input id="check21" type="checkbox" name="check" value="check21">
-								<label for="check21">Не проверен</label>
+								<label for="check21">Аккредитован</label>
 							</div>
-							<div class="ch_wrapper ">
-								<input id="check22" type="checkbox" name="check" value="check22">
-								<label for="check22">Полная аккредитация</label>
-							</div>
+							
 							<div class="ch_wrapper ">
 								<input id="check23" type="checkbox" name="check" value="check23">
 								<label for="check23">Прошел первичную аккредитацию</label>
+							</div>
+
+							<div class="ch_wrapper ">
+								<input id="check22" type="checkbox" name="check" value="check22">
+								<label for="check22">Не аккредитован</label>
 							</div>
 						</div>
 					</div>
@@ -488,10 +492,39 @@
 					<div class="scan__block-col col-1-3">
 						<div class="input input--big input--type">
 							<div class="user-input-bootstrap-wrapper-big">						
-							<select class="user-input-bootstrap" id="user-type-car" name="user-type-car">								
-						  		<option>1--------**********--</option>
-						  		<option>2--------------</option>
-						  		<option>3--****11111111111111111111111******  **** ****** ******-----</option>					  		
+							<select class="user-input-bootstrap" id="user-type-car" name="user-type-car">
+								<option>Нажмите, чтобы выбрать</option>
+								<option>Грибы</option>
+								<option>Декоративные культуры</option>
+								<option>Зерно, зернобобовые</option>
+								<option>Комбикорма, зерносмеси</option>
+								<option>Корма экструдированные</option>
+								<option>Кормовые добавки</option>
+								<option>Кормовые дрожжи</option>
+								<option>Кормовые корнеплоды</option>
+								<option>Масличные культуры</option>
+								<option>Мёд, продукция пчеловодства</option>
+								<option>Мука кровяная</option>
+								<option>Мука мясная</option>
+								<option>Мука мясокостная</option>
+								<option>Мука перьевая</option>
+								<option>Мука рыбная</option>
+								<option>Мука травяная</option>
+								<option>Некондиционные продукты питания на корм животным</option>
+								<option>Овощи</option>
+								<option>Орехи</option>
+								<option>Отруби</option>
+								<option>Прочие корма</option>
+								<option>Семена, посевной материал</option>
+								<option>Сено, солома, силос</option>
+								<option>Соль кормовая</option>	
+								<option selected>С/х животные и птица (живок)</option>					
+								<option>Технические культуры</option>
+								<option>Техническое сырье</option>
+								<option>Фрукты. Ягоды</option>
+								<option>Яйцо</option>
+								<option>ДРУГОЙ</option>	
+						  						  		
 							</select>
 							</div>
 							<i>Выберите тип груза</i>						
@@ -499,10 +532,17 @@
 
 						<div class="input input--big input--type">
 							<div class="user-input-bootstrap-wrapper-big">						
-							<select class="user-input-bootstrap" id="user-subtype-car" name="user-subtype-car">							
-						  		<option>1--------**********--</option>
-						  		<option>2--------------</option>
-						  		<option>3--****11111111111111111111111******  **** ****** ******-----</option>					  		
+							<select class="user-input-bootstrap" id="user-subtype-car"  name="user-subtype-car">
+								<option>Нажмите, чтобы выбрать</option>								
+								<option>Козы</option>
+						  		<option>Кролики</option>
+						  		<option>КРС</option>
+						  		<option>Лошади</option>
+						  		<option>Овцы</option>
+						  		<option>Птицы</option>
+						  		<option>Пчелы</option>
+						  		<option>Рыбопосадочный материал</option>
+						  		<option>Свиньи</option>					  		
 							</select>
 							</div>
 							<i>Выберите подтип груза</i>						
@@ -512,10 +552,11 @@
 					<div class="scan__block-col col-1-3">
 						<div class="input input--big input--type">
 							<div class="user-input-bootstrap-wrapper-big">						
-							<select class="user-input-bootstrap" id="user-loading-car" name="user-loading-car">							
-						  		<option>1--------**********--</option>
-						  		<option>2--------------</option>
-						  		<option>3--****11111111111111111111111******  **** ****** ******-----</option>					  		
+							<select class="user-input-bootstrap" id="user-loading-car" multiple="multiple" name="user-loading-car">		
+								<option>Верхняя</option>
+								<option>Боковая</option>
+								<option>Задняя</option>						
+						  							  		
 							</select>
 							</div>
 							<i>Выберите способ загрузки</i>						
@@ -594,20 +635,22 @@
 
 					<div class="scan__block-col col-1-3">
 						<div class="scan__block-border">
-							<p class="scan__block-border-title">Прохождение весового контроля в пути </p>
-							<p class="scan__text">Проверку службой безопастности проходят только аккредитованные заказчики. <br>С остальными Вы работаете на свой страх и риск.</p>						
+							<p class="scan__block-border-title">Выберите статус перевозчика</p>
+							<p class="scan__text">Проверку службой безопастности проходят только аккредитованные перевозчики. <br>С остальными Вы работаете на свой страх и риск.</p>						
 
 							<div class="ch_wrapper ">
 								<input id="check36" type="checkbox" name="check" value="check36">
-								<label for="check36">Не проверен</label>
+								<label for="check36">Агент АгроКарго</label>
 							</div>
-							<div class="ch_wrapper ">
-								<input id="check37" type="checkbox" name="check" value="check37">
-								<label for="check37">Полная аккредитация</label>
-							</div>
+							
 							<div class="ch_wrapper ">
 								<input id="check38" type="checkbox" name="check" value="check38">
-								<label for="check38">Прошел первичную аккредитацию</label>
+								<label for="check38">Проверенный перевозчик</label>
+							</div>
+
+							<div class="ch_wrapper ">
+								<input id="check37" type="checkbox" name="check" value="check37">
+								<label for="check37">Не проверенный перевозчик</label>
 							</div>
 						</div>
 					</div>
@@ -682,7 +725,7 @@
 					<i class="filter active">Профессиональная деятельность</i>
 					<i class="filter">Международные перевозки</i>
 					<i class="filter">Автосервис и ремонт</i>
-					<i class="filter">Проблемные места загрузки и разгрузки</i>
+					<i class="filter max">Проблемные места загрузки и разгрузки</i>
 					<i class="filter">Юридические вопросы</i>
 					<i class="filter">Продажа, аренда и обмен техники</i>
 				</div>				

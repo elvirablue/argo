@@ -33,7 +33,55 @@
 		}
 	}
 
+
+	.filter.max {
+		@media @mobil-widths {
+			width: 100%;
+		}
+	}
+
+	.filter--orders {
+		width: 220px;
+		padding: 12px 5px;
+		margin-bottom: 0;
+		@media @mobil-widths {
+			font-size: 12px;
+			
+			white-space: nowrap;
+			height: auto;
+		}
+	}
+
 	.filter.active, .filter:hover, .filter:active {
 		background-color: #e8e8e8;
+	}
+
+	&__wrapper {
+		display: inline-block;
+		vertical-align: top;
+		padding: 20px;
+		@media @mobil-widths {
+			padding: 10px 0;
+		}
+	}
+
+	label.lab-filter {
+		.segoe-regular(16px);
+		color: @color-text-blue;
+		font-style: normal;
+		text-decoration: underline;
+		display: block;
+		padding-bottom: 10px;
+		text-align: left;
+		@media @mobil-widths {font-size: 13px;}
+	}
+
+	&__btn {
+		margin-top: 30px;
+		width: 220px;
+		padding: 15px;
+		color: @color-black;
+		@media @mobil-widths {font-size: 13px;}
+
 	}
 }
