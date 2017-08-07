@@ -58,9 +58,15 @@ $(document).on('ready', function(){
  $(document).ready(function() {
         $('#user-auto-cargo').multiselect({maxHeight: 200});
         $('.user-input-bootstrap').multiselect(
+          
             {
               maxHeight: 200,
-              nonSelectedText: 'Нажмите, чтобы выбрать'             
+              nonSelectedText: 'Нажмите, чтобы выбрать',
+              nSelectedText: ' шт. выбрано',
+              allSelectedText: 'Выбрано ',
+              disabledText: 'Нажмите, чтобы выбрать',
+                          
+
                               
             }
         );

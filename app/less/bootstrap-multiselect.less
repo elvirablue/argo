@@ -129,15 +129,18 @@ span.multiselect-native-select select{
         height: 100%;
         cursor: pointer;
         font-weight: normal;
-        padding: 3px 20px 3px 40px;
-        line-height: 2;
+        padding: 7px 10px 7px 40px;
+        line-height: 1.2;
+        white-space: normal;
 
         &.radio, &.checkbox {
           margin: 0;
         }
 
-        > input[type="checkbox"] {
+        > input[type="checkbox"], input[type=radio] {
           margin-bottom:5px;
+          margin-top: 0;
+          line-height: 1.2;
         }
       }
     }

@@ -1,0 +1,51 @@
+.registry-status {
+	display: block;
+	margin: 20px;
+	width: 100%;	
+	min-height: 170px;
+	border-radius: 10px;
+	border: 2px solid @color-gray;
+	.segoe-bold(24px);
+	color: @color-darkgray;
+	text-align: right;
+	text-transform: uppercase;
+	padding: 60px 30px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	
+	background-position: left center;
+	cursor: pointer;
+	position: relative;
+	transition: border-color ease 0.3s;
+}
+
+.registry-status:before {
+	content: "\2714";
+	.segoe-regular(30px);
+	color: #00ad5d;
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	opacity: 0;
+	transition: opacity ease 0.3s;
+}
+
+.registry-status:hover, .registry-status:active {
+	.shadow-hover();
+	border-color: #00ad5d;
+}
+
+.registry-status:hover:before, .registry-status:active:before {
+	opacity: 1;
+}
+
+
+#status-card {
+	background-image: url("../img/pic-1.png");
+	background-size: 30%;
+}
+
+#status-car {
+	background-image: url("../img/pic-3.png");
+	background-size: 40%;
+}
