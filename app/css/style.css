@@ -2931,6 +2931,9 @@ textarea:focus ~ i {
   top: -7px;
   left: -10px;
 }
+.step-contact {
+  display: none;
+}
 .m-bottom {
   margin-bottom: 20px;
 }

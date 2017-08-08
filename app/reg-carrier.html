@@ -233,10 +233,27 @@
 									</div>
 								</div>
 							</div>
+
+							<div class="row-col">
+								<div class="wrapper m-bottom">
+									
+									<div class="ch_wrapper in-block">
+										<input id="check-entity" onchange="ShowStepContact(this)" type="checkbox" name="check-entity" value="check-entity">
+										<label for="check-entity">Есть Юридическое лицо</label>
+									</div>
+									<script type="text/javascript">
+										function ShowStepContact(elem) {
+											if (elem.checked) document.querySelector('.step-contact').style.display = 'block'
+											else document.querySelector('.step-contact').style.display = 'none';
+										}
+									</script>
+									
+								</div>
+							</div>
 						</div>
 
 <!-- *************************** ШАГ 2 ***************************************- -->
-						<div class="scan__block-row">
+						<div class="scan__block-row step-contact">
 							<p class="scan__step-head"><span class="text-blue"></span>Контакты и реквизиты</p>
 							<div class="row-col">
 								<label class="lab-for-input lab-max lab-title">Директор:</label>
