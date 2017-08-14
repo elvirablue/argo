@@ -1,14 +1,15 @@
 .block-login {
 	display: inline-block;
 	vertical-align: middle;
-	
+	margin-top: 10px;
+	width: 220px;
 	padding-left: 20px;
 	border-left: 1px solid #dddddd;
 
 	&__head {
 		.segoe-regular(18px);		
 		color: @color-black;
-		text-decoration: underline;
+		
 		position: relative;
 		.ico-absolute(-55px, -4px);
 		margin-left: 30px;
@@ -16,22 +17,31 @@
 
 	&__bbtn {
 		width: 100%;
-		text-align: right;
-		.segoe-regular(12px);
-		cursor: pointer;	
+		text-align: center;
+		.segoe-regular(14px);
+		cursor: pointer;			
+		
+	}
 
 		a {
 			display: inline-block;
 			color: @color-black;
 			transition: ease color 0.3s;
+			font: inherit;
 		}
+		
 
 		a:hover, a:active, a.active {
 			color: @color-text-blue;
 			text-decoration: underline;
-		}	
-		
-	}
+		}
+
+		.exit {
+			color: @color-black;
+			display: block;
+			text-align: left;
+
+		}
 
 	
 }
@@ -39,24 +49,42 @@
 @media @tablet-widths {
 	.block-login {
 		border-left: none;
-	}
-	
-	.block-login__head, .registry {
-			display: none;
-			font-size: 0;
+		width: auto;
+		margin-top: 0;
+		margin-left: 40px;
+
+		&__head {
+			font-size: 0  !important;
+			width: 100%;
+			margin-left: 0;
+			
 		}
 
-	.ingress {
-		font-size: 0;
-		width: 45px;
-		height: 45px;
-		background: url("../img/ingress.png") no-repeat center;
+		&__head:before {
+			background-image: none;
+		}
+	
+		.exit {
+			text-align: center;
+			margin-left: 10px;
+		}		
+	
+		.ingress {		
+			width: 45px;
+			height: 45px;
+			display: block;
+			margin: 0 auto;
+			background: url("../img/ingress.png") no-repeat center;
+		}
 
-	}
-	.block-login__bbtn {
-		font-size: 0;
-
-	}
+		.user-login {
+			width: 32px;
+			height: 32px;
+			display: block;
+			margin: 0 auto;
+			background: url("../img/ico-sprite.png") -55px -4px no-repeat;
+		}
+	}	
 }
 
 @media @mobil-widths {
@@ -83,21 +111,6 @@
 
 	}
 
-	.block-login__head, .registry {
-			display: none;
-			font-size: 0;
-		}
-
-	.ingress {
-		font-size: 0;
-		width: 45px;
-		height: 45px;
-		background: url("../img/ingress.png") no-repeat center;
-
-	}
-	.block-login__bbtn {
-		font-size: 0;
-		cursor: pointer;
-	}
+	
 }
 

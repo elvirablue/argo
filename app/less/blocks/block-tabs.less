@@ -1,0 +1,48 @@
+.block-tabs {
+	input { display: none;}
+
+
+	&__toggle {
+		display: block;
+		width: 100%;
+		padding-top: 30px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid @color-lightgray;		
+
+		label {
+			display: inline-block;
+			width: auto;
+			text-align: left;
+			h2 {
+				color: @color-text-blue;
+				transition: color ease 0.3s;
+				margin: 20px 10px 9px;				
+			}			
+			h2:before {display: none;}
+			cursor: pointer;
+		}
+
+		label:hover, label.active, label:active {
+			h2 {color: @color-black;}
+			h2:before {display: block;}			
+		}
+	}
+
+	&__tab1,
+	&__tab2 {
+		width: 100%;			
+		display: none;
+	}
+
+	#btn-1:checked ~ &__tab1,
+	#btn-2:checked ~ &__tab2 {
+		display: block;
+	}
+
+	#btn-1:checked ~ &__toggle label[for="btn-1"],
+	#btn-2:checked ~ &__toggle label[for="btn-2"] {
+		h2 {color: @color-black;}
+		h2:before {display: block;}	
+		cursor: default;
+	}		 
+}

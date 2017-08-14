@@ -96,7 +96,8 @@
 
 					<p class="block-login__head">Личный кабинет</p>
 					<p class="block-login__bbtn">
-						<a class="ingress" href="#">Вход</a> / <a class="registry" href="#">Регистрация</a>
+						<a class="ingress" href="#">Вход / </a> <a class="registry" href="#"> Регистрация</a>
+						<a class="exit" href="#">Выход</a>
 					</p>					
 				</div>
 
@@ -113,11 +114,11 @@
 			<div class="page-header__bottom">
 				<a href="index.html" class="main-logo page-header__logo"></a>
 				<div class="page-header__center">
-					<a href="add-car.html" id="add-car" class="bbtn bbtn--yellow bbtn--big"><span>Добавить транспорт</span></a>
+					<a href="add-car.html" id="add-car" class="bbtn bbtn--yellow bbtn--big  disabled"><span>Добавить транспорт</span></a>
 					<a href="add-card.html" id="bid" class="bbtn bbtn--yellow bbtn--big"><span>Оставить заявку на перевозку</span></a>
 				</div>
 				<div class="page-header__left">
-					<a href="#" class="page-header__link bbtn-distances">Расчет расстояний</a>
+					<a href="#" class="page-header__link bbtn-distances ">Расчет расстояний</a>
 					<a href="#" class="page-header__link bbtn-forum">Перейти на форум</a>
 				</div>
 			</div>
@@ -939,9 +940,20 @@
 			</div>
 
 			<div class="page-footer__block-bottom">
-				<p class="page-footer__block-bottom-item login">
-					<a href="#">Личный кабинет</a>
-				</p>
+				<div class="page-footer__block-bottom-item login">
+					<!--
+					<a class="ingress" href="{{ route('login') }}">Вход </a> / 
+                    <a class="registry" href="{{ route('register') }}"> Регистрация</a>
+-->
+                    <a href="{{ route('carrieroffice', Auth::user()->id) }}" class="user-login">{{ Auth::user()->name }}</a> / 
+                    <a class="exit" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Выход</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                            </form>
+				</div>
 				<p class="page-footer__block-bottom-item mail">
 					<a href="#">info@agrocargo.ru</a>
 				</p>

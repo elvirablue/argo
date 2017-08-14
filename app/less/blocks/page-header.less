@@ -179,6 +179,41 @@
 				display: block;
 				position: relative;
 				z-index: 100000;
+				width: auto;
+				margin-top: 0;
+				margin-left: 40px;
+
+				.block-login__head {
+					font-size: 0  !important;
+					width: 100%;
+					margin-left: 0;
+					
+				}
+
+				.block-login__head:before {
+					background-image: none;
+				}
+				
+				.exit {
+					text-align: center;
+					margin-left: 10px;
+				}		
+				
+				.ingress {		
+					width: 45px;
+					height: 45px;
+					display: block;
+					margin: 0 auto;
+					background: url("../img/ingress.png") no-repeat center;
+				}
+
+				.user-login {
+					width: 32px;
+					height: 32px;
+					display: block;
+					margin: 0 auto;
+					background: url("../img/ico-sprite.png") -55px -4px no-repeat;
+				}
 			}
 
 			&__top {
@@ -197,15 +232,19 @@
 				width: ~'calc(100vw - 280px)';			
 				z-index: 9999;
 				top: 0px;
-				right: 50px;
+				right: 70px;
 				left: auto;
 				@media @mobil-widths {
-					width: ~'calc(100vw - 170px)';	
+					width: ~'calc(100vw - 190px)';	
+					height: 100%;
+					display: flex;
+					flex-flow: column wrap;
+					justify-content: center;
 				}
 
 				.bbtn {
 					display: inline-block;
-					width: 50%;
+					width: 45%;
 					min-width: 120px;
 					max-width: 300px;
 					height: 20px;
@@ -214,17 +253,17 @@
 					box-shadow: none;
 
 					@media @tablet-widths {
-						min-width: 120px;
-						max-width: 350px;
-						margin: 8px 10px 0;
-						padding: 18px;
+						
 					}
 
 					@media @mobil-widths {
+						width: 70%;
+						display: block;
 						min-width: 120px;
 						max-width: 280px;
-						height: 20px;
-						margin: 8px 10px 0;
+						height: auto;
+						padding: 18px;
+						margin: 4px auto;
 					}
 					
 					span {
@@ -260,7 +299,7 @@
 				@media @mobil-widths {
 					width: 40px;
 					height: 40px;					
-					left: 80px;
+					left: 65px;
 					right: auto;
 				}
 				

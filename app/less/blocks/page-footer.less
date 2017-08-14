@@ -51,6 +51,7 @@
 
 	&__block-bottom-item {
 		display: inline-block;
+		vertical-align: top;
 		width: 31%;
 		text-align: center;
 		a {
@@ -63,10 +64,29 @@
 		}
 	}
 
-	&__block-bottom-item.login a {
-		text-decoration: underline;
+	&__block-bottom-item.login {
+		
 		position: relative;		
 		.ico-absolute(-53px, -4px);
+		color: @color-white;
+		text-align: left;
+		margin-left: 10px;
+		
+
+		.user-login {
+			display: inline-block;
+			vertical-align: top;
+			max-width: 180px;
+			overflow: hidden;
+			text-decoration: underline;
+			white-space: nowrap;
+		}
+
+		.exit {
+			display: inline-block;
+			vertical-align: top;
+			text-decoration: underline;
+		}
 	}
 
 	&__block-bottom-item.mail a {		
@@ -226,6 +246,17 @@
 		&__block-bottom-item {			
 			width: 200px;
 			padding-bottom: 15px;
+		}
+
+		&__block-bottom-item.login {
+			width: auto;
+			max-width: 80%;
+			
+
+			.user-login {
+				width: 70%;
+				max-width: 300px;
+			}
 		}
 
 		.city-select {

@@ -182,7 +182,7 @@
   	box-shadow: 1px 0 20px 2px rgba(0, 0, 0, 0.2); 
 
   	.main-nav--opened .main-nav {
-  		top: 70px;
+  		top: 95px;
   	}  
 
   	.main-nav-block {
@@ -218,7 +218,7 @@
 		
 	}
 	.main-nav-block {
-		background-color: #ffffff;    	
+		background-color: transparent;    	
     	color: @color-gray;
     	width: 70px;
     	float: left;
@@ -227,7 +227,7 @@
 
 	
 	.main-nav__toggle, .main-nav--closed .main-nav__toggle:before {
-		background-color: #ffffff;    	
+		background-color: transparent;    	
     	color: @color-gray;
 	}
 
@@ -249,10 +249,11 @@
 	}	
 
 	.main-nav--opened .main-nav {
-		width: 100vw;
+		width: 120vw;
 		height: 100vh;
-		top: 80px;
-		left: -20px;
+		top: 85px;
+		left: -10vw;
+		padding-left: 10vw;
 
 	}
 }

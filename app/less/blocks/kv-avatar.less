@@ -1,0 +1,75 @@
+.kv-avatar .krajee-default.file-preview-frame,.kv-avatar .krajee-default.file-preview-frame:hover {
+    margin: 0 auto;
+    padding: 0;    
+    box-shadow: none;
+    text-align: center;
+    display: block;
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid @color-lightgray;
+    img {
+        width: 100% !important;        
+        height: auto !important;       
+    }
+}
+.kv-avatar .file-input {
+    display: table-cell;
+    max-width: 220px;   
+    position: relative;
+
+    .file-footer-caption {
+        display: block;
+        white-space: normal;
+
+        font-size: 11px;
+    }
+
+    .kv-file-content {
+        line-height: 0;
+        font-size: 0; 
+             
+    }
+
+    .file-actions,
+    .fileinput-upload.fileinput-upload-button  {
+        display: none;
+    }
+
+    .fileinput-remove.fileinput-remove-button {
+        position: absolute;
+        z-index: 100;
+        bottom: 0px;
+        right: 0px;
+        background-color: transparent;
+        border: none;
+    }
+
+    .file-upload-indicator {
+        text-align: left;
+        padding-left: 5px;
+    }
+
+
+}
+.kv-reqd {
+    color: red;
+    font-family: monospace;
+    font-weight: normal;
+}
+
+.file-default-preview {
+    display: block;
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid @color-lightgray;
+    img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    h6 {
+        padding: 10px;
+    }
+}

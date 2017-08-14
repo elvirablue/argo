@@ -28,7 +28,7 @@
 		background-position: center;
 	}
 
-	&__out {
+	&__out, &__load {
 		display: block;
 		width: 100px;
 		text-align: center;
@@ -37,14 +37,20 @@
 		color: @color-text-blue;
 		text-decoration: underline;
 		cursor: pointer;
+		background-color: transparent;
+		border: none;
+		outline: none;
 
 		@media @mobil-widths {
 			font-size: 13px;
 		}
 	}
 
-	&__out:hover, &__out:active, &__out:focus {
+	&__out:hover, &__out:active, &__out:focus,
+	&__load:hover, &__load:active, &__load:focus {
 		font-weight: bold;
+		text-shadow: none;
+
 	}
 
 	&__status {
@@ -179,11 +185,7 @@
 	@media @mobil-widths {
 		h4 {font-size: 18px;}
 		.col-private-office {width: 100%; font-size: 13px;}
-		.col-private-office:first-child {margin-top: 250px;}
-		.col-private-office:last-child {
-			position: absolute;
-			top: 0;
-		}
+		
 	}
 }
 

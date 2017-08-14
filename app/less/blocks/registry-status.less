@@ -17,6 +17,14 @@
 	cursor: pointer;
 	position: relative;
 	transition: border-color ease 0.3s;
+
+	@media @mobil-widths {
+		max-width: 350px;
+		margin: 10px auto;
+		min-height: 90px;
+		padding: 30px;
+		font-size: 18px;
+	}
 }
 
 .registry-status:before {
@@ -43,9 +51,15 @@
 #status-card {
 	background-image: url("../img/pic-1.png");
 	background-size: 30%;
+	@media @mobil-widths {
+		background-size: 25%;
+	}
 }
 
 #status-car {
 	background-image: url("../img/pic-3.png");
 	background-size: 40%;
+	@media @mobil-widths {
+		background-size: 30%;
+	}
 }

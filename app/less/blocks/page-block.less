@@ -2,6 +2,7 @@
 	background-color: #fafafa;
 	position: relative;
 	z-index: 102;
+
 	
 	&--forum {
 		background-image: url("../img/bg-forum.png");
@@ -32,6 +33,7 @@
 
 .page-block {
 	.container-fluid();
+	.clearfix();
 	padding-bottom: 40px;
 
 	&__subtitle {
@@ -41,6 +43,10 @@
 		text-align: left;
 		@media @tablet-widths {
 			text-align: center;					
+		}
+
+		@media @mobil-widths {
+			font-size: 18px;
 		}
 	}
 

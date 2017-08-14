@@ -36,6 +36,13 @@ $(document).on('ready', function(){
         $('.scan-car .js-step-num').text('2');
     });
 
+    $('.scan-cargo .js-btn-step2').click(function(event){
+        event.preventDefault();
+        $('.scan-cargo .scan-cargo__step3').addClass('show');
+        $(this).addClass('hidden');
+        $('.scan-cargo .js-step-num').text('3');
+    });
+
     $('.scan-car .js-btn-step2').click(function(event){
         event.preventDefault();
         $('.scan-car .scan-car__step3').addClass('show');
@@ -43,12 +50,22 @@ $(document).on('ready', function(){
         $('.scan-car .js-step-num').text('3');
     });
 
+    $('.scan-cargo .js-btn-step3').click(function(event){
+        event.preventDefault();
+        $('.scan-cargo .scan-cargo__step4').addClass('show');
+        $(this).addClass('hidden');
+        $('.scan-cargo .js-step-num').text('4');
+    });
+
+    
     $('.scan-car .js-btn-step3').click(function(event){
         event.preventDefault();
-        $('.scan-car .scan-car__step4').addClass('show');
+        $('.scan-car .scan-cargo__step4').addClass('show');
         $(this).addClass('hidden');
         $('.scan-car .js-step-num').text('4');
     });
+
+    
 
 	
 
