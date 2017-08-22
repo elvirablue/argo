@@ -19,7 +19,7 @@
                         <div class="wrapper m-bottom">
                             <label class="lab-for-input" for="user-login">Логин:&nbsp;&nbsp;&nbsp;&nbsp; </label>
                             <div class="input input--small input--login">
-                                <input id="email" type="email" class="user-input" id="user-login" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="text" class="user-input" id="user-login" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -41,9 +41,13 @@
                             @endif
                         </div>
                         <button type="submit" class="bbtn bbtn--yellow bbtn--small">Вход</button>
+						@if(Session::has('message'))
+							{!!Session::get('message')!!}
+						@endif
                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Забыли пароль?
                         </a>
+						<a class="btn btn-link" href="{{ route('getRepeat') }}">Не получили письмо с подтверждением?</a>
                     </div>
                 </form>
             </div>

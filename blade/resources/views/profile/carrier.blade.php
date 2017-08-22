@@ -34,27 +34,27 @@
                                 <div class="in-block">
                                     <p class="wrapper">
                                         <span class="span-private-office">Имя: </span>
-                                        <span class="span-private-office blue">Название Название Название</span>
+                                        <span class="span-private-office blue">{{ $user->name }}</span>
                                     </p>
 
                                     <p class="wrapper">
                                         <span class="span-private-office">Фамилия: </span>
-                                        <span class="span-private-office blue">Название</span>
+                                        <span class="span-private-office blue">{{ $user->lastname }}</span>
                                     </p>
                                 
                                     <p class="wrapper">
                                         <span class="span-private-office">Компания: </span>
-                                        <span class="span-private-office blue">Название компании</span>
+                                        <span class="span-private-office blue">{{ $user->company }}</span>
                                     </p>
 
                                     <p class="wrapper">
                                         <span class="span-private-office">E-mail: </span>
-                                        <span class="span-private-office blue">mail@mail.com</span>
+                                        <span class="span-private-office blue">{{ $user->email }}</span>
                                     </p>
 
                                     <p class="wrapper">
                                         <span class="span-private-office">Телефон: </span>
-                                        <span class="span-private-office blue">+ 7 000 000 0000</span>
+                                        <span class="span-private-office blue">{{ $user->phone }}</span>
                                     </p>
                                 </div>
                                
@@ -65,18 +65,26 @@
                                 <div class="private-office__avatar" style="background-image: url(img/nophoto.png);"></div>
                                 
                                 <div class="private-office__req">Реквизиты <a href="#" class="link">(скачать <span class="glyphicon glyphicon-save"></span>)</a></div>
+
+                                <!-- class  st-tested - green border and text
+                                            st-notested - blue
+                                            st-agent - yellow
+                                            st-new - red
+                                -->
                                 <div class="private-office__status st-tested">Проверенный перевозчик <i class="help">?</i></div>
                             </div>
                             
                         </div>
                     </div>
 
-                </div>
-
-
-
+                </div> 
 
             </div>
+
+                <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
         </div>
 
 

@@ -23,7 +23,8 @@
 
 			<div class="page-block form-add-car-wrapper">
 				<div class="scan__wrapper">
-					<form action="" method="">
+					<form action="{{ route('storecar') }}" method="POST"  enctype="multipart/form-data">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<p class="scan__head">Заполните форму для добавления транспорта</p>
 
 <!-- *************************** ШАГ 1 ***************************************- -->
@@ -35,19 +36,10 @@
 										<label class="lab-for-input param-reg" for="user-1-car">Тип кузова: </label>
 										<div class="input input--small">
 											<div class="user-input-bootstrap-wrapper">						
-											<select class="user-input-bootstrap" id="user-1-car" name="user-1-car">
-												<option>Нажмите, чтобы выбрать</option>
-										  		<option>Скотовоз</option>
-										  		<option>Тушевоз</option>
-										  		<option>Кормовоз</option>	
-										  		<option>Зерновоз</option>
-										  		<option>Молоковоз</option>
-										  		<option>Птицевоз</option>
-										  		<option>Сельхозник</option>
-										  		<option>Рефрежератор</option>				  		
-										  		<option>Комбайн</option>
-										  		<option>Молотилка</option>
-										  		<option>Тент</option>
+											<select class="user-input-bootstrap" id="user-1-car" name="user-1-car" required>
+												@foreach ($bodyTypes as $key => $value) 
+													<option>{{$value}}</option>
+												@endforeach
 											</select>
 											</div>																
 										</div>
@@ -56,15 +48,15 @@
 
 								<div class="scan__block-col col-1-2">
 									<div class="ch_wrapper in-block">
-										<input id="user-2-1-car" type="radio" checked name="radio" value="user-2-1-car">
+										<input id="user-2-1-car" type="radio" checked name="radio" value="Полуприцеп">
 										<label for="user-2-1-car">Полуприцеп</label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="user-2-2-car" type="radio" name="radio" value="user-2-2-car">
+										<input id="user-2-2-car" type="radio" name="radio" value="Грузовик">
 										<label for="user-2-2-car">Грузовик</label>
 									</div>
 									<div class="ch_wrapper in-block">
-										<input id="user-2-3-car" type="radio" name="radio" value="user-2-3-car">
+										<input id="user-2-3-car" type="radio" name="radio" value="Сцепка">
 										<label for="user-2-3-car">Сцепка</label>
 									</div>	
 								</div>
@@ -76,10 +68,10 @@
 									<label class="lab-for-input" for="user-3-car">Тип загрузки: </label>
 									<div class="input input--small">
 										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-3-car" multiple="multiple" name="user-3-car">								
-									  		<option>Верхняя</option>
-									  		<option>Боковая</option>
-									  		<option>Задняя</option>					  		
+										<select class="user-input-bootstrap" id="user-3-car" multiple="multiple" name="user-3-car[]">								
+									  		@foreach ($loadTypes as $key => $value) 
+												<option>{{$value}}</option>
+											@endforeach				  		
 										</select>
 										</div>																
 									</div>
@@ -88,15 +80,25 @@
 								<div class="wrapper m-bottom">
 									<label class="lab-for-input param-reg" for="user-4-car">Грузоподъемность, т: </label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-4-car" name="user-4-car">			
+										<input type="text" class="user-input" id="user-4-car" name="user-4-car" required>			
 									</div>
+									<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-4-car").mask("?000000",{placeholder:""});
+											});
+									</script>
 								</div>
 
 								<div class="wrapper m-bottom">
 									<label class="lab-for-input param-reg" for="user-5-car">Объем, м<sup>3</sup>: </label>
 									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-5-car" name="user-5-car">			
+										<input type="text" class="user-input" id="user-5-car" name="user-5-car" required>			
 									</div>
+									<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-5-car").mask("?000000",{placeholder:""});
+											});
+									</script>
 								</div>
 							</div>							
 							</div>
@@ -128,7 +130,7 @@
 						<div class="scan__block-row">
 							<p class="scan__step-head"><span class="text-blue">Шаг 2</span> Разрешения</p>
 							<div class="row-col">
-								<div class="scan__block-col col-1-3">
+								<div class="scan__block-col col-1-2">
 									<div class="ch_wrapper ">
 										<input id="user-7-1-car" type="checkbox" name="check" value="user-7-1-car">
 										<label for="user-7-1-car">Медицинская книжка</label>
@@ -141,131 +143,66 @@
 										<input id="user-7-3-car" type="checkbox" name="check" value="user-7-3-car">
 										<label for="user-7-3-car">Пропуск на МКАД</label>
 									</div>
-								</div>
-
-								<div class="scan__block-col col-1-3">
 									<div class="ch_wrapper ">
 										<input id="user-7-4-car" type="checkbox" name="check" value="user-7-4-car">
 										<label for="user-7-4-car">Экспедирование</label>
 									</div>
-									<div class="ch_wrapper ">
-										<input id="user-7-5-car" type="checkbox" name="check" value="user-7-5-car">
-										<label for="user-7-5-car">Прохождение весового контроля в пути</label>
-									</div>
 								</div>
 
-								<div class="scan__block-col col-1-3">
-									<div class="scan__block-border">
-										<p class="scan__block-border-title">Прохождение весового контроля в пути </p>
-										<p class="scan__text">Проверку службой безопастности проходят только аккредитованные заказчики. <br>С остальными Вы работаете на свой страх и риск.</p>						
-
-										<div class="ch_wrapper ">
-											<input id="user-8-1-car" type="checkbox" name="check" value="user-8-1-car">
-											<label for="user-8-1-car">Не проверен</label>
-										</div>
-										<div class="ch_wrapper ">
-											<input id="user-8-2-car" type="checkbox" name="check" value="user-8-2-car">
-											<label for="user-8-2-car">Полная аккредитация</label>
-										</div>
-										<div class="ch_wrapper ">
-											<input id="user-8-3-car" type="checkbox" name="check" value="user-8-3-car">
-											<label for="user-8-3-car">Прошел первичную аккредитацию</label>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 
 <!-- *************************** ШАГ 3 ***************************************- -->
+						
 						<div class="scan__block-row">
-							<p class="scan__step-head"><span class="text-blue">Шаг 3</span> Когда</p>
-							<div class="row-col">
-								<div class="ch_wrapper m-bottom">
-									<input id="user-9-1-car" type="radio" name="radio" value="user-9-1-car">
-									<label for="user-9-1-car">Готов к загрузке <b>(с сегодняшнего дня +2 дня)</b></label>
-								</div>
-								<div class="ch_wrapper m-bottom">
-									<input id="user-9-2-car" type="radio" name="radio" value="user-9-2-car">
-									<label for="user-9-2-car">С&nbsp;&nbsp;&nbsp;</label>
-									<div class="input input--small input--date">
-										<input type="text" class="datetimepicker6 user-input" id="user-9-2-1-car" name="user-9-2-1-car">							
-									</div>
-									<span class="wr">
-									<label>&nbsp;&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;</label>
-									<div class="input input--small input--day">
-										<input type="number" class="user-input required" id="user-9-2-2-car" name="user-9-2-2-car">										
-									</div>
-
-									<label for="user-9-2-2-car">&nbsp;&nbsp;&nbsp;дней</label>
-									</span>
-
-								</div>
-								<div class="ch_wrapper m-bottom">
-									<input id="user-9-3-car" type="radio" name="radio" value="user-9-3-car">
-									<label for="user-9-3-car">Постоянно&nbsp;&nbsp;&nbsp;</label>
-									<span class="wr">
-									<div class="input input--small input--time">
-										<div class="user-input-bootstrap-wrapper">						
-										<select class="user-input-bootstrap" id="user-9-3-1-car" name="user-9-3-1-car">
-									  		<option>В течение 1 месяца</option>
-									  		<option>В течение 6 месяцев</option>
-									  		<option>В течение 1 года</option>
-									  		<option>Безсрочно</option>					  		
-										</select>
-										</div>															
-									</div>
-									</span>
-									<span class="wr">
-									<label>&nbsp;&nbsp;&nbsp;<b>(с сегодняшнего дня +2 дня)</b></label></span>
-								</div>	
-							</div>
-							<p class="scan__text">В течении этого времени заявка будет находится в системе, после чего будет автоматически удалена.<br>Если заявка потеряет актуальность раньше, не забудьте её удалить из системы.</p>
-						</div>
-
-<!-- *************************** ШАГ 4 ***************************************- -->
-						<div class="scan__block-row">
-							<p class="scan__step-head"><span class="text-blue">Шаг 4</span> Оплата</p>
+							<p class="scan__step-head"><span class="text-blue">Шаг 3</span> Оплата</p>
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input" for="user-10-car">Минимальная ставка: </label>
-									<div class="input input--small input--short">
-										<input type="number" class="user-input" id="user-rate-car" name="user-10-car">			
+									<label class="lab-for-input" for="user-rate-car">Минимальная ставка: </label>
+									<div class="input input--small  m-left m-bottom-mobil">
+										<input type="text" class="user-input" id="user-rate-car" name="user-10-car">			
 									</div>
-									<div class="input input--small ">
+									<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-rate-car").mask("?999999",{placeholder:""});
+											});
+									</script>
+									<div class="input input--small m-left m-bottom-mobil" style="width: 150px;">
 										<div class="user-input-bootstrap-wrapper">						
 										<select class="user-input-bootstrap" id="user-10-1-car" name="user-10-1-car">								
 									  		<option>руб./км</option>
-									  		<option>руб./км</option>				  						  		
+									  		<option>Тариф в руб.</option>				  						  		
 										</select>
 										</div>																
 									</div>
 								</div>
+							</div>
 
-								<div class="wrapper m-bottom">
-									<label class="lab-for-input" for="">Способ оплаты: </label>
+							<div class="row-col">
+								<div class="wrapper m-bottom">									
 									<div class="ch_wrapper in-block">
-										<input id="user-11-1-car" type="checkbox" name="check" value="user-11-1-car">
-										<label for="user-11-1-car">Безналичный</label>
+										<input id="user-11-1-car" type="checkbox" name="check" value="user-11-1-car" checked>
+										<label for="user-11-1-car">Безналичный расчет</label>
 									</div>
 									<div class="ch_wrapper in-block">
 										<input id="user-11-2-car" type="checkbox" name="check" value="user-11-2-car">
-										<label for="user-11-2-car">Наличный</label>
-									</div>
-									<div class="ch_wrapper in-block">
-										<input id="user-11-3-car" type="checkbox" name="check" value="user-11-3-car">
-										<label for="user-11-3-car">НДС</label>
-									</div>
+										<label for="user-11-2-car">Наличный расчет</label>
+									</div>									
 									<div class="ch_wrapper in-block">
 										<input id="user-11-4-car" type="checkbox" name="check" value="user-11-4-car">
-										<label for="user-11-4-car">На карту</label>
+										<label for="user-11-4-car">Расчет по карте</label>
 									</div>
+								</div>
+								<div class="ch_wrapper m-bottom in-block">
+										<input id="user-11-3-car" type="checkbox" name="check" value="user-11-3-car">
+										<label for="user-11-3-car"> с НДС</label>
 								</div>
 							</div>
 						</div>
 
 <!-- *************************** ШАГ 5 ***************************************- -->
 						<div class="scan__block-row">
-							<p class="scan__step-head"><span class="text-blue">Шаг 5</span> Примечание</p>
+							<p class="scan__step-head"><span class="text-blue">Шаг 4</span> Примечание</p>
 							<div class="row-col">
 								<div class="input input-area">
 									<textarea name="user-12-car" id="user-12-car" cols="7" rows="10" class="user-input area" maxlength="1500"></textarea>
@@ -276,7 +213,7 @@
 
 <!-- *************************** ШАГ 6 ***************************************- -->
 						<div class="scan__block-row">
-							<p class="scan__step-head"><span class="text-blue">Шаг 6</span> ПТС</p>
+							<p class="scan__step-head"><span class="text-blue">Шаг 5</span> ПТС</p>
 							<div class="row-col">
 								<label class="lab-for-input lab-max lab-title">Свидетельство о регистрации ТС:</label>
 								<div class="scan__block-col col-1-3">
@@ -285,15 +222,25 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-13-car" name="user-13-car">			
 										</div>
+										<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-13-car").mask("?#######################################",{placeholder:""});
+											});
+										</script>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
 										<label class="lab-for-input lab-min" for="user-14-car">Серия: </label>
-										<div class="input input--small input--max">
+										<div class="input input--small input--large">
 											<input type="text" class="user-input" id="user-14-car" name="user-14-car">			
 										</div>
+										<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-14-car").mask("ЯЯЯЯЯ",{placeholder:""});
+											});
+										</script>
 									</div>
 								</div>
 
@@ -301,8 +248,13 @@
 									<div class="wrapper m-bottom">
 										<label class="lab-for-input lab-min" for="user-15-car">Номер: </label>
 										<div class="input input--small input--large">
-											<input type="number" class="user-input" id="user-15-car" name="user-15-car">			
+											<input type="text" class="user-input" id="user-15-car" name="user-15-car">			
 										</div>
+										<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-15-car").mask("999999",{placeholder:""});
+											});
+										</script>
 									</div>
 								</div>								
 							</div>
@@ -313,6 +265,11 @@
 									<div class="input input--small input--large">
 										<input type="text" class="user-input" id="user-16-car" name="user-16-car">			
 									</div>
+									<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-16-car").mask("?ЯЯЯЯЯЯЯЯЯ",{placeholder:""});
+											});
+									</script>
 								</div>
 
 								<div class="wrapper m-bottom">
@@ -327,40 +284,60 @@
 									<div class="input input--small input--max">
 										<input type="text" class="user-input" id="user-18-car" name="user-18-car">			
 									</div>
-								</div>
+									<script type="text/javascript">
+											jQuery(function($){
+										  			$("#user-18-car").mask("?########################################################",{placeholder:""});
+											});
+									</script>
+								</div>			
 
-								<div class="wrapper m-bottom">	
-									<label class="lab-for-input lab-large" for="user-19-car"> </label>								
-									<div class="input input--small input--large">
-										<input type="text" class="user-input" id="user-19-car" name="user-19-car">			
-									</div>
-								</div>
-
-								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-20-car">Отметка о снятии с учета:  </label>
-									<div class="input input--small input--large">
-										<input type="text" class="user-input" id="user-20-car" name="user-20-car">			
-									</div>
-								</div>
-
-								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-21-car">Дата снятия с учета:  </label>
-									<div class="input input--small input--date">
-										<input type="text" class="datetimepicker6 user-input" id="user-21-car" name="user-21-car">							
-									</div>
-								</div>
+								
 							</div>
 
-							<div class="scan__block-btn">
-								<button type="submit" class="bbtn bbtn--yellow bbtn--big scan__btn-last">Загрузить фотографии</button>
-								<p class="scan__text">Список загруженных файлов Список загруженных файлов Список загруженных файлов</p>
+							<div class="row-col">
+								<div class="scan__block-col col-1-2">
+									<div style="text-align: left;">
+										<button type="submit" class="bbtn bbtn--yellow bbtn--small bbtn--file">Выберите файл
+											<input id="photos" type="file" name="files[]"								
+										   			onchange='$("#upload-file-info1").text("Файл " + $(this)[0].files[0].name);'>
+										</button>
+										<span id="upload-file-info1" class="scan__text"></span>
+									</div>
+	
+									<div style="text-align: left;">	
+										<button type="submit" class="bbtn bbtn--yellow bbtn--small bbtn--file">Выберите файл
+											<input id="photos" type="file" name="files[]"								
+										   			onchange='$("#upload-file-info2").text("Файл " + $(this)[0].files[0].name);'>
+										</button>
+										<span id="upload-file-info2" class="scan__text"></span>
+									</div>
+								</div>
+
+								<div class="scan__block-col col-1-2">
+
+									<div style="text-align: left;">
+										<button type="submit" class="bbtn bbtn--yellow bbtn--small bbtn--file">Выберите файл
+											<input id="photos" type="file" name="files[]"								
+										   			onchange='$("#upload-file-info3").text("Файл " + $(this)[0].files[0].name);'>
+										</button>
+										<span id="upload-file-info3" class="scan__text"></span>
+									</div>
+	
+									<div style="text-align: left;">
+										<button type="submit" class="bbtn bbtn--yellow bbtn--small bbtn--file">Выберите файл
+											<input id="photos" type="file" name="files[]"								
+										   			onchange='$("#upload-file-info4").text("Файл " + $(this)[0].files[0].name);'>
+										</button>
+										<span id="upload-file-info4" class="scan__text"></span>
+									</div>
+								</div>
 								
 							</div>
 						</div>
 
 <!-- *************************** ШАГ 7 ***************************************- -->
 						<div class="scan__block-row">
-							<p class="scan__step-head"><span class="text-blue">Шаг 7</span> Контакты</p>
+							<p class="scan__step-head"><span class="text-blue">Шаг 6</span> Контакты</p>
 							<div class="row-col">
 								<label class="lab-for-input lab-max lab-title">Собственник:</label>
 								<div class="scan__block-col col-1-3">
@@ -369,6 +346,11 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-23-car" name="user-23-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-23-car").mask("?яяяяяяяяяяяяяяяяяяяяяяяяяяяяяя",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>
 
@@ -378,6 +360,11 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-24-car" name="user-24-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-24-car").mask("?яяяяяяяяяяяяяяяяяяяяяяяяяяяяяя",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>
 
@@ -387,6 +374,11 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-25-car" name="user-25-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-25-car").mask("?яяяяяяяяяяяяяяяяяяяяяяяяяяяяяя",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>					
 							</div>
@@ -398,6 +390,13 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-26-car" name="user-26-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-26-car").mask("999999999999",{placeholder:""});
+                                                //Для организации (десятизначный цифровой код)
+                                                //Для физического лица (двенадцатизначный цифровой код)
+                                            });
+                                        </script>
 									</div>
 								</div>
 
@@ -407,6 +406,12 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-27-car" name="user-27-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-27-car").mask("999999999",{placeholder:""});
+                                                //Структура КПП представляет собой девятизначный код: NNNNPPXXX
+                                            });
+                                        </script>
 									</div>
 								</div>
 
@@ -416,6 +421,12 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-28-car" name="user-28-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-28-car").mask("9999999999999",{placeholder:""});
+                                                //Структура ОГРН представляет собой 13-значный код: СГГККННХХХХХЧ
+                                            });
+                                        </script>
 									</div>
 								</div>					
 							</div>
@@ -427,24 +438,41 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-29-car" name="user-29-car">			
 										</div>
+										<script type="text/javascript">
+                                        jQuery(function($){
+                                            $("#user-29-car").mask("999.99.999.9.9999.9999999",{placeholder:" "});
+                                            //20-значное число, имеющее следующую структуру: ААА.ББ.ВВВ.Г.ДДДД.ЕЕЕЕЕЕЕ:
+                                        });
+                                    </script>
 									</div>
 								</div>
-								<div class="scan__block-col col-1-2">
+							</div>
+							<div class="row-col">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min p-left" for="user-30-car">В банке: </label>
+										<label class="lab-for-input lab-large" for="user-30-car">Наименование банка: </label>
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-30-car" name="user-30-car">			
 										</div>
+										<script type="text/javascript">
+                                        	jQuery(function($){
+                                           	 	$("#user-30-car").mask("?############################################################",{placeholder:""});
+                                        	});
+                                    	</script>
 									</div>
-								</div>
+								
 							</div>
 
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-3132-car">Юридический адрес: </label>
+									<label class="lab-for-input lab-large" for="user-31-car">Юридический адрес: </label>
 									<div class="input input--small input--max">
-										<input type="text" class="user-input" id="user-3132-car" name="user-3132-car">			
+										<input type="text" class="user-input" id="user-31-car" name="user-31-car">			
 									</div>
+									<script type="text/javascript">
+                                        jQuery(function($){
+                                            $("#user-31-car").mask("?############################################################",{placeholder:""});
+                                        });
+                                    </script>
 								</div>
 
 								<div class="wrapper m-bottom">
@@ -452,6 +480,11 @@
 									<div class="input input--small input--max">
 										<input type="text" class="user-input" id="user-32-car" name="user-32-car">			
 									</div>
+									<script type="text/javascript">
+                                        jQuery(function($){
+                                            $("#user-32-car").mask("?############################################################",{placeholder:""});
+                                        });
+                                    </script>
 								</div>
 
 							</div>
@@ -466,6 +499,11 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-33-car" name="user-33-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-33-car").mask("?яяяяяяяяяяяяяяяяяяяяяяяяяяяяяя",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>
 
@@ -475,6 +513,11 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-34-car" name="user-34-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-34-car").mask("?яяяяяяяяяяяяяяяяяяяяяяяяяяяяяя",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>
 
@@ -484,6 +527,11 @@
 										<div class="input input--small input--max">
 											<input type="text" class="user-input" id="user-35-car" name="user-35-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-35-car").mask("?яяяяяяяяяяяяяяяяяяяяяяяяяяяяяя",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>					
 							</div>
@@ -495,6 +543,11 @@
 										<div class="input input--small input--large">
 											<input type="text" class="user-input" id="user-36-car" name="user-36-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-36-car").mask("?ЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯ",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								
 							</div>
@@ -506,6 +559,11 @@
 										<div class="input input--small input--large">
 											<input type="text" class="user-input" id="user-37-car" name="user-37-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-37-car").mask("?ЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯ",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								
 							</div>	
@@ -513,28 +571,36 @@
 							<div class="row-col">								
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-38-car">Рег. №: </label>
-										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-38-car" name="user-38-car">			
-										</div>
+										<label>Водительское удостоверение: </label>
+										
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
 										<label class="lab-for-input lab-min" for="user-39-car">Серия: </label>
-										<div class="input input--small input--max">
+										<div class="input input--small input--large">
 											<input type="text" class="user-input" id="user-39-car" name="user-39-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-39-car").mask("ЯЯЯЯЯ",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>
 
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
 										<label class="lab-for-input lab-min" for="user-40-car">Номер:  </label>
-										<div class="input input--small input--max">
+										<div class="input input--small input--large">
 											<input type="text" class="user-input" id="user-40-car" name="user-40-car">			
 										</div>
+										<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-40-car").mask("999999",{placeholder:""});
+                                            });
+                                        </script>
 									</div>
 								</div>					
 							</div>
@@ -545,7 +611,7 @@
 							<p class="scan__text param-reg" style="padding: 0; text-align: left;">Поля, обязательные для заполнения<br></p>
 							<div class="scan__block-btn">
 								<button type="submit" class="bbtn bbtn--yellow bbtn--big scan__btn-last-1-2">Добавить транспорт</button>
-								<button type="submit" class="bbtn bbtn--yellow bbtn--big scan__btn-last-1-2">Закрыть</button>
+								<button type="button" class="bbtn bbtn--yellow bbtn--big scan__btn-last-1-2">Отмена</button>
 							</div>							
 
 						</div>

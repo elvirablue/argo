@@ -85,6 +85,7 @@
 	background-color: @color-yellow;
 	text-decoration: none;
 	border: none;
+	color: @color-black;
 }
 
 .bbtn--yellow:hover {
@@ -103,4 +104,32 @@
 .bbtn--shadow {
 	box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.15);
 }
+
+.bbtn--file {
+		display: inline-block;
+		position: relative;
+		min-width: 180px;
+		max-width: 180px;
+		width: 180px;
+		margin: 5px 10px;
+		@media @mobil-widths {
+			min-width: 100px;
+			width: 100%;
+			max-width: 200px;					
+		}
+	
+
+		#photos {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+			font-size: 150px;
+			height: 100%;
+			z-index: 20;
+			cursor: pointer;
+		}
+	}
+
 

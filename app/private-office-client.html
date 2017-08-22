@@ -53,9 +53,250 @@
 </head> 
 <body>
 
+<!-- HTML-код модального окна для груза-->
+	<div id="infoOrderModalBox" class="modal fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <!-- Заголовок модального окна -->
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	        <h4 class="modal-title">Информация о заказе №ХХХ</h4>
+	      </div>
+	      <!-- Основное содержимое модального окна -->
+	      <div class="modal-body">
+	      	<h6 class="modal-title">Заказчик - Имя имя имя (Статус - Аккредитован)</h6>
+	      	<div class="row">
+	      		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	      			<table>
+	      				<caption>Информация о грузе</caption>	        	
+	      				<tbody>
+	      					<tr>
+	      						<td><label>Тип груза: </label></td>
+	      						<td>Декоративные культуры</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Подтип груза:</label></td>
+	      						<td>Цветы</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Вес, т</label></td>
+	      						<td></td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Объем, м<sup>3</sup></label></td>
+	      						<td></td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Упаковка: </label></td>
+	      						<td>ящик ХХ шт. (ремней - ХХ шт.)</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Тип кузова:</label></td>
+	      						<td>Грузовик</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Тип загрузки:</label></td>
+	      						<td>верхняя/боковая/задняя</td>
+	      					</tr>	        		
+	      				</tbody>
+	      			</table>
+	      		</div>
+
+	      		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	      			<table>
+	      				<caption>Информация о маршруте</caption>        		
+	      				<tbody>
+	      					<tr>
+	      						<td><label>Откуда: </label></td>
+	      						<td>Регион, город</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Дата и время загрузки: </label></td>
+	      						<td>01.01.2017 с 10:00 до 15:00</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Куда:</label></td>
+	      						<td>Регион, город</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Дата и время рагрузки: </label></td>
+	      						<td>10.01.2017 с 10:00 до 15:00</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Расстояние, км</label></td>
+	      						<td>500</td>
+	      					</tr>	        		       		
+	      				</tbody>
+	      			</table>
+	      		</div>	      		
+	      	</div>
+	        
+	        
+	        <table>
+	        	<caption>Информация об оплате</caption>        		
+	        	<tbody>
+	        		<tr>
+	        			<td><label>Безналичный расчет / учитывать НДС - ДА</label></td>	        			
+	        		</tr>
+	        		<tr>
+	        			<td><label>Ставка 10000 руб. общая макимальная</label></td>	        			
+	        		</tr>
+	        		<tr>
+	        			<td><label>Вариант оплаты: Отсрочка после предоставления документов 10 дней</label></td>	        			
+	        		</tr>
+	        		<tr>
+	        			<td><label>Прямой договор - ДА / Возможен торг - ДА </label></td>	        			
+	        		</tr>
+	        		<tr>
+	        			<td>
+	        				<label>Примечание:</label>
+	        				<p> текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст</p>
+	        			</td>	        			
+	        		</tr>	        		       		
+	        	</tbody>
+	        </table>
+	      </div>
+	      <!-- Футер модального окна -->
+	      <div class="modal-footer">
+	        <button type="button" class="bbtn bbtn--yellow bbtn--small bbtn--modal" data-dismiss="modal">Закрыть</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+<!-- HTML-код модального окна для транспорта-->
+	<div id="infoCarModalBox" class="modal fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <!-- Заголовок модального окна -->
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	        <h4 class="modal-title">Информация о транспорте №ХХХ</h4>
+	      </div>
+	      <!-- Основное содержимое модального окна -->
+	      <div class="modal-body">
+	      	<h6 class="modal-title">Перевозчик - Имя имя имя (Статус - Аккредитован)</h6>
+	      	<div class="row">
+	      		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	      			<table>
+	      				<caption>Транспортное средство</caption>	        	
+	      				<tbody>
+	      					<tr>
+	      						<td><label>Название: </label></td>
+	      						<td>Автомобиль как в ПТС написано</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Гос. регистр. знак:</label></td>
+	      						<td>А 555 АА 154</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Тип кузова: </label></td>
+	      						<td>Скотовоз - Грузовик</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Тип загрузки: </label></td>
+	      						<td>верхняя/нижняя</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Вес, т</label></td>
+	      						<td></td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Объем, м<sup>3</sup></label></td>
+	      						<td></td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>ПТС (серия/номер):</label></td>
+	      						<td>54 НС 000000000</td>
+	      					</tr>	      					
+	      					<tr>
+	      						<td><label>Дата регистрации:</label></td>
+	      						<td>01.01.2017</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Выдано ГИБДД:</label></td>
+	      						<td>отдел ГИБДД по НСО......</td>
+	      					</tr>	      						        		
+	      				</tbody>
+	      			</table>
+	      		</div>
+
+	      		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+	      			<table>
+	      				<caption>Собственник / Водитель</caption>        		
+	      				<tbody>
+	      					<tr>
+	      						<td><label>ФИО собственника: </label></td>
+	      						<td>Фамилия Имя Отчество</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>ФИО водителя: </label></td>
+	      						<td>Фамилия Имя Отчество</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Водительское удостоверение:</label></td>
+	      						<td> 00 00 000000000</td>
+	      					</tr>
+	      					<tr>
+	      						<td><label>Имеются разрешения: </label></td>
+	      						<td><p>Медицинская книжка</p>
+	      							<p>Спецодежда для перевозки кормов и свиней</p>
+	      							<p>Пропуск на МКАД</p>
+	      							<p>Экспедирование</p></td>
+	      					</tr>
+	      						        		       		
+	      				</tbody>
+	      			</table>
+	      		</div>	      		
+	      	</div>
+	        
+	        
+	        <table>
+	        	<caption>Информация об оплате</caption>        		
+	        	<tbody>
+	        		<tr>
+	        			<td><label>Безналичный расчет / учитывать НДС - ДА</label></td>	        			
+	        		</tr>
+	        		<tr>
+	        			<td><label>Минимальна ставка 10000 руб. общая макимальная</label></td>	        			
+	        		</tr>	        		
+	        		<tr>
+	        			<td>
+	        				<label>Примечание:</label>
+	        				<p> текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст</p>
+	        			</td>	        			
+	        		</tr>	        		       		
+	        	</tbody>
+	        </table>
+	      </div>
+	      <!-- Футер модального окна -->
+	      <div class="modal-footer">
+	        <button type="button" class="bbtn bbtn--yellow bbtn--small bbtn--modal" data-dismiss="modal">Закрыть</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	 
+	<!-- Скрипт, вызывающий модальное окно после загрузки страницы -->
+	<script>
+		
+	  
+	</script>
+
+
+
+
+
+
+
 
 <div class="wrapper-x">
 	<div class="wrapper-y">
+
+
 	<!-- *************************** ШАПКА ***************************************- -->
 		<div id="header-sticky-wrapper" class="sticky-wrapper">
 		<div class="page-header-wr">
@@ -390,7 +631,7 @@
 	
 					<div class="page-block__wr-border-gray private-office__table-wr">
 					<table class="private-office__table">
-						<tbody>
+						<thead>
 							<tr>
 								<th>Дата погрузки</th>
 								<th>Откуда</th>
@@ -400,8 +641,10 @@
 								<th>Подтип груза</th>
 								<th>Статус заказчика</th>
 							</tr>
+						</thead>
 
-							<tr>
+						<tbody>
+							<tr data-toggle="modal" data-target="#infoOrderModalBox">
 								<td>31.07.2017 10:49:59</td>
 								<td>c. Тербуны, Липецкая обл, Тербунский р-н</td>
 								<td>Склад, Кашино, Московская обл, Волоколамский р-н</td>
@@ -411,7 +654,7 @@
 								<td>Не аккредитован</td>
 							</tr>
 
-							<tr>
+							<tr data-toggle="modal" data-target="#infoCarModalBox">
 								<td>31.07.2017 10:49:59</td>
 								<td>c. Тербуны, Липецкая обл, Тербунский р-н</td>
 								<td>Склад, Кашино, Московская обл, Волоколамский р-н</td>
@@ -558,7 +801,7 @@
 	
 					<div class="page-block__wr-border-gray private-office__table-wr">
 					<table class="private-office__table">
-						<tbody>
+						<thead>
 							<tr>
 								<th>Дата погрузки</th>
 								<th>Откуда</th>
@@ -568,7 +811,8 @@
 								<th>Подтип груза</th>
 								<th>Статус заказчика</th>
 							</tr>
-
+						</thead> 
+						<tbody>
 							<tr>
 								<td>31.07.2017 10:49:59</td>
 								<td>c. Тербуны, Липецкая обл, Тербунский р-н</td>

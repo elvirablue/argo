@@ -1,0 +1,1 @@
+<a href="5.128.55.12/register/confirm/{{$token}}">Ссылка</a>

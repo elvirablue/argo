@@ -85,6 +85,11 @@
 		border-color: @color-agent;
 	}
 
+	&__status.st-new {
+		color: @color-new;
+		border-color: @color-new;
+	}
+
 	&__req {
 		text-align: center;
 		display: block;
@@ -124,8 +129,7 @@
 		width: 958px;
 
 		tr {
-			background-color: #fff;
-			
+			background-color: #fff;			
 
 			td {
 				padding: 15px 5px;
@@ -136,7 +140,7 @@
 				border: 1px solid #d1d1d1;
 			}
 
-			td:nth-child(4), td:nth-child(5), td:nth-child(6), td:nth-child(7) {
+			td:last-child {
 				text-align: center;
 			}
 		}
@@ -144,16 +148,16 @@
 		tr:nth-child(odd) {
 			background-color: @color-paleblue;
 		}
+
+		tr:hover {
+			background-color: #e8e8e8;
+			cursor: pointer;		
+		}
 		
-		tr:first-child {
+		thead tr:first-child {
 			background-color: @color-darkblue;
 
-			th {padding: 5px; width: 13%;}
-
-			th:nth-child(2), th:nth-child(3) {
-				width: 17.5%;
-			}
-		
+			th {padding: 5px; }		
 			th:first-child {border-top-left-radius: 5px;}
 			th:last-child {border-top-right-radius: 5px;}
 		}
@@ -161,17 +165,33 @@
 		
 
 
-		th {
+		thead th {
 			color: @color-white;
 			height: 90px;
 			text-align: center;			
 			.segoe-regular(16px);
 			font-weight: normal;
 			border: 1px solid #d1d1d1;
+			position: relative;
+
+			p {
+				display: block;
+				width: 100%;
+				padding: 3px;
+				text-align: center;				
+			}
+
+			.glyphicon {				
+				font-size: 13px;				
+				padding: 0 3px;
+			}
+			
 			
 		}
 
 	}
+
+	
 
 	@media @tablet-widths {
 		.col-private-office {
@@ -194,7 +214,7 @@
 	.segoe-regular(16px);
 	color: @color-black;
 	padding-top: 20px;
-	@media @mobil-widths {width: 100%; padding-top: 15px;}
+	@media @mobil-widths {display: block; width: 100%; padding-top: 15px;}
 
 }
 

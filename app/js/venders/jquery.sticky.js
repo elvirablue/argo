@@ -49,7 +49,7 @@
       for (var i = 0, l = sticked.length; i < l; i++) {
         var s = sticked[i],
           elementTop = s.stickyWrapper.offset().top,
-          etse = elementTop - s.topSpacing - extra + 200;
+          etse = elementTop - s.topSpacing - extra + 100;
 
         //update height in case of dynamic content
         s.stickyWrapper.css('height', s.stickyElement.outerHeight());
