@@ -215,6 +215,7 @@
 
 	&__btn-last {
 		display: block;
+		position: relative;
 		min-width: 380px;
 		max-width: 380px;
 		width: 80%;
@@ -223,6 +224,19 @@
 			min-width: 200px;
 			width: 100%;
 			max-width: 350px;					
+		}
+	
+
+		#upload {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+			font-size: 150px;
+			height: 100%;
+			z-index: 20;
+			cursor: pointer;
 		}
 	}
 

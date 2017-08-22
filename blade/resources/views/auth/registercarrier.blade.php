@@ -37,7 +37,7 @@
                                     <div class="wrapper m-bottom">
                                         <label class="lab-for-input lab-min param-reg" for="user-1-carrier">Ваше имя: </label>
                                         <div class="input input--small input--max">
-                                            <input type="text" class="user-input" id="user-1-carrier" name="user-1-carrier" required>            
+                                            <input type="text" class="user-input" id="user-1-carrier" name="user-1-carrier" required>
                                         </div> 
                                         <script type="text/javascript">
                                             jQuery(function($){
@@ -153,7 +153,7 @@
                                 <div class="wrapper m-bottom">
                                     
                                     <div class="ch_wrapper in-block">
-                                        <input id="check-entity" onchange="ShowStepContact(this)" type="checkbox" name="check-entity" value="check-entity">
+                                        <input id="check-entity" onchange="ShowStepContact(this)" type="checkbox" name="check-entity" value="1">
                                         <label for="check-entity">Есть Юридическое лицо</label>
                                     </div>
                                     <script type="text/javascript">
@@ -204,7 +204,7 @@
                                     <div class="wrapper m-bottom">
                                         <label class="lab-for-input lab-min" for="user-13-carrier">Отчество: </label>
                                         <div class="input input--small input--max">
-                                            <input type="number" class="user-input" id="user-13-carrier" name="user-13-carrier">            
+                                            <input type="text" class="user-input" id="user-13-carrier" name="user-13-carrier">            
                                         </div>
                                         <script type="text/javascript">
                                             jQuery(function($){
@@ -235,13 +235,15 @@
                                     <div class="wrapper m-bottom">
                                         <label class="lab-for-input p-left" for="user-15-carrier">Вид деятельности: </label>
                                         <div class="input input--small input--large">
-                                            <input type="text" class="user-input" id="user-15-carrier" name="user-15-carrier">          
+                                             <div class="user-input-bootstrap-wrapper">                      
+                                            <select class="user-input-bootstrap" id="user-15-carrier" name="user-15-carrier">
+												@foreach ($workingTypes as $type)
+													<option>{{$type}}</option>
+												@endforeach
+                                            </select>
+                                            </div>           
                                         </div>
-                                        <script type="text/javascript">
-                                            jQuery(function($){
-                                                $("#user-15-carrier").mask("?яяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя",{placeholder:""});
-                                            });
-                                        </script>
+                                        
                                     </div>
                                 </div>
 
@@ -259,7 +261,7 @@
                                         </div>
                                         <script type="text/javascript">
                                             jQuery(function($){
-                                                $("#user-16-carrier").mask("999999999999",{placeholder:"0"});
+                                                $("#user-16-carrier").mask("999999999999",{placeholder:""});
                                                 //Для организации (десятизначный цифровой код)
                                                 //Для физического лица (двенадцатизначный цифровой код)
                                             });
@@ -275,7 +277,7 @@
                                         </div>
                                         <script type="text/javascript">
                                             jQuery(function($){
-                                                $("#user-17-carrier").mask("999999999",{placeholder:"0"});
+                                                $("#user-17-carrier").mask("999999999",{placeholder:""});
                                                 //Структура КПП представляет собой девятизначный код: NNNNPPXXX
                                             });
                                         </script>
@@ -290,8 +292,8 @@
                                         </div>
                                         <script type="text/javascript">
                                             jQuery(function($){
-                                                $("#user-18-carrier").mask("9999999999999",{placeholder:"0"});
-                                                //Структура КПП представляет собой 13-значный код: СГГККННХХХХХЧ
+                                                $("#user-18-carrier").mask("9999999999999",{placeholder:""});
+                                                //Структура ОГРН представляет собой 13-значный код: СГГККННХХХХХЧ
                                             });
                                         </script>
                                     </div>
@@ -306,7 +308,7 @@
                                     </div>
                                     <script type="text/javascript">
                                         jQuery(function($){
-                                            $("#user-19-carrier").mask("999.99.999.9.9999.999999",{placeholder:"0"});
+                                            $("#user-19-carrier").mask("999.99.999.9.9999.9999999",{placeholder:" "});
                                             //20-значное число, имеющее следующую структуру: ААА.ББ.ВВВ.Г.ДДДД.ЕЕЕЕЕЕЕ:
                                         });
                                     </script>
@@ -319,20 +321,20 @@
                                     </div>
                                     <script type="text/javascript">
                                         jQuery(function($){
-                                            $("#user-19-carrier").mask("9999999999999999999",{placeholder:"0"});
+                                            $("#user-20-carrier").mask("99999999999999999999",{placeholder:""});
                                             //20-значное число
                                         });
                                     </script>
                                 </div>
 
                                 <div class="wrapper m-bottom">
-                                    <label class="lab-for-input lab-min" for="user-20-carrier">БИК: </label>
+                                    <label class="lab-for-input lab-min" for="user-20-1-carrier">БИК: </label>
                                     <div class="input input--small input--large">
-                                        <input type="text" class="user-input" id="user-20-carrier" name="user-20-carrier">          
+                                        <input type="text" class="user-input" id="user-20-1-carrier" name="user-20-1-carrier">          
                                     </div>
                                     <script type="text/javascript">
                                         jQuery(function($){
-                                            $("#user-20-carrier").mask("999999999",{placeholder:"0"});
+                                            $("#user-20-1-carrier").mask("999999999",{placeholder:""});
                                             //9-значное число
                                         });
                                     </script>

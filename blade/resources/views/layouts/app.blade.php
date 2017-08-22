@@ -29,7 +29,7 @@
     <script src="{{ asset('js/venders/fileinput.js') }}"></script>
  
     <!-- Include the plugin's CSS and JS: -->
-    <script src="{{ asset('js/venders/bootstrap-multiselect.js') }}"></script> 
+    
     <script src="{{ asset('js/venders/moment-with-locales.min.js') }}"></script>
     <script src="{{ asset('js/venders/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{ asset('js/venders/jquery.sticky.js') }}"></script>
@@ -39,12 +39,16 @@
         }); 
     </script>
 
+    <script src="kladr/jquery.kladr.min.js" type="text/javascript"></script>
+    <script src="kladr/js/form.js" type="text/javascript"></script>
+	<script src="kladr/js/form1.js" type="text/javascript"></script>
+
 
 
     <link rel="stylesheet" href="{{ asset('css/venders/bootstrap-3.3.2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/venders/bootstrap-datetimepicker.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/venders/bootstrap-datetimepicker-standalone.css') }}"/>
-
+    <link rel="stylesheet" href="kladr/jquery.kladr.min.css" >
     
     <link rel="stylesheet" href="{{ asset('css/venders/jquery.arcticmodal-0.3.css') }}">   
     <script src="{{ asset('js/venders/jquery.arcticmodal-0.3.min.js') }}"></script>
@@ -63,6 +67,36 @@
 
 </head>
 <body>
+
+<!-- HTML-код модального окна для транспорта-->
+    <div id="infoRegModalBox" class="modal fade">
+      <div class="modal-dialog modal-min">
+        <div class="modal-content">
+          <!-- Заголовок модального окна -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Внимание! Данный функционал не доступен.</h4>
+          </div>
+          <!-- Основное содержимое модального окна -->          
+          <div class="modal-body">
+            <br><br>
+
+            <p>Войдите в систему под логином <span id="log1">...</span> , если Вы зарегистрированы.</p>
+            <br>
+            <p>Или пройдите регистрацию <span id="log2">...</span></p>
+            <a href="{{ route('register') }}" class="page-block__subtitle link center">Регистрация для новых пользователей</a>
+           
+
+           </div>
+          <!-- Футер модального окна -->
+          <div class="modal-footer">
+            <button type="button" class="bbtn bbtn--yellow bbtn--small bbtn--modal" data-dismiss="modal">Закрыть</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 <div class="wrapper-x">
     <div class="wrapper-y">
@@ -208,10 +242,10 @@
             <div class="page-footer__block-center">
                 <p class="page-footer__title">AGROCARGO В СОЦИАЛЬНЫХ СЕТЯХ:</p>
                 <div class="block-social page-footer__social" >
-                    <a href="#" class="social social--vk">vk</a>
-                    <a href="#" class="social social--instargam">instargam</a>
+                    <a href="https://vk.com/agrocargo" target="_blank" class="social social--vk">vk</a>
+                    <a href="https://www.instagram.com/agrocargo.ru"  target="_blank" class="social social--instargam">instargam</a>
                     <a href="#" class="social social--ok">ok</a>
-                    <a href="#" class="social social--facebook">facebook</a>                
+                    <a href="https://www.facebook.com/Agrocargo-1905749719686842/" target="_blank" class="social social--facebook">facebook</a>                
                 </div>
             </div>
 
@@ -240,7 +274,8 @@
                         @else
                             @if (Auth::user()->role_id == 3)
                                 <a href="{{ route('carrieroffice', Auth::user()->id) }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
-                            @else if (Auth::user()->role_id == 2)
+                            @endif
+                            @if (Auth::user()->role_id == 2)
                                 <a href="{{ route('customeroffice', Auth::user()->id) }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
                             @endif
 
@@ -275,8 +310,10 @@
 <!-- ********************************- -->
 </div> <!-- end wrapper-x -->
 <!-- Scripts -->
+<script src="{{ asset('js/venders/bootstrap-multiselect.js') }}"></script>
 <script src="{{ asset('js/menu.js') }}"> </script>
 <script src="{{ asset('js/script.js') }}"> </script>
+
     
 
 </body>

@@ -2,6 +2,8 @@
   
 @section('content')
 
+@include('modal.infoOrderModalBox')
+
     <!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
         <div class="first-screen-page-bg bg-page-small private-office-client-bg">
             <div class="first-screen-page">
@@ -18,7 +20,7 @@
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="index.html">Главная</a></li>
-                    <li class="active"><a >Личный кабинет заказчика</a></li>
+                    <li class="active"><a >Грузовладелец {{ Auth::user()->name }}</a></li>
                 </ul>
                 
             </div>
@@ -34,30 +36,30 @@
                                 <div class="in-block">
                                     <p class="wrapper">
                                         <span class="span-private-office">Имя: </span>
-                                        <span class="span-private-office blue">Название Название Название</span>
+                                        <span class="span-private-office blue">{{ $user->name }}</span>
                                     </p>
 
                                     <p class="wrapper">
                                         <span class="span-private-office">Фамилия: </span>
-                                        <span class="span-private-office blue">Название</span>
+                                        <span class="span-private-office blue">{{ $user->lastname }}</span>
                                     </p>
                                 
                                     <p class="wrapper">
                                         <span class="span-private-office">Компания: </span>
-                                        <span class="span-private-office blue">Название компании</span>
+                                        <span class="span-private-office blue">{{ $user->company }}</span>
                                     </p>
 
                                     <p class="wrapper">
                                         <span class="span-private-office">E-mail: </span>
-                                        <span class="span-private-office blue">mail@mail.com</span>
+                                        <span class="span-private-office blue">{{ $user->email }}</span>
                                     </p>
 
                                     <p class="wrapper">
                                         <span class="span-private-office">Телефон: </span>
-                                        <span class="span-private-office blue">+ 7 000 000 0000</span>
+                                        <span class="span-private-office blue">{{ $user->phone }}</span>
                                     </p>
                                 </div>
-                                <a href="#" class="bbtn bbtn--yellow bbtn--small private-office__btn">Редактировать данные</a>
+                                <a href="{{ route('editcustomer', $user->id ) }}" class="bbtn bbtn--yellow bbtn--small private-office__btn">Редактировать данные</a>
                                                                 
                             </div>
 
@@ -74,10 +76,10 @@
                                 <!-- note: your server code `avatar_upload.php` will receive `$_FILES['avatar']` on form submission -->
                                 <!-- load avatar -->
                                 <div id="kv-avatar-errors-2" class="center-block" style="width:300px;display:none"></div>
-                                <form class="form form-vertical" action="/avatar_upload.php" method="post" enctype="multipart/form-data">                           
+                                <form class="form form-vertical" action="{{ route('adduserimage') }}" method="post" enctype="multipart/form-data" novalidate>
                                     <div class="kv-avatar center-block text-center" style="width:200px">
                                         <input id="avatar-2" name="avatar-2" type="file" class="file-loading" required>
-                                    
+										{{ csrf_field() }}
                                     <button type="submit" class="private-office__load">Загрузить</button>
                                     </div>                          
                                 </form>
@@ -97,20 +99,38 @@
                                     removeTitle: 'Удалить аватар',
                                     elErrorContainer: '#kv-avatar-errors-2',
                                     msgErrorClass: 'alert alert-block alert-danger',
-                                    defaultPreviewContent: '<img src="img/nophoto.png" alt="Ваш аватар" style="width:200px"><h6 class="text-muted">Выбрать</h6>',
+                                    defaultPreviewContent: 
+									@if ($user->image == null)
+										'<img src="img/nophoto.png" alt="Ваш аватар" style="width:200px"><h6 class="text-muted">Выбрать</h6>',
+									@else
+										'<img src="{{ $img }}" alt="Ваш аватар" style="width:200px">',
+									@endif
                                     
                                     allowedFileExtensions: ["jpg", "png", "gif"]
                                 });
                                 </script>
+								<script>
+									$(".glyphicon-remove").click(function() {
+										$.ajax({
+											url: '{{ route("deleteuserimage") }}',
+											success: function(data){									
+												$(".file-default-preview").html('<img src="img/nophoto.png" alt="Ваш аватар" style="width:200px"><h6 class="text-muted">Выбрать</h6>');
+												//alert(data);
+											}
+										});
+									});
+								</script>
                                 <!-- end load avatar -->
                                 
                                 <!--
                                 <a href="#" class="private-office__out">Выйти</a>
                                 <div class="private-office__req">Реквизиты <a href="#" class="link">(скачать <span class="glyphicon glyphicon-save"></span>)</a></div>
                                 -->
-                                <!-- class  st-tested -  blue border and text
-                                            st-notested - yellow
-                                            st-agent - green
+
+                                <!-- class  st-tested - green border and text
+                                            st-notested - blue
+                                            st-agent - yellow
+                                            st-new - red
                                 -->
                                 <div class="private-office__status st-agent">Аккредитован <i class="help">?</i></div>
                             </div>
@@ -125,175 +145,49 @@
 
             </div>
 
+<!-- *************************** БЛОК Ответы на заказы ***************************************- -->			
+			<div class="page-block">
+                <h2 class="page-block__head yellow-line">Ответы на заказы</h2>
+				{!! $answersTable !!}
+				
+			</div>
+
 <!-- *************************** БЛОК Доступные Заказы в таблицу ***************************************- -->
             <div class="page-block">
                 <h2 class="page-block__head yellow-line">Мои Заказы</h2>
+					
+						<!--{!! $filter !!}-->
+					<div class="separator"></div>
+					{!! $offersTable !!}
+					<script>
+						
+						$(".openoffer").click( function(event){
+							 var target = event.target; // где был клик?
+                                                        
+                            if (target.tagName != this && target.tagName != 'TD') {
+                                return;
+                            }                 
 
-                <div class="block-filter">
-                    <!--**************-->
-                    <div class="block-filter__wrapper">
-                        <label class="lab-filter" for="filter-1">Дата погрузки: </label>
-                        <div class="input filter filter--orders">
-                            <div class="user-input-bootstrap-wrapper">                      
-                                <select class="user-input-bootstrap" id="filter-1" name="filter-1">
-                                    <option>Нажмите, чтобы выбрать</option> 
-                                    <option>По возрастанию</option>
-                                    <option>По убыванию</option>                                                
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!--**************-->
-                    
-                    <div class="block-filter__wrapper">
-                        <label class="lab-filter" for="filter-2">Откуда: </label>
-                        <div class="input filter filter--orders">
-                            <div class="user-input-bootstrap-wrapper">                      
-                                <select class="user-input-bootstrap" id="filter-2" name="filter-2">
-                                    <option>Нажмите, чтобы выбрать</option> 
-                                    <option>Подгружаемый параметр</option>
-                                    <option>Подгружаемый параметр</option>                                          
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!--**************-->
-                    
-                    <div class="block-filter__wrapper">
-                        <label class="lab-filter" for="filter-3">Куда: </label>
-                        <div class="input filter filter--orders">
-                            <div class="user-input-bootstrap-wrapper">                      
-                                <select class="user-input-bootstrap" id="filter-3" name="filter-3">
-                                    <option>Нажмите, чтобы выбрать</option> 
-                                    <option>Подгружаемый параметр</option>
-                                    <option>Подгружаемый параметр</option>                                          
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!--**************-->
 
-                    <div class="block-filter__wrapper">
-                        <label class="lab-filter" for="filter-4">Расстояние: </label>
-                        <div class="input filter filter--orders">
-                            <div class="user-input-bootstrap-wrapper">                      
-                                <select class="user-input-bootstrap" id="filter-4" name="filter-4">
-                                    <option>Нажмите, чтобы выбрать</option> 
-                                    <option>По возрастанию</option>
-                                    <option>По убыванию</option>                                            
-                                </select>
-                            </div>
-                        </div>
-                    </div>                  
-                    <!--**************-->
-
-                    <div class="block-filter__wrapper">
-                        <label class="lab-filter" for="filter-5">Статус заказчика: </label>
-                        <div class="input filter filter--orders">
-                            <div class="user-input-bootstrap-wrapper">                      
-                                <select class="user-input-bootstrap" id="filter-5" name="filter-5">
-                                    <option>Нажмите, чтобы выбрать</option> 
-                                    <option>Аккредитован</option>
-                                    <option>Первичная аккредитация</option> 
-                                    <option>Не аккредитован</option>                                        
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!--**************-->
-
-                    <div class="block-filter__wrapper ">
-                        <label class="lab-filter" for="filter-6">Тип груза: </label>
-                        <div class="input filter filter--orders">
-                            <div class="user-input-bootstrap-wrapper">                      
-                                <select class="user-input-bootstrap" id="filter-6" name="filter-6">
-                                    <option>Нажмите, чтобы выбрать</option> 
-                                    <option>С/х животные и птица (живок)</option>
-                                                                            
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!--**************-->
-                    
-                    <div class="block-filter__wrapper">
-                        <label class="lab-filter" for="filter-7">Подтип груза: </label>
-                        <div class="input filter filter--orders">
-                            <div class="user-input-bootstrap-wrapper">                      
-                                <select class="user-input-bootstrap" id="filter-7" name="filter-7">
-                                    <option>Нажмите, чтобы выбрать</option> 
-                                    <option>Козы</option>
-                                    <option>Кролики</option>
-                                    <option>КРС</option>
-                                    <option>Лошади</option>
-                                    <option>Овцы</option>
-                                    <option>Птицы</option>
-                                    <option>Пчелы</option>
-                                    <option>Рыбопосадочный материал</option>
-                                    <option>Свиньи</option>                                         
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <!--**************-->
-
-                    <div class="block-filter__wrapper">
-                        <a href="#" class="bbtn bbtn--yellow bbtn--small block-filter__btn">Применить фильтры</a>
-
-                    </div>
-                    
-                </div>  
-
-                
-
-                <div class="page-block__wr-border-gray private-office__table-wr">
-                    <table class="private-office__table">
-                        <tbody>
-                            <tr>
-                                <th>Дата погрузки</th>
-                                <th>Откуда</th>
-                                <th>Куда</th>
-                                <th>Расстояние</th>
-                                <th>Тип груза</th>
-                                <th>Подтип груза</th>
-                                <th>Статус заказчика</th>
-                            </tr>
-
-                            <tr>
-                                <td>31.07.2017 10:49:59</td>
-                                <td>c. Тербуны, Липецкая обл, Тербунский р-н</td>
-                                <td>Склад, Кашино, Московская обл, Волоколамский р-н</td>
-                                <td>600</td>
-                                <td>Культура</td>
-                                <td>Ячмень</td>
-                                <td>Не аккредитован</td>
-                            </tr>
-
-                            <tr>
-                                <td>31.07.2017 10:49:59</td>
-                                <td>c. Тербуны, Липецкая обл, Тербунский р-н</td>
-                                <td>Склад, Кашино, Московская обл, Волоколамский р-н</td>
-                                <td>600</td>
-                                <td>Культура</td>
-                                <td>Ячмень</td>
-                                <td>Не аккредитован</td>
-                            </tr>
-
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+							//alert($(this).attr('data-id'));
+							tmp = 'id=' + $(this).attr('data-id');
+							$.ajax({
+									url: '{{route('showoffer')}}',
+									data: tmp,
+									success: function(data){
+										// alert(data);
+										$('#infoOrderModalBox').find(".modal-dialog").html(data);
+									}
+							});
+							$('#infoOrderModalBox').modal('show');
+						});
+					</script>
+				
             </div>
                     
         </div>
+		
+
     
 
         <div class="page-block-bg page-block-bg--article">  
