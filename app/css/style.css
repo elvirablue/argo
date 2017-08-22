@@ -4165,26 +4165,26 @@ span.multiselect-selected-text {
 .private-office__table tr:nth-child(odd) {
   background-color: #cee3ee;
 }
-.private-office__table tr:first-child {
+.private-office__table thead tr:first-child {
   background-color: #374557;
 }
-.private-office__table tr:first-child th {
+.private-office__table thead tr:first-child th {
   padding: 5px;
   width: 13%;
 }
-.private-office__table tr:first-child th:nth-child(2),
-.private-office__table tr:first-child th:nth-child(3) {
+.private-office__table thead tr:first-child th:nth-child(2),
+.private-office__table thead tr:first-child th:nth-child(3) {
   width: 17.5%;
 }
-.private-office__table tr:first-child th:first-child {
+.private-office__table thead tr:first-child th:first-child {
   -webkit-border-top-left-radius: 5px;
           border-top-left-radius: 5px;
 }
-.private-office__table tr:first-child th:last-child {
+.private-office__table thead tr:first-child th:last-child {
   -webkit-border-top-right-radius: 5px;
           border-top-right-radius: 5px;
 }
-.private-office__table th {
+.private-office__table thead th {
   color: #ffffff;
   height: 90px;
   text-align: center;
