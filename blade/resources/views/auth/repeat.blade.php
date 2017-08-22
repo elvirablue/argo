@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
+@section('title', 'Отправить повторное письмо с подтверждением')
+
 @section('content')
 
         <div class="breadcrumbs">
             <ul>
                 <li><a href="index.html">Главная</a></li>
-                <li class="active"><a >Вход в личный кабинет</a></li>
+                <li class="active"><a >Отправить повторное письмо с подтверждением</a></li>
             </ul>
             
         </div>

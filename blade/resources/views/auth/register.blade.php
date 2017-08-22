@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Регистрация в системе')
+
 @section('content')
         <div class="breadcrumbs">
             <ul>

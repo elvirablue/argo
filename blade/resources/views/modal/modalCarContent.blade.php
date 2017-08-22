@@ -6,7 +6,16 @@
 	      </div>
 	      <!-- Основное содержимое модального окна -->
 	      <div class="modal-body">
-	      	<h6 class="modal-title">Перевозчик - {{$carrier->user->lastname}} {{$carrier->user->name}} (Статус - Аккредитован)</h6>
+	      	<h6 class="modal-title">Перевозчик - {{$carrier->user->lastname}} {{$carrier->user->name}} (Статус - 
+	     			@if ($user->accred == 3)
+						Агент AGRO
+					@elseif ($user->accred == 2)
+						Проверенный перевозчик
+					@elseif ($user->accred == 1)
+						Непроверенный перевозчик
+					@else
+						Новичок
+					@endif)</h6>
 	      	<div class="row">
 	      		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	      			<table>

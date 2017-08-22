@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Профиль заказчика')
   
 @section('content')
 
@@ -71,7 +73,13 @@
                                             st-agent - yellow
                                             st-new - red
                                 -->
-                                <div class="private-office__status st-agent">Аккредитован <i class="help">?</i></div>
+                                <div class="private-office__status @if ($user->accred == 1) st-tested @else st-new @endif">
+									@if ($user->accred == 1)
+										Аккредитован
+									@else
+										Не аккредитован
+									@endif
+								<i class="help">?</i></div>
                             </div>
                             
                         </div>

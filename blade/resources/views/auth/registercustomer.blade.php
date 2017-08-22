@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Регистрация грузовладельца')
  
 @section('content')
 

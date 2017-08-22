@@ -6,7 +6,12 @@
 	      </div>
 	      <!-- Основное содержимое модального окна -->
 	      <div class="modal-body">
-	      	<h6 class="modal-title">Заказчик - {{$user->lastname}} {{$user->name}} (Статус - Аккредитован)</h6>
+	      	<h6 class="modal-title">Заказчик - {{$user->lastname}} {{$user->name}} (Статус - 
+	      		@if ($user->accred == 1)
+					Аккредитован
+				@else
+					Не аккредитован
+				@endif)</h6>
 	      	<div class="row">
 	      		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 	      			<table>
@@ -83,7 +88,7 @@
 						</label></td>	        			
 	        		</tr>
 	        		<tr>
-	        			<td><label>Ставка {{$offer->rate or 0}} {{$offer->rateunit}} общая макимальная</label></td>	        			
+	        			<td><label>Ставка {{$offer->rate or 0}} {{$offer->rateunit}}</label></td>	        			
 	        		</tr>
 	        		<tr>
 	        			<td><label>Вариант оплаты: {{$offer->payment}} @if ($offer->paydays !== null) {{$offer->paydays}} дней @endif</label></td>	        			

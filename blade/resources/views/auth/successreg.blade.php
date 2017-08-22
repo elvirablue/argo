@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Успешно')
+
 @section('content')
 
         <div class="breadcrumbs">
             <ul>
                 <li><a href="index.html">Главная</a></li>
-                <li class="active"><a >Вход в личный кабинет</a></li>
             </ul>
             
         </div>

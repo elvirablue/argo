@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Редактирование профиля грузовладельца')
  
 @section('content')
 

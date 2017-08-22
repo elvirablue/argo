@@ -1,5 +1,7 @@
 @extends('layouts.app')
-  
+
+@section('title', 'Добавление транспорта')
+
 @section('content')
 		<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
 		<div class="first-screen-page-bg bg-page add-car-bg">
@@ -33,7 +35,7 @@
 							<div class="row-col">
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input param-reg" for="user-1-car">Тип кузова: </label>
+										<label class="lab-for-inputhttps://lk.avantel.ru/docs" for="user-1-car">Тип кузова: </label>
 										<div class="input input--small">
 											<div class="user-input-bootstrap-wrapper">						
 											<select class="user-input-bootstrap" id="user-1-car" name="user-1-car" required>
@@ -218,9 +220,9 @@
 								<label class="lab-for-input lab-max lab-title">Свидетельство о регистрации ТС:</label>
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-input lab-min" for="user-13-car">ТС: </label>
+										<label class="lab-for-input lab-min param-reg" for="user-13-car">ТС: </label>
 										<div class="input input--small input--max">
-											<input type="text" class="user-input" id="user-13-car" name="user-13-car">			
+											<input type="text" class="user-input" id="user-13-car" name="user-13-car" required>			
 										</div>
 										<script type="text/javascript">
 											jQuery(function($){
@@ -238,7 +240,7 @@
 										</div>
 										<script type="text/javascript">
 											jQuery(function($){
-										  			$("#user-14-car").mask("ЯЯЯЯЯ",{placeholder:""});
+										  			$("#user-14-car").mask("99ЯЯ",{placeholder:""});
 											});
 										</script>
 									</div>
@@ -261,9 +263,9 @@
 
 							<div class="row-col">
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input lab-large" for="user-16-car">Гос. регистрационный знак:  </label>
+									<label class="lab-for-input lab-large param-reg" for="user-16-car">Гос. регистрационный знак:  </label>
 									<div class="input input--small input--large">
-										<input type="text" class="user-input" id="user-16-car" name="user-16-car">			
+										<input type="text" class="user-input" id="user-16-car" name="user-16-car" required="">			
 									</div>
 									<script type="text/javascript">
 											jQuery(function($){
@@ -584,7 +586,7 @@
 										</div>
 										<script type="text/javascript">
                                             jQuery(function($){
-                                                $("#user-39-car").mask("ЯЯЯЯЯ",{placeholder:""});
+                                                $("#user-39-car").mask("99ЯЯ",{placeholder:""});
                                             });
                                         </script>
 									</div>

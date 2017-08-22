@@ -52,6 +52,64 @@
 </head> 
 <body>
 
+<!-- HTML-код модального окна для транспорта-->
+	<div id="infoAddCarBox" class="modal fade">
+	  <div class="modal-dialog modal-min">
+	    <div class="modal-content">
+	      <!-- Заголовок модального окна -->
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	        <h4 class="modal-title">Внимание! Мы приняли Вашу заявку на добавление транспорта.</h4>
+	      </div>
+	      <!-- Основное содержимое модального окна -->	      	
+	      <div class="modal-body">
+	      	<br><br>
+	      	<p>Ваш транспорт <b>принят на рассмотрение</b> и ему присвоен <b>статус "На&nbsp;проверке".</b></p><br>
+			<p><b>Служба Безопасности</b> проверит достоверность введенных данных <b>в течении суток</b>, свяжется с Вами в случае необходимости по телефону или e-mail, указанным в профиле.</p><br>
+			<p>После этого Ваш транспорт будет размещен в общей базе данных и ему <b>будет присвоен статус "Доступен".</b></p><br>
+			<p><b>Если данные введены некорректно, то транспорту будет присвоен статус "Отклонен".</b></p>
+			<br><br>	      	
+
+	       </div>
+	      <!-- Футер модального окна -->
+	      <div class="modal-footer">
+	        <button type="button" class="bbtn bbtn--yellow bbtn--small bbtn--modal" data-dismiss="modal">Закрыть</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- HTML-код модального окна для транспорта-->
+	<div id="infoAddOfferBox" class="modal fade">
+	  <div class="modal-dialog modal-min">
+	    <div class="modal-content">
+	      <!-- Заголовок модального окна -->
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	        <h4 class="modal-title">Внимание! Мы приняли Вашу заявку на добавление груза.</h4>
+	      </div>
+	      <!-- Основное содержимое модального окна -->	      	
+	      <div class="modal-body">
+	      	<br><br>
+	      	<p>Ваша заявка на перевозку груза <b>принята на рассмотрение</b> и ей присвоен <b>статус "Ожидает&nbsp;проверки".</b></p><br>
+			<p><b>Наш Модератор</b> проверит достоверность введенных данных <b>в течении суток</b>, свяжется с Вами в случае необходимости по телефону или e-mail, указанным в профиле.</p><br>
+			<p>После этого Ваша заявка будет размещена в общей базе данных и ей <b>будет присвоен статус "Поиск перевозчика".</b></p><br>
+			<p><b>Если данные введены некорректно, то заявке будет присвоен статус "Отклонен".</b></p>
+			<br><br>	      	
+
+	       </div>
+	      <!-- Футер модального окна -->
+	      <div class="modal-footer">
+	        <button type="button" class="bbtn bbtn--yellow bbtn--small bbtn--modal" data-dismiss="modal">Закрыть</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+
 
 <div class="wrapper-x">
 	<div class="wrapper-y">
@@ -126,30 +184,101 @@
 		</div>
 
 		<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
-		<div class="first-screen-page-bg bg-page">
+		<div class="first-screen-page-bg bg-page control-bg">
 			<div class="first-screen-page">
 				<div class="first-screen-page__title">
-					<h1>СТАТЬИ И НОВОСТИ</h1>
+					<h1>
+						ПРОВЕРКА ПАРТНЕРА
+						<p class="first-screen-page__subtitle">Проверьте порядочность&nbsp;и&nbsp;надежность заказчика&nbsp;или&nbsp;перевозчика</p>
+					</h1>
 				</div>				
 			</div>		
 		</div>
 
 	<!-- *************************** БЛОК ***************************************- -->
 
-		<div class="page-block-bg top-shadow">
+		<div class="page-block-bg-white top-shadow">
 
 			<div class="breadcrumbs">
 				<ul>
 					<li><a href="index.html">Главная</a></li>
-					<li class="active"><a >Статьи и новости</a></li>
+					<li class="active"><a >Проверка партнера</a></li>
 				</ul>
+
+				<a href="#infoAddOfferBox" data-toggle="modal">Проверка модального окна</a>
 				
 			</div>
 
-			<div class="page-block news">
-				
+			<div class="page-block">
 
+				<div class="page-block__wr-border-gray page-block__ingress page-block--bg-gray">
+					<form action="" method="">
+						<div class="row-col">
+							<div class="wrapper m-bottom center" >
+								<label class="lab-for-input" for="user-control-inn">ИНН партнера:</label><br><br>
+								<div class="input input--small input--inn ">
+									<input type="text" class="user-input" id="user-control-inn" name="user-control-inn">
+								</div>
+								<script type="text/javascript">
+                                    jQuery(function($){
+                                        $("#user-control-inn").mask("999999999999",{placeholder:""});
+                                        //Для организации (десятизначный цифровой код)
+                                        //Для физического лица (двенадцатизначный цифровой код)
+                                    });
+                                </script>
+							</div>
+							
+							<button type="submit" class="bbtn bbtn--yellow bbtn--small">Проверить</button>
+						</div>
+					</form>
+				</div>
+				<div class="separator"></div>
 			</div>
+		</div>
+
+		<div class="page-block-bg top-shadow">
+			<div class="page-block">
+				<div class="separator"></div>
+				<h2 class="page-block__head yellow-line center">ПРОВЕРКА КОНТРАГЕНТА ВКЛЮЧАЕТ В СЕБЯ</h2>
+			</div>
+
+			<div class="main-benefit">
+				<div class="block-benefit">
+					<div class="block-benefit__img" style="background-image: url(img/benefit-3.png)"></div>
+					<div class="block-benefit__text" style="text-align: left;">
+						Проверка по базе Федеральной Налоговой Службы
+					</div>
+				</div>
+
+				<div class="block-benefit">
+					<div class="block-benefit__img" style="background-image: url(img/benefit-5.png)"></div>
+					<div class="block-benefit__text" style="text-align: left;">
+						Проверка по базе Федеральной Службы Судебных Приставов
+					</div>
+				</div>
+
+				<div class="block-benefit">
+					<div class="block-benefit__img" style="background-image: url(img/benefit-6.png)"></div>
+					<div class="block-benefit__text" style="text-align: left;">
+						Проверка фактического наличия груза или транспорта
+					</div>
+				</div>
+
+				<div class="block-benefit">
+					<div class="block-benefit__img" style="background-image: url(img/benefit-7.png)"></div>
+					<div class="block-benefit__text" style="text-align: left;">
+						Анализ связанных фирм, финансовый анализ, наличие производств в арбитражном суде
+					</div>
+				</div>
+			</div>
+
+			<div class="page-block-bg page-block-bg--article">	
+				<div class="separator"></div>
+				<div class="separator"></div>
+				<div class="separator"></div>
+			</div>
+			
+
 		</div>
 
 

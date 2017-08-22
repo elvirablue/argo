@@ -508,10 +508,6 @@ a {
 .input--short {
   width: 80px;
 }
-.input--inn {
-  width: 100%;
-  max-width: 355px;
-}
 @media (max-width: 980px) {
   .input--date {
     width: 100px  !important;
@@ -1446,36 +1442,28 @@ textarea:focus ~ i {
     line-height: 1.3;
   }
 }
-.page-block-bg,
-.page-block-bg-white {
+.page-block-bg {
   background-color: #fafafa;
   position: relative;
   z-index: 102;
 }
-.page-block-bg--forum,
-.page-block-bg-white--forum {
+.page-block-bg--forum {
   background-image: url("../img/bg-forum.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center top;
 }
-.page-block-bg--article,
-.page-block-bg-white--article {
+.page-block-bg--article {
   background-image: url("../img/bg-last.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center bottom;
 }
-.page-block-bg-white {
-  background-color: #ffffff;
-}
-.page-block-bg.top-shadow,
-.page-block-bg-white.top-shadow {
+.page-block-bg.top-shadow {
   -webkit-box-shadow: inset 0 10px 20px 1px rgba(0, 0, 0, 0.1);
           box-shadow: inset 0 10px 20px 1px rgba(0, 0, 0, 0.1);
 }
-.page-block-bg.bottom-shadow,
-.page-block-bg-white.bottom-shadow {
+.page-block-bg.bottom-shadow {
   -webkit-box-shadow: inset 0 -10px 20px 1px rgba(0, 0, 0, 0.1);
           box-shadow: inset 0 -10px 20px 1px rgba(0, 0, 0, 0.1);
 }
@@ -1618,9 +1606,6 @@ textarea:focus ~ i {
   .page-block__ingress .bbtn {
     min-width: 220px;
   }
-}
-.page-block--bg-gray {
-  background-color: #fafafa;
 }
 .breadcrumbs {
   width: 100%;
@@ -2139,7 +2124,6 @@ textarea:focus ~ i {
 }
 .block-benefit {
   display: inline-block;
-  vertical-align: top;
   width: -webkit-calc(50% - 15px);
   width: calc(50% - 15px);
   height: 176px;
@@ -2190,7 +2174,6 @@ textarea:focus ~ i {
     width: -webkit-calc(50% - 28px);
     width: calc(50% - 28px);
     padding: 20px;
-    height: 155px;
   }
   .block-benefit__img {
     width: 76px;
@@ -2704,25 +2687,6 @@ textarea:focus ~ i {
 .first-screen-page__title.title-left h1 {
   text-align: left;
 }
-.first-screen-page__subtitle {
-  font-family: "SegoeUIRegular", sans-serif;
-  font-size: 34px;
-  text-transform: none;
-  line-height: 1.3;
-  text-align: center;
-  font-weight: bold;
-  color: #000000;
-}
-@media (max-width: 980px) {
-  .first-screen-page__subtitle {
-    font-size: 24px;
-  }
-}
-@media (max-width: 768px) {
-  .first-screen-page__subtitle {
-    font-size: 18px;
-  }
-}
 .bg-page {
   position: relative;
   z-index: 100;
@@ -2769,9 +2733,6 @@ textarea:focus ~ i {
     height: 120px;
     border-top: 1px solid rgba(0, 0, 0, 0.23);
   }
-}
-.control-bg {
-  background-image: url("../img/bg-control-head.jpg");
 }
 .news-bg {
   background-image: url("../img/bg-news.jpg");

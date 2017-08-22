@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Добавление груза')
   
 @section('content')
 	<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
@@ -119,9 +121,9 @@
 							<div class="row-col">								
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom-mobil">
-										<label class="lab-for-input lab-min " for="user-2-card">Вес, т: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+										<label class="lab-for-input lab-min param-reg" for="user-2-card">Вес, т: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 										<div class="input input--small input--min">
-											<input type="text" class="user-input" id="user-2-card" name="user-2-card">			
+											<input type="text" class="user-input" id="user-2-card" name="user-2-card" required>			
 										</div>
 										<script type="text/javascript">
 											jQuery(function($){

@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Личный кабинет перевозчика')
   
 @section('content')
 
@@ -140,7 +142,17 @@
                                             st-agent - yellow
                                             st-new - red
                                 -->
-                                <div class="private-office__status st-tested">Проверенный перевозчик <i class="help">?</i></div>
+                                <div class="private-office__status @if ($user->accred == 3) st-agent @elseif ($user->accred == 2) st-tested @elseif ($user->accred == 1) st-notested @else st-new @endif">
+									@if ($user->accred == 3)
+										Агент AGRO
+									@elseif ($user->accred == 2)
+										Проверенный перевозчик
+									@elseif ($user->accred == 1)
+										Непроверенный перевозчик
+									@else
+										Новичок
+									@endif
+								<i class="help">?</i></div>
                             </div>
                             
                         </div>
@@ -171,6 +183,15 @@
 
 					<!--{!! $filter !!}-->
 					{!! $offersTable !!}
+					<script>
+						$(".glyphicon-ok").click( function(event){
+							var targ = event.target;
+							if (targ.parentNode.parentNode.children[1].children[0].children[0].selected) {
+								event.preventDefault();
+								alert('Выберите трнаспорт!');
+							}
+						});
+					</script>
 					<script>
 						
 						$(".openoffer").click( function(event){
@@ -214,7 +235,7 @@
                                 return;
                             }
 
-                            if (target.tagName != this) {  return;}
+                            //if (target.tagName != this) {  return;}
                             
 							tmp = 'id=' + $(this).attr('data-id');
 							$.ajax({

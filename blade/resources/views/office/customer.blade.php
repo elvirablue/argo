@@ -1,8 +1,11 @@
 @extends('layouts.app')
+
+@section('title', 'Личный кабинет заказчика')
   
 @section('content')
 
 @include('modal.infoOrderModalBox')
+@include('modal.infoCarModalBox')
 
     <!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
         <div class="first-screen-page-bg bg-page-small private-office-client-bg">
@@ -132,7 +135,14 @@
                                             st-agent - yellow
                                             st-new - red
                                 -->
-                                <div class="private-office__status st-agent">Аккредитован <i class="help">?</i></div>
+                                <div class="private-office__status @if ($user->accred == 1) st-tested @else st-new @endif">
+									@if ($user->accred == 1)
+										Аккредитован
+									@else
+										Не аккредитован
+									@endif
+								<i class="help">?</i></div>
+
                             </div>
                             
                         </div>
@@ -152,12 +162,12 @@
 				
 			</div>
 
-<!-- *************************** БЛОК Доступные Заказы в таблицу ***************************************- -->
+<!-- *************************** БЛОК Мои Заказы в таблицу ***************************************- -->
             <div class="page-block">
                 <h2 class="page-block__head yellow-line">Мои Заказы</h2>
 					
 						<!--{!! $filter !!}-->
-					<div class="separator"></div>
+					
 					{!! $offersTable !!}
 					<script>
 						
@@ -182,7 +192,33 @@
 							$('#infoOrderModalBox').modal('show');
 						});
 					</script>
-				
+					<script>
+						
+						$(".opencar").click( function(event){
+							event.preventDefault();
+                            var target = event.target; // где был клик?
+							// alert($(this).text());
+							/*
+                            if (target.tagName === 'SPAN' && target.parentNode.tagName === 'A') {                      
+                                location.href = target.parentNode.href;
+                                return;
+                            }
+							*/
+                            //if (target.tagName != this) {  return;}
+                            
+							tmp = 'id=' + $(this).attr('data-id');
+							$.ajax({
+									url: '{{route('showcar')}}',
+									data: tmp,
+									success: function(data){
+										// alert(data);
+										$('#infoCarModalBox').find(".modal-dialog").html(data);
+									}
+							});
+							$('#infoCarModalBox').modal('show');
+						});
+					</script>
+
             </div>
                     
         </div>

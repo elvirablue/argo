@@ -1,5 +1,5 @@
-.page-block-bg {
-	background-color: #fafafa;
+.page-block-bg, .page-block-bg-white {
+	background-color: @color-bg-gray;
 	position: relative;
 	z-index: 102;
 
@@ -21,11 +21,17 @@
 
 }
 
-.page-block-bg.top-shadow {
+.page-block-bg-white {
+	background-color: #ffffff;
+}
+
+.page-block-bg.top-shadow,
+.page-block-bg-white.top-shadow {
 	box-shadow: inset 0 10px 20px 1px rgba(0, 0, 0, 0.1)
 }
 
-.page-block-bg.bottom-shadow {
+.page-block-bg.bottom-shadow,
+.page-block-bg-white.bottom-shadow {
 	box-shadow: inset 0 -10px 20px 1px rgba(0, 0, 0, 0.1)
 }
 
@@ -35,6 +41,8 @@
 	.container-fluid();
 	.clearfix();
 	padding-bottom: 40px;
+
+
 
 	&__subtitle {
 		.segoe-regular(20px);
@@ -132,6 +140,11 @@
 				min-width: 220px;
 			}
 		}
+	}
+
+	&--bg-gray {
+		background-color: @color-bg-gray;
+
 	}
 }
 

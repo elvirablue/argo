@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Профиль перевозчика')
   
 @section('content')
 
@@ -71,7 +73,17 @@
                                             st-agent - yellow
                                             st-new - red
                                 -->
-                                <div class="private-office__status st-tested">Проверенный перевозчик <i class="help">?</i></div>
+                                <div class="private-office__status @if ($user->accred == 3) st-agent @elseif ($user->accred == 2) st-tested @elseif ($user->accred == 1) st-notested @else st-new @endif">
+									@if ($user->accred == 3)
+										Агент AGRO
+									@elseif ($user->accred == 2)
+										Проверенный перевозчик
+									@elseif ($user->accred == 1)
+										Непроверенный перевозчик
+									@else
+										Новичок
+									@endif
+								<i class="help">?</i></div>
                             </div>
                             
                         </div>

@@ -1,4 +1,5 @@
 node_modules/
+blade/
 package.json
 
 gulpfile.js
