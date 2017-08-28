@@ -35,7 +35,7 @@
 							<div class="row-col">
 								<div class="scan__block-col col-1-2">
 									<div class="wrapper m-bottom">
-										<label class="lab-for-inputhttps://lk.avantel.ru/docs" for="user-1-car">Тип кузова: </label>
+										<label class="lab-for-input param-reg https://lk.avantel.ru/docs" for="user-1-car">Тип кузова: </label>
 										<div class="input input--small">
 											<div class="user-input-bootstrap-wrapper">						
 											<select class="user-input-bootstrap" id="user-1-car" name="user-1-car" required>
@@ -92,9 +92,9 @@
 								</div>
 
 								<div class="wrapper m-bottom">
-									<label class="lab-for-input param-reg" for="user-5-car">Объем, м<sup>3</sup>: </label>
+									<label class="lab-for-input" for="user-5-car">Объем, м<sup>3</sup>: </label>
 									<div class="input input--small input--short">
-										<input type="text" class="user-input" id="user-5-car" name="user-5-car" required>			
+										<input type="text" class="user-input" id="user-5-car" name="user-5-car">			
 									</div>
 									<script type="text/javascript">
 											jQuery(function($){
@@ -619,6 +619,22 @@
 						</div>
 					
 					</form>
+					<script>
+						$('form').submit(function(e) {
+							var $form = $(this);
+							$.ajax({
+								type: $form.attr('method'),
+          						url: $form.attr('action'),
+          						data: $form.serialize()
+        					}).done(function() {
+          						console.log('success');
+        					}).fail(function() {
+          						console.log('fail');
+        					});
+        					//отмена действия по умолчанию для кнопки submit
+        					e.preventDefault(); 
+      					});
+					</script>
 				</div>
 			</div>
 		</div>

@@ -197,48 +197,16 @@
 
 	<!-- *************************** БЛОК ***************************************- -->
 
-		<div class="page-block-bg-white top-shadow">
+		<div class="page-block-bg top-shadow">
 
 			<div class="breadcrumbs">
 				<ul>
 					<li><a href="index.html">Главная</a></li>
 					<li class="active"><a >Проверка партнера</a></li>
-				</ul>
-
-				<a href="#infoAddOfferBox" data-toggle="modal">Проверка модального окна</a>
-				
+				</ul>				
 			</div>
 
-			<div class="page-block">
-
-				<div class="page-block__wr-border-gray page-block__ingress page-block--bg-gray">
-					<form action="" method="">
-						<div class="row-col">
-							<div class="wrapper m-bottom center" >
-								<label class="lab-for-input" for="user-control-inn">ИНН партнера:</label><br><br>
-								<div class="input input--small input--inn ">
-									<input type="text" class="user-input" id="user-control-inn" name="user-control-inn">
-								</div>
-								<script type="text/javascript">
-                                    jQuery(function($){
-                                        $("#user-control-inn").mask("999999999999",{placeholder:""});
-                                        //Для организации (десятизначный цифровой код)
-                                        //Для физического лица (двенадцатизначный цифровой код)
-                                    });
-                                </script>
-							</div>
-							
-							<button type="submit" class="bbtn bbtn--yellow bbtn--small">Проверить</button>
-						</div>
-					</form>
-				</div>
-				<div class="separator"></div>
-			</div>
-		</div>
-
-		<div class="page-block-bg top-shadow">
-			<div class="page-block">
-				<div class="separator"></div>
+			<div class="page-block">				
 				<h2 class="page-block__head yellow-line center">ПРОВЕРКА КОНТРАГЕНТА ВКЛЮЧАЕТ В СЕБЯ</h2>
 			</div>
 
@@ -271,6 +239,42 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="separator"></div>
+
+			
+		</div>
+
+		<div class="page-block-bg-white top-shadow">
+			<div class="page-block">
+				<div class="separator"></div>
+				<div class="separator"></div>
+				<div class="page-block__wr-border-gray page-block__ingress page-block--bg-gray">
+					<form action="" method="">
+						<div class="row-col">
+							<div class="wrapper m-bottom center" >
+								<label class="lab-for-input" for="user-control-inn">ИНН партнера:</label><br><br>
+								<div class="input input--small input--inn ">
+									<input type="text" class="user-input" id="user-control-inn" name="user-control-inn">
+								</div>
+								<script type="text/javascript">
+                                    jQuery(function($){
+                                        $("#user-control-inn").mask("999999999999",{placeholder:""});
+                                        //Для организации (десятизначный цифровой код)
+                                        //Для физического лица (двенадцатизначный цифровой код)
+                                    });
+                                </script>
+							</div>
+							
+							<button type="submit" class="bbtn bbtn--yellow bbtn--small">Проверить</button>
+						</div>
+					</form>
+				</div>
+				<div class="separator"></div>
+			</div>
+
+
+			
 
 			<div class="page-block-bg page-block-bg--article">	
 				<div class="separator"></div>
