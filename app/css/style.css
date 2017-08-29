@@ -4549,6 +4549,21 @@ span.multiselect-selected-text {
   font-size: 12px;
   color: #686868;
 }
+.btn-icon {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  border: 1px solid #aeaeae;
+  background-color: #ffffff;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+}
+.btn-icon span:before {
+  color: inherit;
+}
+.btn-icon:hover {
+  background-color: #cee3ee;
+}
 /*
 @import "blocks/breadcpamps.less";
 
