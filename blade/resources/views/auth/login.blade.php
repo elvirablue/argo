@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Вход в личный кабинет')
+
 @section('content')
 
         <div class="breadcrumbs">
             <ul>
-                <li><a href="index.html">Главная</a></li>
+                <li><a href="/">Главная</a></li>
                 <li class="active"><a >Вход в личный кабинет</a></li>
             </ul>
             
@@ -17,7 +19,10 @@
                     {{ csrf_field() }}
                     <div class="row-col">
                         <div class="wrapper m-bottom">
-                            <label class="lab-for-input" for="user-login">Логин:&nbsp;&nbsp;&nbsp;&nbsp; </label>
+							@if(Session::has('verify'))
+									{!!Session::get('verify')!!}<br><br>
+							@endif
+                            <label class="lab-for-input" for="user-login">E-mail:&nbsp;&nbsp;&nbsp;&nbsp; </label>
                             <div class="input input--small input--login">
                                 <input id="email" type="text" class="user-input" id="user-login" name="email" value="{{ old('email') }}" required autofocus>
 

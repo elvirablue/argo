@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
+@section('title', 'Регистрация в системе')
+
 @section('content')
         <div class="breadcrumbs">
             <ul>
-                <li><a href="index.html">Главная</a></li>
+                <li><a href="{{ route('home') }}">Главная</a></li>
                 <li class="active"><a >Регистрация в системе</a></li>
             </ul>
             
