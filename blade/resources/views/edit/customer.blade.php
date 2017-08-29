@@ -19,7 +19,7 @@
 
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
                     <li class="active"><a >Грузовладелец {{ Auth::user()->name }}</a></li>
                 </ul>
                 

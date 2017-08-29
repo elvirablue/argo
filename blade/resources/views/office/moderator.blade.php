@@ -8,7 +8,7 @@
 
 @include('modal.infoCarModalBox')
 <!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
-        <div class="first-screen-page-bg bg-page-small private-office-carrier-bg">
+        <div class="first-screen-page-bg bg-page-small "><!--private-office-carrier-bg-->
             <div class="first-screen-page">
                 <div class="first-screen-page__title title-left">
                     <h1>Личный кабинет модератора</h1>
@@ -22,7 +22,7 @@
 
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
                     <li class="active"><a>Модератор (работа с заявками)</a></li>
                 </ul>
                 
@@ -33,6 +33,7 @@
 <!-- *************************** БЛОК Доступные Заказы в таблицу ***************************************- -->
             <div class="page-block">
                 <h2 class="page-block__head yellow-line">Таблица заказов</h2>
+				<p class="page-block__subtitle">Новых заявок в системе - {{ $count }}</p>
                 <div class="page-block__wr-border-gray private-office__table-wr">
 
 					{!! $offersTable !!}

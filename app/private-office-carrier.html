@@ -23,6 +23,8 @@
 	<script src="js/venders/bootstrap-multiselect.js"></script> 
 	<script src="js/venders/moment-with-locales.min.js"></script>
 	<script src="js/venders/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/venders/bootstrap-tooltip.js"></script>
+	<script src="js/venders/bootstrap-popover.js"></script>  
 	<script src="js/venders/jquery.sticky.js"></script>
 	 <script> 
     $(window).load(function(){ 
@@ -188,7 +190,16 @@
 								<div class="private-office__avatar" style="background-image: url(img/nophoto.png);"></div>
 								<a href="#" class="private-office__out">Выйти</a>
 								<div class="private-office__req">Реквизиты <a href="#" class="link">(скачать <span class="glyphicon glyphicon-save"></span>)</a></div>
-								<div class="private-office__status st-tested">Проверенный перевозчик <i class="help">?</i></div>
+								<div class="private-office__status st-tested">Проверенный перевозчик <i class="help" id="tip1" data-toggle="popover" data-html="true" title="Значение статуса" data-content="- Перевозчик зарегистрирован в системе.<br>- Подтверждены телефон и электронная почта.">?</i></div>
+								<script type="text/javascript">
+									$(function() {
+									  // инициализировать элемент, имеющий идентификатор, как компонент tooltip
+									  	$('#tip1').popover({
+    										//Установление направления отображения popover
+    										placement : 'top'
+  										});
+									});
+								</script>
 							</div>
 							
 						</div>

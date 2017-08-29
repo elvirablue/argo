@@ -22,7 +22,7 @@
 
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
                     <li class="active"><a >Грузовладелец {{ Auth::user()->name }}</a></li>
                 </ul>
                 
@@ -63,7 +63,7 @@
                                     </p>
                                 </div>
                                 <a href="{{ route('editcustomer', $user->id ) }}" class="bbtn bbtn--yellow bbtn--small private-office__btn">Редактировать данные</a>
-                                                                
+                                <a href="{{ route('offerhistory' ) }}" class="bbtn bbtn--yellow bbtn--small private-office__btn">История заказов</a>                                
                             </div>
 
                             <div class="col-1-3 col-private-office">

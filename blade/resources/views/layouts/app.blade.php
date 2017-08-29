@@ -29,12 +29,15 @@
     <script src="{{ asset('js/venders/jquery.maskedinput.js') }}"></script>
     <script src="{{ asset('js/venders/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/venders/fileinput.js') }}"></script>
+
  
     <!-- Include the plugin's CSS and JS: -->
     
     <script src="{{ asset('js/venders/moment-with-locales.min.js') }}"></script>
     <script src="{{ asset('js/venders/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{ asset('js/venders/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/venders/bootstrap-popover.js') }}"></script> 
+
      <script> 
     $(window).load(function(){ 
         $("#header-sticky-wrapper").sticky({ topSpacing: 0 }); 
@@ -113,11 +116,11 @@
                     <nav class="main-nav">          
                         <div class="main-nav__wrapper">
                             <ul>
-                                <li class="active"><a href="">Главная</a></li>
+                                <li class="active"><a href="{{ route('home') }}">Главная</a></li>
                                 <!--<li><a href="help.html">Помощь</a></li>-->
                                 <!--<li><a href="service.html">О сервисе</a></li>-->
                                 <li><a href="contacts.html">Контакты</a></li>           
-                                <li><a href="news.html">Новости и статьи</a></li>
+                                <li><a href="{{ route('news') }}">Новости и статьи</a></li>
                                 <!--<li><a href="docs.html">Образцы документов</a></li>-->
                                 <li><a href="accreditation.html">Аккредитация</a></li>
                                 <li><a href="forum.html">Форум</a></li>
@@ -155,6 +158,8 @@
 								<a href="{{ route('moderatoroffice') }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
 							@elseif (Auth::user()->role_id == 5)
 								<a href="{{ route('securityoffice') }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
+							@elseif (Auth::user()->role_id == 1)
+								<a href="" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
 							@endif
                         @endif
                        
@@ -246,7 +251,7 @@
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                     <ul>
-                        <li><a href="news.html">Новости и статьи</a></li>
+                        <li><a href="{{ route('news') }}">Новости и статьи</a></li>
                         <li><a href="docs.html">Образцы документов</a></li>
                         <li><a href="accreditation.html">Аккредитация</a></li>
                         <li><a href="forum.html">Форум</a></li>

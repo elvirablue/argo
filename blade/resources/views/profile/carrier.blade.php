@@ -19,7 +19,7 @@
 
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
                     <li class="active"><a >Профиль перевозчика</a></li>
                 </ul>
                 
@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="col-1-3 col-private-office">
-                                <div class="private-office__avatar" style="background-image: url(img/nophoto.png);"></div>
+                                <div class="private-office__avatar" style="background-image: url({{ $img or 'img/nophoto.png' }});"></div>
                                 
                                 <div class="private-office__req">Реквизиты <a href="#" class="link">(скачать <span class="glyphicon glyphicon-save"></span>)</a></div>
 
@@ -83,7 +83,29 @@
 									@else
 										Новичок
 									@endif
-								<i class="help">?</i></div>
+								    <i id="p1" class="help" data-toggle="popover" data-original-title="Значение статуса"  data-html="true" 
+                                        @if ($user->accred == 3)
+                                            data-content="- Проверены учредительные документы.<br>- Проверены бухгалтерские документы.<br>- Отсутствуют судебные решения по взысканиям<br>- Наличие ведения реальной хозяйственной деятельности.<br>- Подтверждено наличие техники и ее документальное сопровождение.<br>- Проверен выездной службой безопасности ресурса."
+                                        @elseif ($user->accred == 2)
+                                            data-content="- Проверены учредительные документы.<br>- Отсутствуют судебные решения по взысканиям.<br>- Проверено наличие автотранспорта в собственности<br>- Имеется заключение службы безопасности ресурса."
+                                        @elseif ($user->accred == 1)
+                                            data-content="- Перевозчик зарегистрирован в системе.<br>- Подтверждены телефон и электронная почта.<br>- Прошел проверку ФНС."
+                                        @else
+                                            data-content="- Перевозчик зарегистрирован в системе.<br>- Подтверждены телефон и электронная почта."
+                                        @endif                                       
+                                    >?</i>
+                                </div>
+
+                                <script type="text/javascript">
+                                        jQuery(function($){
+                                            $('#p1').popover({
+                                            //Установление направления отображения popover
+                                            placement : 'top'
+                                            });
+                                        });
+                                </script>
+
+                                
                             </div>
                             
                         </div>

@@ -19,7 +19,7 @@
 
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
                     <li class="active"><a >Профиль заказчика</a></li>
                 </ul>
                 
@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="col-1-3 col-private-office">
-                                <div class="private-office__avatar" style="background-image: url(img/nophoto.png);"></div>
+                                <div class="private-office__avatar" style="background-image: url({{ $img or 'img/nophoto.png' }});"></div>
                                 
                                 <div class="private-office__req">Реквизиты <a href="#" class="link">(скачать <span class="glyphicon glyphicon-save"></span>)</a></div>
 
@@ -79,7 +79,22 @@
 									@else
 										Не аккредитован
 									@endif
-								<i class="help">?</i></div>
+								    <i id="p2" class="help" data-toggle="popover" data-original-title="Значение статуса"  data-html="true" 
+                                        @if ($user->accred == 1)
+                                            data-content="- Проверены учредительные документы.<br>- Отсутствуют судебные решения.<br>- Подтверждена регистрация по электронной почте."
+                                        @else
+                                            data-content="- Заказчик зарегистрирован в системе.<br>- Подтверждены телефон и электронная почта."
+                                        @endif 
+                                    >?</i>
+                                </div>
+                                <script type="text/javascript">
+                                        jQuery(function($){
+                                            $('#p2').popover({
+                                            //Установление направления отображения popover
+                                            placement : 'top'
+                                            });
+                                        });
+                                </script>
                             </div>
                             
                         </div>

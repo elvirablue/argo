@@ -22,7 +22,7 @@
 
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
                     <li class="active"><a>Перевозчик {{ Auth::user()->name }}</a></li>
                 </ul>
                 
@@ -70,6 +70,7 @@
 								</form>
                                 -->
 								<a href="{{ route('editcarrier', $user->id ) }}" class="bbtn bbtn--yellow bbtn--small private-office__btn">Редактировать данные</a>
+								<a href="{{ route('offerhistory' ) }}" class="bbtn bbtn--yellow bbtn--small private-office__btn">История заказов</a>                                
                             </div>
 
                             <div class="col-1-3 col-private-office">
@@ -188,7 +189,7 @@
 							var targ = event.target;
 							if (targ.parentNode.parentNode.children[1].children[0].children[0].selected) {
 								event.preventDefault();
-								alert('Выберите трнаспорт!');
+								alert('Выберите транспорт!');
 							}
 						});
 					</script>
