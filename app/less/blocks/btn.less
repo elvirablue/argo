@@ -14,6 +14,7 @@
 	outline: none;
 
 	transition: background-color ease 0.3s,
+				background-image ease 0.3s,
 				color ease 0.3s;
 
 	@media @tablet-widths {
@@ -48,7 +49,9 @@
 
 .bbtn.disabled, .bbtn.disabled:hover {
 	background-color: @color-btn-gray !important;
+	background-image: none !important;
 	cursor: default !important;
+	border-color: @color-lightgray;
 	color: @color-lightgray;
 }
 
@@ -81,15 +84,25 @@
 	background-color: @color-btn-gray;
 }
 
+
+
 .bbtn--yellow {
-	background-color: @color-yellow;
-	text-decoration: none;
-	border: none;
+	/*background-color: @color-yellow;
+	border: none;*/
+	border-width: 1px;
+  	border-color: rgb(255, 238, 49);
+  	border-style: solid;
+  	border-radius: 8px;  
+    background-image: linear-gradient(to top, rgb(255,175,45) 0%, rgb(255,222,0) 80%);
+  	box-shadow: 0px 0px 1.71px 1.29px rgba(252, 147, 11, 0.004);
 	color: @color-black;
+	text-decoration: none;
 }
 
+
 .bbtn--yellow:hover {
-	background-color: #ffce0c;
+	/*background-color: #ffce0c;*/
+	background-image: linear-gradient(to top, rgb(255,150,49), rgb(250,196,0));
 }
 
 .bbtn--border-black {

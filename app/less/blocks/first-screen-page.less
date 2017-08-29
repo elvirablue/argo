@@ -56,6 +56,24 @@
 		h1 {text-align: left;}
 	}
 
+	&__subtitle {
+		text-align: center;
+		.segoe-regular(34px);
+		text-transform: none;
+		line-height: 1.3;
+		text-align: center;
+		font-weight: bold;
+		color: @color-black;
+		@media @tablet-widths {
+				font-size: 24px;
+			}
+
+			@media @mobil-widths {
+				font-size: 18px;
+				
+			}
+	}
+
 
 }
 
@@ -97,7 +115,7 @@
 }
 
 
-
+.control-bg {background-image: url("../img/bg-control-head.jpg");}
 .news-bg {background-image: url("../img/bg-news.jpg");}
 .add-car-bg {background-image: url("../img/bg-add-car-head.jpg");}
 .add-card-bg {background-image: url("../img/bg-add-card-head.jpg");}

@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Личный кабинет модератора')
   
 @section('content')
 
@@ -6,7 +8,7 @@
 
 @include('modal.infoCarModalBox')
 <!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
-        <div class="first-screen-page-bg bg-page-small private-office-carrier-bg">
+        <div class="first-screen-page-bg bg-page-small "><!--private-office-carrier-bg-->
             <div class="first-screen-page">
                 <div class="first-screen-page__title title-left">
                     <h1>Личный кабинет модератора</h1>
@@ -20,7 +22,7 @@
 
             <div class="breadcrumbs">
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="{{ route('home') }}">Главная</a></li>
                     <li class="active"><a>Модератор (работа с заявками)</a></li>
                 </ul>
                 
@@ -30,11 +32,11 @@
 
 <!-- *************************** БЛОК Доступные Заказы в таблицу ***************************************- -->
             <div class="page-block">
-                <h2 class="page-block__head yellow-line">Таблица заявок</h2>
-                <p class="page-block__subtitle">Новых заявок в системе - <span>ХХХ шт.</span></p>
+                <h2 class="page-block__head yellow-line">Таблица заказов</h2>
+				<p class="page-block__subtitle">Новых заявок в системе - {{ $count }}</p>
                 <div class="page-block__wr-border-gray private-office__table-wr">
 
-					<!--{!! $myoffersFilter !!}-->
+					{!! $offersTable !!}
 					
                 </div>
             </div>
@@ -46,30 +48,30 @@
                 <p class="page-block__subtitle">Заказчики, которые не размещали заказ на перевозку груза более 14 дней</p>
                 <div class="page-block__wr-border-gray private-office__table-wr">
 
-					<!--{!! $filter !!}-->
-					<!--{!! $offersTable !!}-->
+					{!! $oldTable !!}
+					
 					<script>
 						
-					//	$(".openoffer").click( function(event){
-					//		
-                    //        var target = event.target; // где был клик?
-					//		                            
-                    //        if (target.tagName != this && target.tagName != 'TD') {
-                    //            return;
-                    //        }
-//
-					//		//alert($(this).attr('data-id'));
-					//		tmp = 'id=' + $(this).attr('data-id');
-					//		$.ajax({
-					//				url: '{{route('showoffer')}}',
-					//				data: tmp,
-					//				success: function(data){
-					//					// alert(data);
-					//					$('#infoOrderModalBox').find(".modal-dialog").html(data);
-					//				}
-					//		});
-					//		$('#infoOrderModalBox').modal('show');
-					//	});
+						$(".openoffer").click( function(event){
+							
+                           var target = event.target; // где был клик?
+							                            
+                           if (target.tagName != this && target.tagName != 'TD') {
+                               return;
+                           }
+
+							//alert($(this).attr('data-id'));
+							tmp = 'id=' + $(this).attr('data-id');
+							$.ajax({
+									url: '{{route('showoffer')}}',
+									data: tmp,
+									success: function(data){
+										// alert(data);
+										$('#infoOrderModalBox').find(".modal-dialog").html(data);
+									}
+							});
+							$('#infoOrderModalBox').modal('show');
+						});
 					</script>
                 </div>
             </div>

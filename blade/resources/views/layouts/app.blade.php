@@ -8,7 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'AGRO CARGO - БЕЗОПАСНЫЙ ПОИСК ГРУЗОВ  И ПЕРЕВОЗЧИКОВ ДЛЯ АГРОСЕКТОРА') }}</title>
+<!--    <title>{{ config('app.name', 'AGRO CARGO - БЕЗОПАСНЫЙ ПОИСК ГРУЗОВ  И ПЕРЕВОЗЧИКОВ ДЛЯ АГРОСЕКТОРА') }}</title>	-->
+
+	<title>@yield('title')</title>
 
     <!-- Styles -->
     
@@ -27,12 +29,15 @@
     <script src="{{ asset('js/venders/jquery.maskedinput.js') }}"></script>
     <script src="{{ asset('js/venders/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/venders/fileinput.js') }}"></script>
+
  
     <!-- Include the plugin's CSS and JS: -->
     
     <script src="{{ asset('js/venders/moment-with-locales.min.js') }}"></script>
     <script src="{{ asset('js/venders/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{ asset('js/venders/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/venders/bootstrap-popover.js') }}"></script> 
+
      <script> 
     $(window).load(function(){ 
         $("#header-sticky-wrapper").sticky({ topSpacing: 0 }); 
@@ -111,12 +116,12 @@
                     <nav class="main-nav">          
                         <div class="main-nav__wrapper">
                             <ul>
-                                <li class="active"><a href="">Главная</a></li>
-                                <li><a href="help.html">Помощь</a></li>
-                                <li><a href="service.html">О сервисе</a></li>
+                                <li class="active"><a href="{{ route('home') }}">Главная</a></li>
+                                <!--<li><a href="help.html">Помощь</a></li>-->
+                                <!--<li><a href="service.html">О сервисе</a></li>-->
                                 <li><a href="contacts.html">Контакты</a></li>           
-                                <li><a href="news.html">Новости и статьи</a></li>
-                                <li><a href="docs.html">Образцы документов</a></li>
+                                <li><a href="{{ route('news') }}">Новости и статьи</a></li>
+                                <!--<li><a href="docs.html">Образцы документов</a></li>-->
                                 <li><a href="accreditation.html">Аккредитация</a></li>
                                 <li><a href="forum.html">Форум</a></li>
                             </ul>
@@ -140,6 +145,7 @@
                 <div class="block-login page-header__left">
 
                     <p class="block-login__head">
+					
                         @if (Auth::guest())
                             <a class="ingress" href="{{ route('login') }}">Вход </a> / 
                             <a class="registry" href="{{ route('register') }}"> Регистрация</a>
@@ -148,6 +154,12 @@
 								<a href="{{ route('carrieroffice', Auth::user()->id) }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
 							@elseif (Auth::user()->role_id == 2)
 								<a href="{{ route('customeroffice', Auth::user()->id) }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
+							@elseif (Auth::user()->role_id == 4)
+								<a href="{{ route('moderatoroffice') }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
+							@elseif (Auth::user()->role_id == 5)
+								<a href="{{ route('securityoffice') }}" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
+							@elseif (Auth::user()->role_id == 1)
+								<a href="" class="user-login" title="{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
 							@endif
                         @endif
                        
@@ -189,11 +201,21 @@
 					@if (Auth::user()->role_id == 3)
 						<a href="{{ route('addcar') }}" id="add-car" class="bbtn bbtn--yellow bbtn--big"><span>Добавить транспорт</span></a>
                         <a id="bid" class="bbtn bbtn--yellow bbtn--big disabled"><span>Оставить заявку на перевозку</span></a>
-					@elseif (Auth::user()->role_id == 2)
-                        <a id="add-car" class="bbtn bbtn--yellow bbtn--big disabled"><span>Добавить транспорт</span></a>
-						<a href="{{ route('addoffer') }}" id="bid" class="bbtn bbtn--yellow bbtn--big"><span>Оставить заявку на перевозку</span></a>
 					@endif
+                    @if (Auth::user()->role_id == 2)
+                        <a id="add-car" class="bbtn bbtn--yellow bbtn--big disabled"><span>Добавить транспорт</span></a>
+						<a href="{{ route('addoffer') }}" id="bid" class="bbtn bbtn--yellow bbtn--big"><span>Оставить заявку на перевозку</span></a>					    
+                    @endif
+                    @if (Auth::user()->role_id == 4)
+                        <a id="add-car" class="bbtn bbtn--yellow bbtn--big disabled"><span>Добавить транспорт</span></a>
+                        <a id="bid" class="bbtn bbtn--yellow bbtn--big disabled"><span>Оставить заявку на перевозку</span></a>                        
+                    @endif
+                     @if (Auth::user()->role_id == 5)
+                        <a id="add-car" class="bbtn bbtn--yellow bbtn--big disabled"><span>Добавить транспорт</span></a>
+                        <a id="bid" class="bbtn bbtn--yellow bbtn--big disabled"><span>Оставить заявку на перевозку</span></a>                        
+                    @endif
 				@endif
+               
                 </div>
                 <div class="page-header__left">
                     <a href="#" class="page-header__link bbtn-distances">Расчет расстояний</a>
@@ -229,7 +251,7 @@
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                     <ul>
-                        <li><a href="news.html">Новости и статьи</a></li>
+                        <li><a href="{{ route('news') }}">Новости и статьи</a></li>
                         <li><a href="docs.html">Образцы документов</a></li>
                         <li><a href="accreditation.html">Аккредитация</a></li>
                         <li><a href="forum.html">Форум</a></li>
