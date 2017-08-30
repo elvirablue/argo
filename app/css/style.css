@@ -4550,7 +4550,8 @@ span.multiselect-selected-text {
   color: #686868;
 }
 .btn-icon {
-  display: inline-block;
+  display: block;
+  margin: 3px auto;
   width: 50px;
   height: 25px;
   border: 1px solid #aeaeae;

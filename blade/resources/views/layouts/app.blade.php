@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -36,7 +36,8 @@
     <script src="{{ asset('js/venders/moment-with-locales.min.js') }}"></script>
     <script src="{{ asset('js/venders/bootstrap-datetimepicker.min.js') }}"></script>
     <script src="{{ asset('js/venders/jquery.sticky.js') }}"></script>
-    <script src="{{ asset('js/venders/bootstrap-popover.js') }}"></script> 
+    <script src="{{ asset('js/venders/bootstrap-tooltip.js') }}"></script>
+	<script src="{{ asset('js/venders/bootstrap-popover.js') }}"></script> 
 
      <script> 
     $(window).load(function(){ 
@@ -47,7 +48,17 @@
     <script src="kladr/jquery.kladr.min.js" type="text/javascript"></script>
     <script src="kladr/js/form.js" type="text/javascript"></script>
 	<script src="kladr/js/form1.js" type="text/javascript"></script>
-
+	
+	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+	<script>tinymce.init({ selector:'textarea' });</script>
+     <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    
+    <script src="{{ asset('js/multiroute_driving.js') }}" type="text/javascript"></script>
+    <style>
+        #map {
+            width: 100%; height: 100%; padding: 0; margin: 0;
+        }
+    </style>
 
 
     <link rel="stylesheet" href="{{ asset('css/venders/bootstrap-3.3.2.min.css') }}">
@@ -218,7 +229,7 @@
                
                 </div>
                 <div class="page-header__left">
-                    <a href="#" class="page-header__link bbtn-distances">Расчет расстояний</a>
+                    <a href="{{route('distance')}}" class="page-header__link bbtn-distances">Расчет расстояний</a>
                     <a href="#" class="page-header__link bbtn-forum">Перейти на форум</a>
                 </div>
             </div>
