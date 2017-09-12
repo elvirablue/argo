@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
@@ -49,9 +49,8 @@
     <script src="kladr/js/form.js" type="text/javascript"></script>
 	<script src="kladr/js/form1.js" type="text/javascript"></script>
 	
-	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-	<script>tinymce.init({ selector:'textarea' });</script>
-     <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	
     
     <script src="{{ asset('js/multiroute_driving.js') }}" type="text/javascript"></script>
     <style>
@@ -72,6 +71,9 @@
     <link rel="stylesheet" href="{{ asset('css/venders/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/stylename.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea.add-tinymce' });</script>
+
     <!--[if lte IE 9]>
         <script src="{{ asset('oldies/oldies.js') }}" charset="utf-8"></script>
         <style>
@@ -83,6 +85,22 @@
 
 </head>
 <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105327142-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<div class="btn_up">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="35px" height="35px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve"> 
+        <g><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0   c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744   c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z" fill="#004dbc"></path> </g>
+    </svg>
+</div>
 
 <!-- HTML-код модального окна для транспорта-->
     <div id="infoRegModalBox" class="modal fade">
@@ -130,28 +148,32 @@
                                 <li class="active"><a href="{{ route('home') }}">Главная</a></li>
                                 <!--<li><a href="help.html">Помощь</a></li>-->
                                 <!--<li><a href="service.html">О сервисе</a></li>-->
-                                <li><a href="contacts.html">Контакты</a></li>           
+                                <li><a href="{{ route('contacts') }}">Контакты</a></li>           
                                 <li><a href="{{ route('news') }}">Новости и статьи</a></li>
                                 <!--<li><a href="docs.html">Образцы документов</a></li>-->
-                                <li><a href="accreditation.html">Аккредитация</a></li>
-                                <li><a href="forum.html">Форум</a></li>
+                                <li><a href="{{ route('accreditation') }}">Аккредитация</a></li>
+                                <li><a href="{{ route('forum') }}">Форум</a></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
 
-                <form class="city-select">
-                    <label class="" for="city">Ваш регион: </label>
-                    <div class="select-wr">
-                        <select class="" id="city" name="city">
-                            <option>Новосибирск</option>
-                            <option>Санкт-Петербург</option>
-                            <option>Москва</option>
-                            <option>Ростов-на-Дону</option>
-                        </select>
-                    </div>
-                    <p style="display: none;"><input type="submit" value="Отправить"></p>               
-                </form>             
+					<div class="city-select">
+						<label class="" for="city">Ваш регион: <span id="city">Москва</span> </label>        
+					</div>
+					<script type="text/javascript">
+						ymaps.geolocation.get({
+							// Выставляем опцию для определения положения по ip
+							provider: 'yandex',
+							// Автоматически геокодируем полученный результат.
+							autoReverseGeocode: true
+						}).then(function (result) {
+							var city = result.geoObjects.get(0).properties.get('name');
+							// alert(city);
+							$("#city").text(city);
+						});
+					</script>
+				
 
                 <div class="block-login page-header__left">
 
@@ -192,11 +214,7 @@
                     </div>                    
                 </div>
 
-                <form class="search-form" action="" method="get" id="search-block-form"> 
-                    <input class="search" type="text" name="search" id="search" value="" size="15" maxlength="128" placeholder="Поиск по сайту">   
-                    <input type="hidden" name="id" value="">
-                    <input type="submit" class="submit-bbtn" id="edit-submit" value="Поиск"> 
-                </form>
+                
 
             </div>          
         </header>
@@ -230,7 +248,7 @@
                 </div>
                 <div class="page-header__left">
                     <a href="{{route('distance')}}" class="page-header__link bbtn-distances">Расчет расстояний</a>
-                    <a href="#" class="page-header__link bbtn-forum">Перейти на форум</a>
+                    <a href="{{ route('forum') }}" class="page-header__link bbtn-forum">Перейти на форум</a>
                 </div>
             </div>
         </header>
@@ -257,15 +275,17 @@
                 <div class="page-footer__nav">
                     <ul>
                         <li class="active"><a href="">Главная</a></li>
+                        <li><a href="{{ route('news') }}">Новости и статьи</a></li>
+                        <li><a href="{{ route('accreditation') }}">Аккредитация</a></li>
+                        <li><a href="{{ route('forum') }}">Форум</a></li>                        
+                        <li><a href="{{ route('contacts') }}">Контакты</a></li>
+                    </ul>
+                    <ul style="display: none;">
+                        
+                        <li><a href="docs.html">Образцы документов</a></li>
                         <li><a href="help.html">Помощь</a></li>
                         <li><a href="service.html">О сервисе</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="{{ route('news') }}">Новости и статьи</a></li>
-                        <li><a href="docs.html">Образцы документов</a></li>
-                        <li><a href="accreditation.html">Аккредитация</a></li>
-                        <li><a href="forum.html">Форум</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -284,18 +304,7 @@
 
             <div class="page-footer__block-right">
                 <p class="page-footer__title">СВЯЗАТЬСЯ С НАМИ</p>
-                <form class="city-select page-footer__city-select">
-                    <label class="" for="city">Ваш регион: </label>
-                    <div class="select-wr">
-                        <select class="" id="city" name="city">
-                            <option>Новосибирск</option>
-                            <option>Санкт-Петербург</option>
-                            <option>Москва</option>
-                            <option>Ростов-на-Дону</option>
-                        </select>
-                    </div>
-                    <p style="display: none;"><input type="submit" value="Отправить"></p>               
-                </form>
+               
                 <a href="tel:+79151253443" class="page-footer__phone">+7 (915) 125-34-43</a>                
             </div>
 
@@ -326,7 +335,7 @@
                     <a href="#">info@agrocargo.ru</a>
                 </p>
                 <p class="page-footer__block-bottom-item call-form">
-                    <a href="#">Форма обратной связи</a>
+                    <a href="{{ route('feedback') }}">Форма обратной связи</a>
                 </p>
             </div>
             

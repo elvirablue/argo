@@ -9,13 +9,12 @@
 									@endif
 									)"></div>
                                     <div class="block-main-article__content">
+                                        <p>{{ $article->date }}</p>
                                         <h5>{{ $article->name }}</h5>
                                         <div class="block-main-article__text">
 										{!! $article->text  !!}
                                         </div>
-										<div>
-										{{ $article->date }}
-										</div>
+										
                                         <a href="{{ route('shownews', $article) }}" class="block-main-article__link link">Читать подробнее...</a>
                                     </div>
                                     </a>

@@ -5,6 +5,20 @@ $(document).on('ready', function(){
   	return s.replace(r,'');
 	}
 
+    $('.btn_up').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+      });
+
+  $(window).scroll(function(){
+      
+    if ($(this).scrollTop() > 600) {
+        $('.btn_up').fadeIn();
+    } else {
+        $('.btn_up').fadeOut();
+    };
+  });
+
 
 //$('.js-btn-cargo').click(function(event){
 //     	event.preventDefault();

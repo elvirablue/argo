@@ -152,11 +152,11 @@
 		&__logo {
 			position: absolute;
 			z-index: 10;
-			width: 50px;
+			width: 100px;
 			height: 50px;
 			top: 13px;
 			left: 50%;
-			margin-left: -25px;
+			margin-left: -50px;
 		}
 	}
 }
@@ -240,7 +240,7 @@
 					width: ~'calc(100vw - 190px)';	
 					height: 100%;
 					display: flex;
-					flex-flow: column wrap;
+					flex-flow: column nowrap;
 					justify-content: center;
 				}
 
@@ -252,7 +252,7 @@
 					height: 20px;
 					margin: 25px 10px 0;
 					padding: 25px;
-					box-shadow: none;
+					box-shadow: 0 0 0 1px rgba(252, 147, 11, 0.75);
 
 					@media @tablet-widths {
 						
@@ -287,7 +287,7 @@
 				top: auto;
 				left: auto;
 				right: auto;
-				margin-top: -60px;
+				margin-top: -62px;
 				margin-left: 120px;
 				
 				@media @tablet-widths {
@@ -299,8 +299,9 @@
 				}
 
 				@media @mobil-widths {
-					width: 80px;
-					height: 40px;					
+					top: -57px;
+					width: 85px;
+					height: 45px;					
 					left: 45px;
 					right: auto;
 				}

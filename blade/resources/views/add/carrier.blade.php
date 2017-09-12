@@ -3,6 +3,8 @@
 @section('title', 'Добавление транспорта')
 
 @section('content')
+
+@include('modal.infoAddCarBox')
 		<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
 		<div class="first-screen-page-bg bg-page add-car-bg">
 			<div class="first-screen-page">
@@ -18,7 +20,7 @@
 
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="index.html">Главная</a></li>
+					<li><a href="{{ route('home') }}">Главная</a></li>
 					<li class="active"><a >Добавление транспорта</a></li>
 				</ul>				
 			</div>
@@ -394,7 +396,7 @@
 										</div>
 										<script type="text/javascript">
                                             jQuery(function($){
-                                                $("#user-26-car").mask("999999999999",{placeholder:""});
+                                                $("#user-26-car").mask("9999999999?99",{placeholder:""});
                                                 //Для организации (десятизначный цифровой код)
                                                 //Для физического лица (двенадцатизначный цифровой код)
                                             });
@@ -442,7 +444,7 @@
 										</div>
 										<script type="text/javascript">
                                         jQuery(function($){
-                                            $("#user-29-car").mask("999.99.999.9.9999.9999999",{placeholder:" "});
+                                            $("#user-29-car").mask("99999999999999999999?99999999",{placeholder:" "});
                                             //20-значное число, имеющее следующую структуру: ААА.ББ.ВВВ.Г.ДДДД.ЕЕЕЕЕЕЕ:
                                         });
                                     </script>
@@ -472,7 +474,7 @@
 									</div>
 									<script type="text/javascript">
                                         jQuery(function($){
-                                            $("#user-31-car").mask("?############################################################",{placeholder:""});
+                                            $("#user-31-car").mask("?####################################################################################################################################################################################",{placeholder:""});
                                         });
                                     </script>
 								</div>
@@ -484,7 +486,7 @@
 									</div>
 									<script type="text/javascript">
                                         jQuery(function($){
-                                            $("#user-32-car").mask("?############################################################",{placeholder:""});
+                                            $("#user-32-car").mask("?####################################################################################################################################################################################",{placeholder:""});
                                         });
                                     </script>
 								</div>
@@ -621,19 +623,25 @@
 					</form>
 					<script>
 						$('form').submit(function(e) {
+							e.preventDefault(); 
 							var $form = $(this);
 							$.ajax({
 								type: $form.attr('method'),
           						url: $form.attr('action'),
           						data: $form.serialize()
         					}).done(function() {
-          						console.log('success');
+          						$('#infoAddCarBox').modal('show');
         					}).fail(function() {
+								alert('error');
           						console.log('fail');
         					});
         					//отмена действия по умолчанию для кнопки submit
-        					e.preventDefault(); 
+        					
       					});
+						
+						$('#btn-modal-close').click(function () {
+							$(location).attr('href', "{{ route('carrieroffice', \Auth::user()->id)}}");
+						});
 					</script>
 				</div>
 			</div>

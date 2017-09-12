@@ -141,8 +141,25 @@
 									@else
 										Не аккредитован
 									@endif
-								<i class="help">?</i></div>
-
+								    <i id="p3" class="help" data-toggle="popover" data-original-title="Значение статуса"  
+                                        @if ($user->accred == 1)
+                                            data-content="- Проверены учредительные документы.<br>- Отсутствуют судебные решения.<br>- Подтверждена регистрация по электронной почте."
+                                        @else
+                                            data-content="- Заказчик зарегистрирован в системе.<br>- Подтверждены телефон и электронная почта."
+                                        @endif 
+                                    >?</i>
+								</div>
+                                <script type="text/javascript">
+                                        jQuery(function($){
+                                            $('#p3').popover({
+                                            //Установление направления отображения popover
+                                                placement : 'top'
+                                            });
+                                        });
+                                </script>
+								<div>
+									<a href="{{ route('accreditation') }}" class="bbtn bbtn--yellow bbtn--small private-office__status">Подробнее про статус</a>
+								</div>
                             </div>
                             
                         </div>

@@ -66,8 +66,13 @@
                             <div class="col-1-3 col-private-office">
                                 <div class="private-office__avatar" style="background-image: url({{ $img or 'img/nophoto.png' }});"></div>
                                 
-                                <div class="private-office__req">Реквизиты <a href="#" class="link">(скачать <span class="glyphicon glyphicon-save"></span>)</a></div>
-
+                                <div class="private-office__req"><a href="" class="link">Показать реквизиты</a></div>
+								<script>
+									$(".link").click(function (event) {
+										event.preventDefault();
+										$(".requisites").show();
+									});
+								</script>
                                 <!-- class  st-tested - green border and text
                                             st-notested - blue
                                             st-agent - yellow
@@ -105,18 +110,29 @@
                                         });
                                 </script>
 
-                                
                             </div>
-                            
-                        </div>
-                    </div>
 
+                        </div>
+						
+                    </div>
+					
                 </div> 
 
             </div>
-
-                <div class="separator"></div>
             <div class="separator"></div>
+            <div class="separator"></div>
+
+            <div class="page-block">
+                <div class="requisites" style="display: none;">
+                        @if ($user->entity)
+                            @include('control.table', [ 'entity' => $user->entity ])
+                        @else
+                            <p class="page-block__subtitle center">Пользователь не заполнил данные об организации</p>
+                        @endif
+                </div>
+            </div>
+
+            
             <div class="separator"></div>
             <div class="separator"></div>
         </div>

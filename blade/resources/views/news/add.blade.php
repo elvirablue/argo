@@ -53,7 +53,7 @@
 						<div class="row-col">
 							<label class="lab-for-input lab-max" for="text">Текст новости:  </label>
 							<div class="input input-area">
-								<textarea name="text" id="text" cols="7" rows="20" class="user-input area area--news" maxlength="10000"></textarea>								
+								<textarea name="text" id="text" cols="7" rows="20" class="user-input area area--news add-tinymce" maxlength="10000"></textarea>								
 							</div>
 						</div>					
 

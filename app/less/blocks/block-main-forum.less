@@ -8,9 +8,13 @@
 	background-color: @color-white;
 	margin-bottom: 28px;
 
+	.row-col {
+		max-width: 100%;
+	}
+
 	&__img {
 		display: inline-block;
-		vertical-align: top;
+		vertical-align: middle;
 		width: 100px;
 		height: 80px;
 		background: no-repeat center @color-palegray;
@@ -23,28 +27,79 @@
 
 	&__content {
 		display: inline-block;
-		vertical-align: top;
-		width: ~'calc(100% - 110px)';
+		vertical-align: middle;
+		width: ~'calc(100% - 110px - 200px)';
 		padding-left: 30px;
 		@media @mobil-widths {
-			width: ~'calc(100% - 75px)';	
+			width: ~'calc(100% - 75px)';
+			min-width: 200px;	
 			padding-left: 10px;
 		}
 
 		
-		* {color: @color-gray;}
+		* {color: @color-gray;}		
+	}
 
-		h4 {color: @color-black; text-align: left;}
+	h4 {color: @color-black; text-align: left;}
 
-		.rubrik {
-			font-size: 16px;
-			padding-bottom: 10px;
-			text-align: left;
-			@media @mobil-widths {
-				font-size: 12px;
+	.rubrik {
+		font-size: 16px;
+		padding-bottom: 10px;
+		text-align: left;
+		@media @mobil-widths {
+			font-size: 12px;
+		}
+	}
+
+	.rubrik-ico {
+		position: relative;
+		margin-right: 50px;
+		 margin-left: 30px;
+
+	}
+
+	.rubrik-ico.mail { .ico-absolute(5px, -3px); white-space: nowrap;}
+	.rubrik-ico.phone { .ico-absolute(-195px, -3px); white-space: nowrap;}
+	.rubrik-ico.time { .ico-absolute(-225px, -3px);}
+
+	&__btn {
+		display: inline-block !important;
+		width: 180px !important;
+		vertical-align: middle;
+		text-align: right !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		@media @mobil-widths {
+				display: block !important;
+				margin: 10px auto !important;
+				width: 80% !important;
+		}
+
+		.filter {
+			margin: 0 !important;
+			text-align: center;
+			@media @mobil-widths {				
+				width: 100% !important;
+				max-width: 100% !important;
+				height: auto !important;
 			}
 		}
+
 	}	
+}
+
+.block-main-forum:hover {
+	box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.contact-block {
+	padding: 15px 30px;
+}
+
+.contact-block:hover {
+	box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
 }
 
 .block-count {
@@ -72,7 +127,10 @@
 	}
 }
 				
-	
+.border-red { border: 2px solid @color-new;}	
+.border-yellow { border: 2px solid @color-notested;}	
+.border-green { border: 2px solid @color-agent;}
+.border-blue { border: 2px solid @color-tested;}
 
 @media @mobil-widths {	
 	.block-count {

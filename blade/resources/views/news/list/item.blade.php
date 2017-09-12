@@ -8,10 +8,8 @@
 					@endif
 					)"></div>
 					<div class="block-main-article__content">
-						<h5>{{ $article->name }}</h5>
-						<div>
-							{{ $article->date }}
-						</div>
+						<p>{{ $article->date }}</p>
+						<h5>{{ $article->name }}</h5>						
 						
 						<a href="{{ route('shownews', $article) }}" class="block-main-article__link link">Читать подробнее...</a>
 						@if (Auth::check())

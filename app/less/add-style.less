@@ -8,9 +8,10 @@
 
 .btn-icon {
 	display: block;
-    margin: 3px auto;
-    width: 50px;
+    margin: 3px auto 20px;
+    width: 70px;
     height: 25px;
+    padding: 2px;
     border: 1px solid @color-lightgray;
 	background-color: #ffffff;
   	border-radius: 3px;  
@@ -22,4 +23,93 @@
 
 .btn-icon:hover {
 	background-color: #cee3ee;
+}
+
+.btn_up {
+    display: none;
+    width: auto;
+    position: fixed;
+    z-index: 10000;
+    bottom: 50px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 0px;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #d7d7d7;   
+    border-radius: 5px;  
+   
+    background-color: rgba(165,201,240, 0.3);   
+    box-shadow: 1px 3px 2px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding: 6px;
+    transform: rotate(90deg);
+}
+
+.bg-arrow-gray {
+    background: url(../img/bg-arrow-gray.png) bottom right no-repeat;
+    background-size: auto;
+    padding-bottom: 150px !important;
+    @media @mobil-widths {
+        background-image: none;
+        padding-bottom: 20px !important;
+     }
+}
+
+.accreditation-title {
+    @media @mobil-widths {
+        font-size: 18px;
+        text-align: left;
+    }
+}
+
+.accreditation-content {
+    padding: 10px 0 20px 20px;
+    h3 {font-weight: bold;}
+    p { padding: 20px 0 0;}
+    ul {
+        margin-left: 30px;
+        list-style: square;
+    }
+
+    @media @mobil-widths {
+        padding: 10px 0;
+        h3 {font-size: 18px; text-align: center; padding-top: 10px;}
+        p, li {font-size: 13px;}
+    }
+}
+
+.accreditation-form-comment {
+    text-align: center;
+    .segoe-regular(16px);
+    padding: 20px;
+    padding-top: 70px;
+    @media @mobil-widths {
+        padding-top: 20px;
+    }
+}
+
+.accreditation-form {
+    width: 100%;
+    padding: 20px;
+    margin: 30px 0 0 20px;
+
+    label {
+        display: inline-block;
+        vertical-align: middle;       
+        font-size: 12px;
+        color: #000000;
+    }
+
+    @media @mobil-widths {
+        margin: 0;        
+    }
+}
+
+.accreditation-form-bbtn {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
 }

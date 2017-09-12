@@ -11,35 +11,20 @@
 	min-width: 50px;
 	width: 100px;
 	max-width: 280px;
-   
 
-	
-
-	i {
-		position: absolute;
-		z-index: 101;
-		top: 0;
-		left: 10px;		
-
-		.segoe-regular(10px);		
-
-		color: @color-black;
-		font-style: italic;		
-	}
-
-	&--date {width: 120px !important;}
+    &--date {width: 120px !important;}
 
     &--hour {width: 50px !important;}
 
     &--stavka {width: 200px !important;}
 
-	&--wh {width: 200px;}
+    &--wh {width: 200px;}
 
-	&--km {width: 75px !important;}
+    &--km {width: 75px !important;}
 
     &--day {width: 75px !important;}
 
-	&--distance, &--type {width: 280px;}
+    &--distance, &--type {width: 280px;}
 
     &--login {width: 280px;}
 
@@ -50,7 +35,22 @@
     &--short {width: 80px;}
 
     &--inn {width: 100%; max-width: 355px;}
-}
+}   
+
+	
+
+.scan__wrapper .input i {
+		position: absolute;
+		z-index: 101;
+		top: 0;
+		left: 10px;
+		.segoe-regular(10px);
+		color: @color-black;
+		font-style: italic;		
+	}
+
+	
+
 
 @media @tablet-widths {
     .input  {
@@ -84,10 +84,7 @@
         &--size-car {max-width: 100px;}
 
         &--stavka {width: 170px !important;}
-}
-
-
-   
+    }   
 }
 
 .output-price-distance {

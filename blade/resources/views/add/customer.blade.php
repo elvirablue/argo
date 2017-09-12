@@ -3,6 +3,8 @@
 @section('title', 'Добавление груза')
   
 @section('content')
+
+@include('modal.infoAddOfferBox')
 	<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
 		<div class="first-screen-page-bg bg-page add-card-bg">
 			<div class="first-screen-page">
@@ -18,7 +20,7 @@
 
 			<div class="breadcrumbs">
 				<ul>
-					<li><a href="index.html">Главная</a></li>
+					<li><a href="{{ route('home') }}">Главная</a></li>
 					<li class="active"><a >Добавление груза</a></li>
 				</ul>
 				
@@ -121,13 +123,13 @@
 							<div class="row-col">								
 								<div class="scan__block-col col-1-3">
 									<div class="wrapper m-bottom-mobil">
-										<label class="lab-for-input lab-min param-reg" for="user-2-card">Вес, т: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+										<label class="lab-for-input lab-min param-reg" for="user-2-card">Вес, кг: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 										<div class="input input--small input--min">
 											<input type="text" class="user-input" id="user-2-card" name="user-2-card" required>			
 										</div>
 										<script type="text/javascript">
 											jQuery(function($){
-										  			$("#user-2-card").mask("?000000",{placeholder:""});
+										  			$("#user-2-card").mask("?0000000",{placeholder:""});
 											});
 										</script>
 									</div>
@@ -150,7 +152,7 @@
 								<div class="scan__block-col col-1-3">
 									
 								</div>
-								<p class="scan__text">Введите вес в тоннах или объем груза в кубометрах в расчете на одну машину.<br><br></p>					
+								<p class="scan__text">Введите вес в килограммах и объем груза в кубометрах в расчете на одну машину.<br><br></p>					
 							</div>
 
 							<div class="row-col">								
@@ -252,7 +254,7 @@
 									
 									<div class="wrapper m-bottom">
                                         <label class="lab-for-input lab-min param-reg" for="user-14-1-carrier">Регион: </label>
-                                        <input type="text" class="user-input-map input input--small input--max" id="user-14-1-1-card" placeholder="Начните вводить текст" name="region"> 
+                                        <input type="text" class="user-input-map input input--small input--max" id="user-14-1-1-card" placeholder="Начните вводить текст" name="region" required> 
                                         <input type="text" class="copy-label" style="display: none;" id="lab-regionfrom" name="lab-regionfrom" value="">                                       
                                     </div>
                                 </div>
@@ -261,7 +263,7 @@
 									
 									<div class="wrapper m-bottom">
                                         <label class="lab-for-input lab-min param-reg" for="user-14-2-carrier">Населенный пункт: </label>
-                                        <input type="text" class="user-input-map input input--small input--large" id="user-14-1-2-card" placeholder="Начните вводить текст" name="city"> 
+                                        <input type="text" class="user-input-map input input--small input--large" id="user-14-1-2-card" placeholder="Начните вводить текст" name="city" required> 
                                         <input type="text" class="copy-label" style="display: none;" id="lab-cityfrom" name="lab-cityfrom" value="">                                      
                                     </div>
                                 </div>
@@ -272,14 +274,14 @@
                             		<div class="wrapper m-bottom">											
 										<label for="user-14-2-card" class="lab-for-input lab-min param-reg">Дата загрузки: </label>
 										<div class="input input--small input--date">
-											<input type="text" class="datetimepicker6 user-input" id="user-14-1-3-card" name="user-14-2-1-card">
+											<input type="text" class="datetimepicker6 user-input" id="user-14-1-3-card" name="user-14-2-1-card" required>
 										</div>
 									</div>
                             	</div>
 
                             	<div class="scan__block-col col-1-2">
                             		<div class="wrapper m-bottom m-left">
-										<label for="user-14-2-2-card" class="lab-for-input lab-min param-reg">Время загрузки:&nbsp;&nbsp;</label>
+										<label for="user-14-2-2-card" class="lab-for-input lab-min">Время загрузки:&nbsp;&nbsp;</label>
 										<div class="wr">
 											<label> &nbsp;&nbsp;&nbsp;&nbsp;c&nbsp;&nbsp;</label>
 											<div class="input input--small input--hour">
@@ -303,7 +305,7 @@
 									
 									<div class="wrapper m-bottom">                                       
                                         <label class="lab-for-input lab-min param-reg" for="user-14-1-carrier">Регион: </label>
-                                        <input type="text" class="user-input-map input input--small input--max" id="user-14-2-1-card" placeholder="Начните вводить текст" name="region1">
+                                        <input type="text" class="user-input-map input input--small input--max" id="user-14-2-1-card" placeholder="Начните вводить текст" name="region1" required>
                                         <input type="text" class="copy-label" style="display: none;" id="lab-regionto" name="lab-regionto" value="">
                                     </div>
                                     
@@ -312,7 +314,7 @@
                                 <div class="scan__block-col col-1-2">									
 									<div class="wrapper m-bottom">
                                         <label class="lab-for-input lab-min param-reg" for="user-14-2-carrier">Населенный пункт: </label>
-                                        <input type="text" class="user-input-map input input--small input--large" id="user-14-2-2-card" placeholder="Начните вводить текст" name="city1">  
+                                        <input type="text" class="user-input-map input input--small input--large" id="user-14-2-2-card" placeholder="Начните вводить текст" name="city1" required>  
                                         <input type="text" class="copy-label" style="display: none;" id="lab-cityto" name="lab-cityto" value="">                                     
                                     </div>
                                 </div>
@@ -329,6 +331,19 @@
 										</div>
 									</div>
                             	</div>
+
+                            	<script type="text/javascript">
+                            		jQuery(function($){
+                            			//При изменении даты в Загрузке, она устанавливается как минимальная для Разгрузки
+                            			$("#user-14-1-3-card").on("dp.change",function (e) {
+                            			 	$("#user-14-2-3-card").data("DateTimePicker").setMinDate(e.date);
+                            			});
+                            			//При изменении даты в Разгрузке, она устанавливается как максимальная для Загрузки
+                            			$("#user-14-2-3-card").on("dp.change",function (e) {
+                            			 	$("#user-14-1-3-card").data("DateTimePicker").setMaxDate(e.date);
+                            			});
+                            		});
+                            	</script>
 
                             	<div class="scan__block-col col-1-2">
                             		<div class="wrapper m-bottom m-left">
@@ -493,6 +508,28 @@
 
 
 					</form>
+					<script>
+						$('form').submit(function(e) {
+							e.preventDefault(); 
+							var $form = $(this);
+							$.ajax({
+								type: $form.attr('method'),
+          						url: $form.attr('action'),
+          						data: $form.serialize()
+        					}).done(function() {
+          						$('#infoAddOfferBox').modal('show');
+        					}).fail(function() {
+								alert('error');
+          						console.log('fail');
+        					});
+        					//отмена действия по умолчанию для кнопки submit
+        					
+      					});
+						
+						$('#btn-modal-close').click(function () {
+							$(location).attr('href', "{{ route('customeroffice', \Auth::user()->id)}}");
+						});
+					</script>
 				</div>
 			</div>
 		</div>

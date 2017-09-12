@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>  
+	<meta charset="UTF-8">
+	<title>AGRO CARGO - БЕЗОПАСНЫЙ ПОИСК ГРУЗОВ  И ПЕРЕВОЗЧИКОВ ДЛЯ АГРОСЕКТОРА</title>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">	
+	
+	
+	<link rel="stylesheet" href="css/venders/animate.css">
+	<link rel="stylesheet" href="css/simple.css">
+
+	<script src="js/venders/lory.min.js"></script>
+	<script src="js/sliders.js"></script>
+
+	<!-- jQuery -->
+	<script src="js/venders/jquery-1.11.1.min.js"></script>
+	<script src="js/venders/jquery.maskedinput.js"></script>
+	<script src="js/venders/bootstrap.min.js"></script>
+ 
+	<!-- Include the plugin's CSS and JS: -->
+	<script src="js/venders/bootstrap-multiselect.js"></script> 
+	<script src="js/venders/moment-with-locales.min.js"></script>
+	<script src="js/venders/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/venders/jquery.sticky.js"></script>
+	 <script> 
+    $(window).load(function(){ 
+    	$("#header-sticky-wrapper").sticky({ topSpacing: 0 }); 
+    	}); 
+    </script>
+
+
+
+	<link rel="stylesheet" href="css/venders/bootstrap-3.3.2.min.css">
+	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker.css" />
+	<link rel="stylesheet" href="css/venders/bootstrap-datetimepicker-standalone.css"/>
+
+	
+	<link rel="stylesheet" href="css/venders/jquery.arcticmodal-0.3.css">	
+	<script src="js/venders/jquery.arcticmodal-0.3.min.js"></script>
+
+	<link rel="stylesheet" href="css/venders/normalize.css">
+	<link rel="stylesheet" href="css/stylename.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if lte IE 9]>
+	    <script src="oldies/oldies.js" charset="utf-8"></script>
+	    <style>
+	       .wrapper-x {display: none;}	       
+	    </style>
+	 <![endif]-->
+</head> 
+<body>
+
+
+<div class="wrapper-x">
+	<div class="wrapper-y">
+	<!-- *************************** ШАПКА ***************************************- -->
+		<div id="header-sticky-wrapper" class="sticky-wrapper">
+		<div class="page-header-wr">
+		<header class="page-header">
+			<div class="page-header__top">
+			<!-- *************************** БЛОК МЕНЮ ***************************************- -->
+				<div class="main-nav-block main-nav--closed">
+					<button class="main-nav__toggle" type="button">Mеню</button>					
+					<nav class="main-nav">			
+						<div class="main-nav__wrapper">
+							<ul>
+								<li class="active"><a href="">Главная</a></li>
+								<li><a href="help.html">Помощь</a></li>
+								<li><a href="service.html">О сервисе</a></li>
+								<li><a href="contacts.html">Контакты</a></li>			
+								<li><a href="news.html">Новости и статьи</a></li>
+								<li><a href="docs.html">Образцы документов</a></li>
+								<li><a href="accreditation.html">Аккредитация</a></li>
+								<li><a href="forum.html">Форум</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+
+				<form class="city-select">
+					<label class="" for="city">Ваш регион: </label>
+					<div class="select-wr">
+						<select class="" id="city" name="city">
+						  	<option>Новосибирск</option>
+						  	<option>Санкт-Петербург</option>
+						  	<option>Москва</option>
+						  	<option>Ростов-на-Дону</option>
+						</select>
+					</div>
+					<p style="display: none;"><input type="submit" value="Отправить"></p>				
+				</form>				
+
+				<div class="block-login page-header__left">
+
+					<p class="block-login__head">Личный кабинет</p>
+					<p class="block-login__bbtn">
+						<a class="ingress" href="#">Вход</a> / <a class="registry" href="#">Регистрация</a>
+					</p>					
+				</div>
+
+				<form class="search-form" action="" method="get" id="search-block-form"> 
+				    <input class="search" type="text" name="search" id="search" value="" size="15" maxlength="128" placeholder="Поиск по сайту">   
+				    <input type="hidden" name="id" value="">
+				    <input type="submit" class="submit-bbtn" id="edit-submit" value="Поиск"> 
+				</form>
+
+			</div>			
+		</header>
+
+		<header class="page-header">
+			<div class="page-header__bottom">
+				<a href="index.html" class="main-logo page-header__logo"></a>
+				<div class="page-header__center">
+					<a href="add-car.html" id="add-car" class="bbtn bbtn--yellow bbtn--big"><span>Добавить транспорт</span></a>
+					<a href="add-card.html" id="bid" class="bbtn bbtn--yellow bbtn--big"><span>Оставить заявку на перевозку</span></a>
+				</div>
+				<div class="page-header__left">
+					<a href="#" class="page-header__link bbtn-distances">Расчет расстояний</a>
+					<a href="#" class="page-header__link bbtn-forum">Перейти на форум</a>
+				</div>
+			</div>
+		</header>
+		</div>
+		</div>
+
+		<!-- *************************** ПЕРВЫЙ ЭКРАН ***************************************- -->
+		<div class="first-screen-page-bg bg-page accreditation-bg">
+			<div class="first-screen-page">
+				<div class="first-screen-page__title">
+					<h1>Аккредитация</h1>
+				</div>				
+			</div>		
+		</div>
+
+	<!-- *************************** БЛОК ***************************************- -->
+
+		<div class="page-block-bg top-shadow">
+
+			<div class="breadcrumbs">
+				<ul>
+					<li><a href="{{ route('home') }}">Главная</a></li>
+					<li class="active"><a>Аккредитация</a></li>
+				</ul>				
+			</div>
+
+			<div class="page-block ">
+				<h4 class="accreditation-title">ПОВЫШАЙТЕ СВОЙ СТАТУС В СИСТЕМЕ AGROCARGO И ПОЛУЧАЙТЕ<br>САМЫЕ ВЫГОДНЫЕ ЗАЯВКИ НА ПЕРЕВОЗКУ</h4>
+				<p style="text-align: left;"><b>Статусы перевозчиков, которые активны в системе</b></p><br><br>
+				<div class="block-main-forum border-red">
+					<div class="row-col">
+						<div class="col-1-5" style="text-align: center;">
+							<img src="img/men-red.png" alt="" style="max-width: 100px; margin-top: 15px;">
+						</div>
+						<div class="col-4-5">
+							<div class="accreditation-content">
+								<h3>Новичок</h3>
+								<p>Перевозчик, прошедший процедуру регистрации на площадке AgroCargo, подтвержден e­mail и телефон. Не прошел полную проверку, но уже может работать.</p>
+							</div>
+						</div>
+					</div>	
+					<a href="#accreditation-form" class="bbtn bbtn--yellow bbtn--small">Оставить заявку на смену статуса</a>				
+				</div>
+
+				<div class="block-main-forum border-yellow">
+					<div class="row-col">
+						<div class="col-1-5" style="text-align: center;">
+							<img src="img/men-yellow.png" alt="" style="max-width: 100px; margin-top: 15px;">
+						</div>
+						<div class="col-4-5">
+							<div class="accreditation-content">
+								<h3>НЕПРОВЕРЕННЫЙ ПЕРЕВОЗЧИК</h3>
+								<p>Перевозчик, прошедший процедуру регистрации на площадке AgroCargo, подтвержден e­mail и телефон. Имеет право работать на площадке, но не предоставлены и не подтверждены документы на транспортные средства.</p>
+								<p>Возможности статуса для перевозчика:</p>
+								<ul>
+									<li>доступ к заявкам открытым в свободном доступе;</li>
+									<li>доступ к контактам собственников автопарка.</li>
+								</ul>
+								<p>Возможности для заказчика:</p>
+								<ul>
+									<li>относительно дешевая цена на перевозку, так как отсутствует надежность;</li>
+									<li>высокие налоговые риски, есть риск потери груза;</li>
+									<li>оценка опыта работы перевозчика на площадке.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<a href="#accreditation-form" class="bbtn bbtn--yellow bbtn--small">Оставить заявку на смену статуса</a>					
+				</div>
+
+				<div class="block-main-forum border-blue">
+					<div class="row-col">
+						<div class="col-1-5" style="text-align: center;">
+							<img src="img/men-blue.png" alt="" style="max-width: 100px; margin-top: 15px;">
+						</div>
+						<div class="col-4-5">
+							<div class="accreditation-content">
+								<h3>ПРОВЕРЕННЫЙ ПЕРЕВОЗЧИК</h3>
+								<p>Перевозчик, прошедший процедуру регистрации на площадке AgroCargo, подтвержден email и телефон. Имеет право работать на площадке, но не предоставлены и не подтверждены документы на транспортные средства.</p>
+								<p>Возможности статуса для перевозчика:</p>
+								<ul>
+									<li>доступ к заявкам открытым в свободном доступе;</li>
+									<li>доступ к контактам собственников автопарка. </li>
+								</ul>
+								<p>Возможности для заказчика:</p>
+								<ul>
+									<li>относительно дешевая цена на перевозку, так как отсутствует надежность;</li>
+									<li>высокие налоговые риски, есть риск потери груза;</li>
+									<li>оценка опыта работы перевозчика на площадке.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<a href="#accreditation-form" class="bbtn bbtn--yellow bbtn--small">Оставить заявку на смену статуса</a>					
+				</div>
+
+				<div class="block-main-forum border-green">
+					<div class="row-col">
+						<div class="col-1-5" style="text-align: center;">
+							<img src="img/men-green.png" alt="" style="max-width: 100px; margin-top: 15px;">
+						</div>
+						<div class="col-4-5">
+							<div class="accreditation-content">
+								<h3>АГЕНТ AGROCARGO</h3>
+								<p>Перевозчик, прошедший процедуру регистрации на площадке AgroCargo, подтвержден e­mail и телефон.</p>
+								<p>Дополнительно: прошел проверку ФНС, проверены учредительные документы, проверены бухгалтерские документы, наличие ведения реальной хозяйственной деятельности, отсутствуют судебные решения по взысканиям, подтверждено наличие автотранспорта в собственности и его документальное сопровождение.</p>
+								<p>Имеется заключение службы безопасности площадки AgroCargo ­ осуществлена выездная проверка.</p>
+							</div>
+						</div>
+					</div>
+					<a href="#accreditation-form" class="bbtn bbtn--yellow bbtn--small">Оставить заявку на смену статуса</a>					
+				</div>			
+
+			</div>
+
+			<div class="separator" id="accreditation-form"></div>
+			<div class="separator" ></div>
+
+			<div class="page-block center" >
+				<h4 class="accreditation-title center">ОБРАТИТЕСЬ В СЛУЖБУ БЕЗОПАСНОСТИ ДЛЯ ИЗМЕНЕНИЯ<br>ВАШЕГО СТАТУСА В СИСТЕМЕ AGROCARGO</h4>
+				<div class="row-col">
+					<div class="col-1-2 bg-arrow-gray">
+						<p class="accreditation-form-comment">Оставьте заявку в форме справа или позвоните по телефону <b style="white-space: nowrap;">+7 (915) 125-34-43</b> (рабочее время 9:00&nbsp;-&nbsp;19:00 по МСК) и получите консультацию специалиста службы&nbsp;безопасности</p>				
+					</div>
+					<div class="col-1-2">
+						<form class="scan__block-border accreditation-form">
+							<p class="center"><b>Оставьте Ваши контакты, специалист службы безопасности свяжется с Вами в&nbsp;ближайшее&nbsp;время</b></p><br><br>
+							<div class="wrapper m-bottom">
+								<label class="lab-for-input" for="user-1-accruser-1-accr">Ваше имя: </label>
+								<div class="input input--small ">
+									<input type="text" class="user-input" id="user-1-accr" name="user-1-accr">
+								</div>
+								<script type="text/javascript">
+                                            jQuery(function($){
+                                                $("#user-1-accr").mask("?яяяяяяяяяяяяяяяяяяяя",{placeholder:""});
+                                            });
+                                </script>
+							</div>
+							<div class="wrapper m-bottom">
+								<label class="lab-for-input" for="user-2-accr">Ваш телефон: </label>
+								<div class="input input--small">
+									<input type="text" class="user-input" id="user-2-accr" name="user-2-accr">		
+								</div>
+								<script type="text/javascript">
+								    jQuery(function($){
+								        $("#user-2-accr").mask("+7 (999)-999-99-99",{placeholder:"_"});
+								    });
+								</script>
+							</div>
+							<br>
+							<button type="button" class="bbtn bbtn--yellow bbtn--small accreditation-form-bbtn">Обратиться в службу безопасности</button>
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-block-bg page-block-bg--article">  
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+        </div>
+
+
+		
+
+
+			
+	<!-- *************************** БЛОК ПОДВАЛ***************************************- -->	
+	</div> <!-- end wrapper-y -->	
+
+	<footer class="page-footer-bg">
+		<div class="page-footer">
+			<div class="page-footer__block-left">
+				<div class="page-footer__nav">
+					<ul>
+						<li class="active"><a href="">Главная</a></li>
+						<li><a href="help.html">Помощь</a></li>
+						<li><a href="service.html">О сервисе</a></li>
+						<li><a href="contacts.html">Контакты</a></li>
+					</ul>
+					<ul>
+						<li><a href="news.html">Новости и статьи</a></li>
+						<li><a href="docs.html">Образцы документов</a></li>
+						<li><a href="accreditation.html">Аккредитация</a></li>
+						<li><a href="forum.html">Форум</a></li>
+					</ul>
+				</div>
+			</div>
+
+			
+
+			<div class="page-footer__block-center">
+				<p class="page-footer__title">AGROCARGO В СОЦИАЛЬНЫХ СЕТЯХ:</p>
+				<div class="block-social page-footer__social" >
+					<a href="#" class="social social--vk">vk</a>
+					<a href="#" class="social social--instargam">instargam</a>
+					<a href="#" class="social social--ok">ok</a>
+					<a href="#" class="social social--facebook">facebook</a>				
+				</div>
+			</div>
+
+			<div class="page-footer__block-right">
+				<p class="page-footer__title">СВЯЗАТЬСЯ С НАМИ</p>
+				<form class="city-select page-footer__city-select">
+					<label class="" for="city">Ваш регион: </label>
+					<div class="select-wr">
+						<select class="" id="city" name="city">
+						  	<option>Новосибирск</option>
+						  	<option>Санкт-Петербург</option>
+						  	<option>Москва</option>
+						  	<option>Ростов-на-Дону</option>
+						</select>
+					</div>
+					<p style="display: none;"><input type="submit" value="Отправить"></p>				
+				</form>
+				<a href="tel:+79151253443" class="page-footer__phone">+7 (915) 125-34-43</a>				
+			</div>
+
+			<div class="page-footer__block-bottom">
+				<p class="page-footer__block-bottom-item login">
+					<a href="#">Личный кабинет</a>
+				</p>
+				<p class="page-footer__block-bottom-item mail">
+					<a href="#">info@agrocargo.ru</a>
+				</p>
+				<p class="page-footer__block-bottom-item call-form">
+					<a href="#">Форма обратной связи</a>
+				</p>
+			</div>
+			
+		</div>
+
+	</footer>
+
+	<!-- ************** БЛОК ПРИЛИПАЮЩАЯ НАВИГАЦИЯ ПРИ СКРОЛЛЕ ******************- -->
+	
+
+<!-- ************** БЛОК МОДАЛЬНЫЕ ОКНА ******************- -->
+
+
+<!-- ********************************- -->
+</div> <!-- end wrapper-x -->
+
+<script src="js/menu.js"> </script>
+<script src="js/script.js"> </script>
+<!--<script src="js/prev-video.js"> </script>		
+	
+<script src="js/modal.js"> </script>
+<script src="js/post.js"> </script>
+-->
+
+
+</body>
+</html>

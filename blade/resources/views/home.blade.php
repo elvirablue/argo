@@ -27,7 +27,7 @@
             <div class="block-benefit">
                 <div class="block-benefit__img" style="background-image: url(img/benefit-1.png)"></div>
                 <div class="block-benefit__text">
-                    <b>Уни&shy;каль&shy;ность тех&shy;нологи&shy;чес&shy;кого реше&shy;ния</b>
+                    <b>Уникальность технологического решения</b>
                 </div>
                 <div class="block-benefit__text-hidden">
                     Первый портал для комп&shy;лексных логис&shy;тических решений в области сельского хозяйства.
@@ -37,7 +37,7 @@
             <div class="block-benefit">
                 <div class="block-benefit__img" style="background-image: url(img/benefit-2.png)"></div>
                 <div class="block-benefit__text">
-                    <b>Защита от мошен&shy;нических дейст&shy;вий</b> 
+                    <b>Защита от мошеннических действий</b> 
                 </div>
                 <div class="block-benefit__text-hidden">
                    Система репутаций и мони&shy;торинг дея&shy;тель&shy;ности контр&shy;агентов.
@@ -57,7 +57,7 @@
             <div class="block-benefit">
                 <div class="block-benefit__img" style="background-image: url(img/benefit-4.png)"></div>
                 <div class="block-benefit__text">
-                    <b>Оптими&shy;зация логис&shy;тичес&shy;ких затрат</b>
+                    <b>Оптимизация логитических затрат</b>
                 </div>
                 <div class="block-benefit__text-hidden">
                     Благодаря наиболее полной базе рос&shy;сийских пере&shy;возчи&shy;ков и новей&shy;шим алго&shy;ритмам опти&shy;миза&shy;ции мы представим наиболее выгод&shy;ное реше&shy;ние как по вре&shy;мени, так по стоимости и ка&shy;честву логис&shy;тических услуг.
@@ -139,57 +139,107 @@
         <!-- *************************** БЛОК НОВОЕ НА ФОРУМАХ ***************************************- -->
         <div class="page-block-bg page-block-bg--forum top-shadow">
             <div class="page-block">
-                <h2 class="page-block__head yellow-line">НОВОЕ НА ФОРУМАХ</h2>
-
-                <div class="block-filter">
-                    <i class="filter active">Профессиональная деятельность</i>
-                    <i class="filter">Международные перевозки</i>
-                    <i class="filter">Автосервис и ремонт</i>
-                    <i class="filter max">Проблемные места загрузки и разгрузки</i>
-                    <i class="filter">Юридические вопросы</i>
-                    <i class="filter">Продажа, аренда и обмен техники</i>
-                </div>              
+                <h2 class="page-block__head yellow-line">Обсуждение НА ФОРУМАХ</h2>
+                              
     
                 <div class="block-main-forum">
-                    <div class="block-main-forum__img" style="background-image: url(img/nophoto.png)"></div>
+                    <div class="block-main-forum__img" style="background-image: url(img/01.png)"></div>
                     <div class="block-main-forum__content">
-                        <h4>Название темы на форуме</h4>
-                        <p class="rubrik">Рубрика: Название рубрики</p>
-                        <p class="block-count">
-                            <span class="block-count__last-date">Последнее сообщение: 01.01.2017</span> 
-                            <span class="block-count__sum-message">Ответов и сообщений: 1 218 </span>
-                            <span class="block-count__topic-date">Дата создания темы: 01.01.2016</span>
-                        </p>
+                        <h4>Профессиональная деятельность</h4>
+                        <p class="rubrik">Обмен опытом.</p>                        
+                    </div>
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=3" class="filter">Перейти к форуму</a>
                     </div>
                     
                 </div>
 
                 <div class="block-main-forum">
-                    <div class="block-main-forum__img" style="background-image: url(img/nophoto.png)"></div>
+                    <div class="block-main-forum__img" style="background-image: url(img/02.png)"></div>
                     <div class="block-main-forum__content">
-                        <h4>Название темы на форуме темы на форуме темы на форуме темы на форуме</h4>
-                        <p class="rubrik">Рубрика: Название рубрики</p>
-                        <p class="block-count">
-                            <span class="block-count__last-date">Последнее сообщение: 01.01.2017</span> 
-                            <span class="block-count__sum-message">Ответов и сообщений: 1 218 </span>
-                            <span class="block-count__topic-date">Дата создания темы: 01.01.2016</span>
-                        </p>
+                        <h4>Проблемные места загрузки или разгрузки</h4>
+                        <p class="rubrik">Информация о сложных и труднодоступных для перевозчиков местах, где приходится загружаться и разгружаться.</p>                        
                     </div>
-                    
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=4" class="filter">Перейти к форуму</a>
+                    </div>
                 </div>
     
                 <div class="block-main-forum">
-                    <div class="block-main-forum__img" style="background-image: url(img/nophoto.png)"></div>
+                    <div class="block-main-forum__img" style="background-image: url(img/03.png)"></div>
                     <div class="block-main-forum__content">
-                        <h4>Название темы на форуме</h4>
-                        <p class="rubrik">Рубрика: Название рубрики</p>
-                        <p class="block-count">
-                            <span class="block-count__last-date">Последнее сообщение: 01.01.2017</span> 
-                            <span class="block-count__sum-message">Ответов и сообщений: 1 218 </span>
-                            <span class="block-count__topic-date">Дата создания темы: 01.01.2016</span>
-                        </p>
+                        <h4>Юридические вопросы</h4>
+                        <p class="rubrik"></p>                        
                     </div>
-                    
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=5" class="filter">Перейти к форуму</a>
+                    </div>
+                </div>
+
+                <div class="block-main-forum">
+                    <div class="block-main-forum__img" style="background-image: url(img/04.png)"></div>
+                    <div class="block-main-forum__content">
+                        <h4>Бухгалтерские вопросы</h4>
+                        <p class="rubrik"></p>                        
+                    </div>
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=6" class="filter">Перейти к форуму</a>
+                    </div>
+                </div>
+
+                <div class="block-main-forum">
+                    <div class="block-main-forum__img" style="background-image: url(img/05.png)"></div>
+                    <div class="block-main-forum__content">
+                        <h4>Автосервис и ремонт</h4>
+                        <p class="rubrik">Обслуживание и ремонт грузовой техники.</p>                        
+                    </div>
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=7" class="filter">Перейти к форуму</a>
+                    </div>
+                </div>
+
+                <div class="block-main-forum">
+                    <div class="block-main-forum__img" style="background-image: url(img/06.png)"></div>
+                    <div class="block-main-forum__content">
+                        <h4>Дороги</h4>
+                        <p class="rubrik">Обсуждение маршрутов, состояние дорог, криминал, ГАИ и т.д.</p>                        
+                    </div>
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=8" class="filter">Перейти к форуму</a>
+                    </div>
+                </div>
+
+                <div class="block-main-forum">
+                    <div class="block-main-forum__img" style="background-image: url(img/07.png)"></div>
+                    <div class="block-main-forum__content">
+                        <h4>Железнодорожные перевозки</h4>
+                        <p class="rubrik"></p>                        
+                    </div>
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=9" class="filter">Перейти к форуму</a>
+                    </div>
+                </div>
+
+                <div class="block-main-forum">
+                    <div class="block-main-forum__img" style="background-image: url(img/08.png)"></div>
+                    <div class="block-main-forum__content">
+                        <h4>Складские услуги</h4>
+                        <p class="rubrik"></p>                        
+                    </div>
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=10" class="filter">Перейти к форуму</a>
+                    </div>
+                </div>
+
+                <div class="block-main-forum">
+                    <div class="block-main-forum__img" style="background-image: url(img/09.png)"></div>
+                    <div class="block-main-forum__content">
+                        <h4>Техническая поддержка</h4>
+                        <p class="rubrik"></p>                        
+                    </div>
+                    <div class="block-filter block-main-forum__btn">
+                        <a href="{{ route('forum') }}?id=11" class="filter">Перейти к форуму</a>
+                    </div>
                 </div>
             </div>
         </div>
