@@ -383,8 +383,8 @@ a {
   cursor: default !important;
   border-color: #aeaeae;
   color: #aeaeae;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 .bbtn--small {
   padding: 13px;
@@ -599,6 +599,8 @@ a {
   background-color: transparent;
   outline: none;
   border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   padding: 0 5px;
   font-family: "SegoeUIRegular", sans-serif;
   font-size: 12px;
